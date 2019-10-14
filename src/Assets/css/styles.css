@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: SUKHUMVITSET;
+}
+@font-face {
+    font-family: "SUKHUMVITSET";
+    src: url("../font/SUKHUMVITSET-TEXT.TTF");
+}
+
+/* MarginTop Class */
+/* Navbar */
+
+/* MarginTop Class */
+.MarginTopClass {
+    margin-top: 150px;
+}
+
+/* Navbar */
+.navbarLink{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 39px;
+    display: inline-block; 
+}
+.alpha{
+    background: #ffffff;
+    color: #000000;
+    padding: 1.25rem 1rem !important;
+    border-bottom: 1.2px solid rgba(0,0,0,0.1);
+}
+.navbarLink a {
+    color:#000000;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.14px;
+    color: #333333;
+    text-decoration: none !important;
+}
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-left: 11px;
+    margin-right: 13px;
+    object-fit: contain;
+}
