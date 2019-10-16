@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faSearch } from '@fortawesome/fontawesome-free-solid';
-import mainLogo from'../Assets/images/logo/nattraphak.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch, faShoppingCart , faAngleDown } from '@fortawesome/fontawesome-free-solid';
+import mainLogo from '../Assets/images/logo/nattraphak.png';
 
 class NavigationBar extends Component {
 
@@ -40,38 +40,58 @@ class NavigationBar extends Component {
         })
     }
     render() {
-    
+
         return (
             <React.Fragment>
-                <div>
-                    <Navbar className="text-center alpha  fixed-top" light expand="lg">
-                        <div style={{ marginLeft: '2%' }}>
+                <div className="container">
+                    <Navbar className="text-center  alpha  fixed-top" light expand="lg">
                             <NavLink className="navbar-brand" to="/">
-                                <img src={mainLogo} className="logo" alt="logo"/>
+                                <img src={mainLogo} className="logo" alt="logo" />
                             </NavLink>
-                        </div>
                         <NavbarToggler onClick={this.toggle} />
-                        <Collapse isOpen={this.state.isOpen} navbar>
-                            <div>
-                                <Nav className="mr-auto" navbar>
+                            <Collapse isOpen={this.state.isOpen} navbar>
+                                <div className="alignAutoRight">
+                                    <Nav navbar>
 
-                                    <NavItem className="navbarLink">
-                                        <NavLink to="/" onClick={this.closeNav}>หน้าหลัก</NavLink>
-                                    </NavItem>
-                                    <NavItem className="navbarLink">
-                                        <NavLink to="/Product" onClick={this.closeNav}>สินค้าทั้งหมด</NavLink>
-                                    </NavItem>
-                                    <NavItem className="navbarLink">
-                                        <NavLink to="/News" onClick={this.closeNav}>สินค้าใหม่</NavLink>
-                                    </NavItem>
-                                    <NavItem className="navbarLink">
-                                        <NavLink to="/Promotion" onClick={this.closeNav}>สินค้าโปรโมชั่น</NavLink>
-                                    </NavItem>
-                                </Nav>
-                            </div>
-                        </Collapse>
+                                        <NavItem className="navbarLink">
+                                            <NavLink to="/" onClick={this.closeNav}>หน้าหลัก</NavLink>
+                                        </NavItem>
+                                        <NavItem className="navbarLink">
+                                            <NavLink to="/Product" onClick={this.closeNav}>สินค้าทั้งหมด</NavLink>
+                                        </NavItem>
+                                        <NavItem className="navbarLink">
+                                            <NavLink to="/News" onClick={this.closeNav}>สินค้าใหม่</NavLink>
+                                        </NavItem>
+                                        <NavItem className="navbarLink">
+                                            <NavLink to="/Promotion" onClick={this.closeNav}>สินค้าโปรโมชั่น</NavLink>
+                                        </NavItem>
+                                    </Nav>
+                                    
+                                </div>
+                                <div className=" ml-auto">
+                                    <Nav  navbar>
+                                        <NavItem className="navbarLink">
+                                            <NavLink to="/" onClick={this.closeNav}>สวัสดี Thanyaporn
+                                            &nbsp; <FontAwesomeIcon icon={faAngleDown}/>
+                                            </NavLink>
+                                        </NavItem>
+                                            <div className="hrVertical"></div>
+                                        <NavItem className="navbarLink">
+                                            <NavLink to="/Product" onClick={this.closeNav}>
+                                                <FontAwesomeIcon icon={faSearch} />
+                                            </NavLink>
+                                        </NavItem>
+                                        <NavItem className="navbarLink">
+                                            <NavLink to="/Product" onClick={this.closeNav}>
+                                                <FontAwesomeIcon icon={faShoppingCart}/>
+                                                &nbsp;&nbsp; <span>(0)</span>
+                                            </NavLink>
+                                        </NavItem>
+                                    </Nav>
+                                    </div>
+                            </Collapse> 
                     </Navbar>
-                </div>
+                    </div>
             </React.Fragment>
         );
     }
