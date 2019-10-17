@@ -66,8 +66,12 @@
     .hrVertical{
         display: none;
     }
+    .cart-nav{
+        margin-top: -40px;
+        margin-left: 10px;
+    }
     .navbarLink{
-        padding-top: 5px;
+        padding-top: 25px;
         padding-right: 39px;
         display: inline-block;      
     }    
@@ -117,10 +121,77 @@
     border: 20px solid #fff;
     border-radius:15px ;
 }
-.Category h1{
+.Category h2{
+    font-size: 48px;
     position: absolute ;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
     left: 25%;
     right: 25%;
     top: 50%;
 }
+                
+@media (max-width:375px){
+    .Category h2{
+        position: absolute;
+        left: 25%;
+        font-size: 15px;
+        font-weight: bold;
+        right: 25%;
+        top: 50%;
+    }
+}
+/*Card*/
+.embed-responsive::before {
+    padding-top: 89.50% !important;
+}
+.cardCutoms {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-radius: .25rem;
+}
+.HeaderCard{
+    font-size: 48px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: -0.29px;
+    text-align: center;
+    color: #333333;
+}
+.embed-responsive {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    opacity: 1;
+    overflow: hidden;
+}
+.embed-responsive:hover{
+    opacity: 0.7;
+    transition: 0.1s;
+}
+
+.showItem{
+    position: absolute;
+    bottom:1%;
+    width: 350px;
+    color: #000000;
+    font-size: 24px;
+    height: 56px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+
 

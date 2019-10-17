@@ -81,7 +81,7 @@ class NavigationBar extends Component {
                                                 <FontAwesomeIcon icon={faSearch} />
                                             </NavLink>
                                         </NavItem>
-                                        <NavItem className="navbarLink">
+                                        <NavItem className="cart-nav navbarLink">
                                             <NavLink to="/Product" onClick={this.closeNav}>
                                                 <FontAwesomeIcon icon={faShoppingCart}/>
                                                 &nbsp;&nbsp; <span>(0)</span>

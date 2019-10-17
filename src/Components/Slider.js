@@ -8,18 +8,18 @@ import {
 const items = [
     {
         src: 'https://images.unsplash.com/photo-1571198317078-76a4b545b2c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1373&q=80',
-        altText: 'Slide 1',
-        caption: 'Slide 1'
+        altText: 'This is any Caption and Alt text',
+        caption: 'This is any Caption and Alt text'
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1571292712260-f9af6ad4b924?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+        altText: 'This is any Caption and Alt text',
+        caption: 'This is any Caption and Alt text'
     },
     {
         src: 'https://images.unsplash.com/photo-1571198317078-76a4b545b2c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1373&q=80',
-        altText: 'Slide 2',
-        caption: 'Slide 2'
-    },
-    {
-        src: 'https://images.unsplash.com/photo-1571198317078-76a4b545b2c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1373&q=80',
-        altText: 'Slide 3',
-        caption: 'Slide 3'
+        altText: 'This is any Caption and Alt text',
+        caption: 'This is any Caption and Alt text'
     }
 ];
 
