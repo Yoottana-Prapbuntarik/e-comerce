@@ -8,18 +8,18 @@ import {
 const items = [
     {
         src: 'https://images.unsplash.com/photo-1571198317078-76a4b545b2c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1373&q=80',
-        altText: 'This is any Caption and Alt text',
-        caption: 'This is any Caption and Alt text'
-    },
-    {
-        src: 'https://images.unsplash.com/photo-1571292712260-f9af6ad4b924?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
-        altText: 'This is any Caption and Alt text',
-        caption: 'This is any Caption and Alt text'
+        altText: 'Banner go here',
+        caption: 'Banner go here'
     },
     {
         src: 'https://images.unsplash.com/photo-1571198317078-76a4b545b2c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1373&q=80',
-        altText: 'This is any Caption and Alt text',
-        caption: 'This is any Caption and Alt text'
+        altText: 'Banner go here',
+        caption: 'Banner go here'
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1571198317078-76a4b545b2c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1373&q=80',
+        altText: 'Banner go here',
+        caption: 'Banner go here'
     }
 ];
 
@@ -55,12 +55,15 @@ class Slider extends Component {
                     onExited={this.onExited}
                     key={item.src}>
                     <img src={item.src} alt={item.altText} />
+                    <div className="backgroundText">
+                    </div>
                     <CarouselCaption captionHeader={item.caption}>
                     </CarouselCaption>
                 </CarouselItem>
             );
         });
         return (
+            
             <Carousel
                 activeIndex={activeIndex}>
                 <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />

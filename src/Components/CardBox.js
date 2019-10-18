@@ -44,8 +44,6 @@ class CardBox extends Component {
                                     }
                             </div>
                             <div className="card-block mt-5 ">
-
-
                                 <h4 className="card-title">Midi Off Shoulder Ruched Dress</h4>
                                 <p className="card-text pb-3"><u>1,280 บาท</u> 900 บาท</p>
                             </div>
