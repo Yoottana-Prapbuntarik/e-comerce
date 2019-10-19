@@ -21,11 +21,10 @@ class Home extends Component {
         });
     }
     componentDidMount() {
-        axios.get('http://www.splashbase.co/api/v1/images/latest').then((datas) => {
+        axios.get('https://www.mocky.io/v2/5d45c1fa300000c86ec5c8fc').then((datas) => {            
             this.setState(
                 {
-
-                    ListCard: datas.data.images
+                    ListCard: datas.data.items
                 }
             )
         })
@@ -48,29 +47,29 @@ class Home extends Component {
                         {this.state.index === 1 ? (this.state.ListCard.map((list, i) => {
                             return (
                                 i <= 16 &&
-                                <CardBox img={list.url} />
+                                <CardBox img={list.img} />
                             )
                         })
 
                         ) : this.state.index === 2 ? (this.state.ListCard.map((list, i) => {
                             return (
                                 i <= 32 && i > 16 &&
-                                <CardBox img={list.url} />
+                                <CardBox img={list.img} />
                             )
                         })) : this.state.index === 3 ? (this.state.ListCard.map((list, i) => {
                             return (
                                 i <= 64 && i > 16 &&
-                                <CardBox img={list.url} />
+                                <CardBox img={list.img} />
                             )
                         })) : this.state.index === 4 ? (this.state.ListCard.map((list, i) => {
                             return (
                                 i <= 128 && i > 64 &&
-                                <CardBox img={list.url} />
+                                <CardBox img={list.img} />
                             )
                         })) : (this.state.ListCard.map((list, i) => {
                             return (
                                 i <= 256 && i > 64 &&
-                                <CardBox img={list.url} />
+                                <CardBox img={list.img} />
                             )
                         }))
                         }
