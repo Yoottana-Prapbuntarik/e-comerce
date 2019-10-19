@@ -12,6 +12,7 @@
 /* Navbar */
 /* Slider */
 /* Card */
+/*Responsive Media Query*/
 
 
 
@@ -66,40 +67,6 @@
     margin-left: 550px;
 }
 
-@media (max-width: 1200px) { 
-    .hrVertical{
-        display: none;
-    }
-    .cart-nav{
-        margin-top: -40px;
-        margin-left: 10px;
-    }
-    .navbarLink{
-        padding-top: 25px;
-        padding-right: 39px;
-        display: inline-block;      
-    }    
-    .navbarLink a{
-        font-size: 15px;
-    }
-    .alignAutoRight{
-        margin: 0 auto;
-    }
-    .alignAutoLeft{
-        margin: 0 auto;
-    }
-    .alpha{
-        padding: 0;
-        
-    }
-    .logo {
-        width: 50px;
-        height: 50px;
-        margin-left: 11px;
-        margin-right: 13px;
-        object-fit: contain;
-    }    
-}
 /* Slider */
 .carousel-item img{
     border-style: none;
@@ -132,14 +99,7 @@
     width: 100%;
     height: 950px;
 }
-@media(max-width: 1200px){
-    .carousel-item img{
-        border-style: none;
-        width: 100%;
-        height: 100%;
-    }
-    
-}
+
 /*CategoryBox */
 .Category{
     width: 398px;
@@ -160,16 +120,6 @@
     top: 50%;
 }
                 
-@media (max-width:375px){
-    .Category h2{
-        position: absolute;
-        left: 25%;
-        font-size: 15px;
-        font-weight: bold;
-        right: 25%;
-        top: 50%;
-    }
-}
 /*Card*/
 .embed-responsive::before {
     padding-top: 89.50% !important;
@@ -219,7 +169,6 @@
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-
 /* Footer */
 .Footer{
     margin-top: 30%;
@@ -235,9 +184,108 @@
     margin-top: 60px;
     font-size: 24px;
 } 
-@media (max-width:800px){
-    .right-footer {
-        margin-top: -8px;
-        font-size: 24px;
+.owl-carousel .owl-stage { display: flex; align-items: center; }
+
+/*Responsive Media Query*/
+
+/*Iphon 6  - 4 */
+@media (max-width:375px){
+    /* Category */
+    .Category h2{
+        position: absolute;
+        left: 25%;
+        font-size: 15px;
+        font-weight: bold;
+        right: 25%;
+        top: 50%;
     }
 }
+/* Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) { 
+    /* Slider */
+    .carousel-item img{
+        border-style: none;
+        width: 100%;
+        height: 300px !important;
+    }
+        /* Footer */
+        .left-footer{
+            margin-top: 60px;
+            font-size: 15px;
+        } 
+        .right-footer{
+            margin-top: 60px;
+            font-size: 15px;
+        } 
+    }
+/* Small devices (landscape phones, less than 768px)*/
+@media (max-width: 767.98px) { 
+    /* Footer */
+     .left-footer{
+        margin-top: 60px;
+        font-size: 18px;
+    } 
+    .right-footer{
+        margin-top: 60px;
+        font-size: 18px;
+    } 
+}
+
+/* Medium devices (tablets, less than 992px)*/
+@media (max-width: 991.98px) { 
+    /* Slider */
+    .carousel-item img{
+        border-style: none;
+        width: 100%;
+        height: 550px !important;
+    }
+    .carousel-caption h3 {
+    font-size: 50px !important;
+    font-weight: bold;    
+    }
+ }
+/* Large devices (desktops, less than 1200px*/
+@media (max-width: 1199.98px) { 
+    /*Navbar*/
+    .hrVertical{
+        display: none;
+    }
+    .cart-nav{
+        margin-top: -40px;
+        margin-left: 10px;
+    }
+    .navbarLink{
+        padding-top: 25px;
+        padding-right: 39px;
+        display: inline-block;      
+    }    
+    .navbarLink a{
+        font-size: 15px;
+    }
+    .alignAutoRight{
+        margin: 0 auto;
+    }
+    .alignAutoLeft{
+        margin: 0 auto;
+    }
+    .alpha{
+        padding: 0;
+        
+    }
+    .logo {
+        width: 50px;
+        height: 50px;
+        margin-left: 11px;
+        margin-right: 13px;
+        object-fit: contain;
+    }
+    
+    /* Slider */
+    .carousel-item img{
+        border-style: none;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+

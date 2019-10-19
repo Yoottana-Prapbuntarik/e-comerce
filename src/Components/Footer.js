@@ -7,12 +7,12 @@ class Footer extends Component {
                 <div className="row">
                     <div className="col-12 Footer">
                         <div className="row text-center text-white">
-                            <div className="col-md-6 left-footer">
+                            <div className="col-6 left-footer">
                                &copy; 2019 Nattraphak.com
                             </div>
-                            <div className="col-md-6 right-footer">
+                            <div className="col-6 right-footer">
                                 #Nattraphak.com 
-                                <img className="ml-3" src="https://tasteofbucharest.ro/wp-content/uploads/2017/03/social-facebook-box-blue-icon.png" alt="" width="30px"/>
+                                <img className="ml-2" src="https://tasteofbucharest.ro/wp-content/uploads/2017/03/social-facebook-box-blue-icon.png" alt="" width="30px"/>
                                 <img className="ml-2" src="https://tasteofbucharest.ro/wp-content/uploads/2017/03/social-facebook-box-blue-icon.png" alt="" width="30px"/>
                                 <img className="ml-2" src="https://tasteofbucharest.ro/wp-content/uploads/2017/03/social-facebook-box-blue-icon.png" alt="" width="30px"/>
                             </div>

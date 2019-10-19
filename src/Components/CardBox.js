@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 class CardBox extends Component {
     constructor(props) {
         super(props);
@@ -24,24 +24,22 @@ class CardBox extends Component {
         console.log(this.state.over)
         return (
             <React.Fragment>
-                <div className="col-lg-3  col-md-4 MarginTopClass">
-                    <div className="container">
+                <div className="col-lg-3">
+                    <div className="container MarginTopClass">
                         <div className="cardCutoms text-center">
-                                
                             <div className="embed-responsive embed-responsive-16by9">
-                            <NavLink className="wrapper-card-img " to={`/ProductDetail/`}  onMouseEnter={this.handleMouseEnter} onMouseLeave={this.onExit}>
-
-                                <img alt={this.props.altText} className="card-img-top  embed-responsive-item" src={this.props.images}
-                                    width="300px" >
+                                <NavLink className="wrapper-card-img " to={`/ProductDetail/`} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.onExit}>
+                                    <img alt={this.props.altText} className="card-img-top  embed-responsive-item" src={this.props.img}
+                                        width="300px" >
                                     </img>
-                                    </NavLink>
+                                </NavLink>
 
-                                    {this.state.over &&
-                                        (<div className="showItem">
-                                            10 ชิ้น
+                                {this.state.over &&
+                                    (<div className="showItem">
+                                        10 ชิ้น
                                         </div>
-                                        )
-                                    }
+                                    )
+                                }
                             </div>
                             <div className="card-block mt-5 ">
                                 <h4 className="card-title">Midi Off Shoulder Ruched Dress</h4>

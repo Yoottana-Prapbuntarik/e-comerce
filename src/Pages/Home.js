@@ -1,8 +1,36 @@
 import React, { Component } from 'react';
 import Slider from '../Components/Slider';
 import Category from '../Components/CategoryBox';
-import Card from '../Components/CardBox';
+import CardBox from '../Components/CardBox';
+import axios from 'axios';
 class Home extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            index: 1,
+            ListCard: []
+        }
+        this.HandlePage = this.HandlePage.bind(this);
+    }
+    HandlePage(e) {
+        this.setState({ index: parseInt(e.target.value) })
+    }
+    onclick(type) {
+        this.setState(prevState => {
+            return { index: type === 'add' ? prevState.index + 1 : prevState.index - 1 }
+        });
+    }
+    componentDidMount() {
+        axios.get('http://www.splashbase.co/api/v1/images/latest').then((datas) => {
+            this.setState(
+                {
+
+                    ListCard: datas.data.images
+                }
+            )
+        })
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -14,23 +42,75 @@ class Home extends Component {
                     <div className="row">
                         <div className="col-12 MarginTopClass text-center">
                             <h2 className="HeaderCard">
-                                เสื้อผ้าเเนะนำสำหรับคุณ. 
+                                เสื้อผ้าเเนะนำสำหรับคุณ.
                             </h2>
                         </div>
-                        <Card  images={"https://images.unsplash.com/photo-1416339698674-4f118dd3388b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=676&q=80"} altText={"Banner goes here"}/>
-                        <Card  images={"https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"} altText={"Banner goes here"}/>
-                        <Card  images={"https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"} altText={"Banner goes here"}/>
-                        <Card  images={"https://images.unsplash.com/photo-1469692422776-14abcfa4b525?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"} altText={"Banner goes here"}/>
-                        <Card  images={"https://images.unsplash.com/photo-1416339698674-4f118dd3388b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=676&q=80"} altText={"Banner goes here"}/>
-                        <Card  images={"https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"} altText={"Banner goes here"}/>
-                        <Card  images={"https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"} altText={"Banner goes here"}/>
-                        <Card  images={"https://images.unsplash.com/photo-1469692422776-14abcfa4b525?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"} altText={"Banner goes here"}/>
-                     
+                        {this.state.index === 1 ? (this.state.ListCard.map((list, i) => {
+                            return (
+                                i <= 16 &&
+                                <CardBox img={list.url} />
+                            )
+                        })
+
+                        ) : this.state.index === 2 ? (this.state.ListCard.map((list, i) => {
+                            return (
+                                i <= 32 && i > 16 &&
+                                <CardBox img={list.url} />
+                            )
+                        })) : this.state.index === 3 ? (this.state.ListCard.map((list, i) => {
+                            return (
+                                i <= 64 && i > 16 &&
+                                <CardBox img={list.url} />
+                            )
+                        })) : this.state.index === 4 ? (this.state.ListCard.map((list, i) => {
+                            return (
+                                i <= 128 && i > 64 &&
+                                <CardBox img={list.url} />
+                            )
+                        })) : (this.state.ListCard.map((list, i) => {
+                            return (
+                                i <= 256 && i > 64 &&
+                                <CardBox img={list.url} />
+                            )
+                        }))
+                        }
+                    </div > 
+                    <div className="row">
+                        <div className="col-12">
+                            <nav aria-label="Page navigation">
+                                <ul className="pagination">
+                                    <li className="page-item ml-2">
+                                        <button className="page-link text-dark" href="#" aria-label="Previous" onClick={this.onclick.bind(this, 'subTack')}>
+                                            <span aria-hidden="true">{"<"}</span>
+                                        </button>
+                                    </li>
+                                    <li className="page-item ml-2">
+                                        <button className="page-link  text-dark" value={1} onClick={this.HandlePage}>1</button></li>
+                                    <li className="page-item ml-2">
+                                        <button className="page-link  text-dark" value={2} onClick={this.HandlePage}>2</button>
+                                    </li>
+                                    <li className="page-item ml-2">
+                                        <button className="page-link  text-dark" value={3} onClick={this.HandlePage}>3</button>
+                                    </li>
+                                    <li className="page-item ml-2">
+                                        <button className="page-link  text-dark" value={4} onClick={this.HandlePage}>4</button>
+                                    </li>
+                                    <li className="page-item ml-2">
+                                        <button className="page-link  text-dark" value={5} onClick={this.HandlePage}>5</button>
+                                    </li>
+                                    <li className="page-item ml-2">
+                                        <button className="page-link text-dark" href="#" aria-label="Next" onClick={this.onclick.bind(this, 'add')}>
+                                            <span aria-hidden="true">{">"}</span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
-                </div>
+                </div >
             </React.Fragment>
         );
     }
-}
 
-export default Home;
+}
+export default Home
