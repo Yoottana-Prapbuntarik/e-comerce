@@ -21,7 +21,6 @@ class CardBox extends Component {
         })
     }
     render() {
-        console.log(this.state.over)
         return (
             <React.Fragment>
                 <div className="col-lg-3">
@@ -42,8 +41,8 @@ class CardBox extends Component {
                                 }
                             </div>
                             <div className="card-block mt-5 ">
-                                <h4 className="card-title">Midi Off Shoulder Ruched Dress</h4>
-                                <p className="card-text pb-3"><u>1,280 บาท</u> 900 บาท</p>
+                                <h4 className="card-title">{this.props.name}</h4>
+                                <p className="card-text pb-3"><u>1,280 บาท</u> {this.props.cost} บาท</p>
                             </div>
                         </div>
                     </div>

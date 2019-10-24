@@ -1,6 +1,8 @@
+
 const initState = {
     addedItems:[],
-    allCost:0
+    allCost:0,
+    dataProduct:[],
 
 }
 const CartReducer = (state = initState, action) => {
@@ -10,10 +12,15 @@ const CartReducer = (state = initState, action) => {
                 ...state,
                 addedItems: [...state.addedItems, action.payload],
             }     
-        case 'Total':      
+        case 'TotalCost':      
             return {
                 ...state,
                 allCost: state.allCost += action.payload
+            }
+        case 'Get-Api':
+            return{
+                ...state,
+                dataProduct:[...state.dataProduct,action.payload]
             }     
         default:
             return state

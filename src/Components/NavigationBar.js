@@ -83,7 +83,7 @@ class NavigationBar extends Component {
                                     </NavItem>
                                     <div className="hrVertical"></div>
                                     <NavItem className="navbarLink">
-                                        <NavLink to="" onClick={this.closeNav}>
+                                        <NavLink to="">
                                             <FontAwesomeIcon icon={faSearch} onClick={this.HandleSearch} />
                                         </NavLink>
                                     </NavItem>
@@ -94,7 +94,9 @@ class NavigationBar extends Component {
                                         </NavLink>
                                     </NavItem>
                                 </Nav>
-                                        {this.state.search === true && <SearchBox />}
+                                <div className="container">
+                                    {this.state.search === true && <SearchBox />}
+                                </div>
                             </div>
                         </Collapse>
                     </Navbar>
