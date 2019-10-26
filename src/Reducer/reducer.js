@@ -1,8 +1,9 @@
-
 const initState = {
     addedItems:[],
     allCost:0,
     dataProduct:[],
+    itemsSearch:[],
+    UserSearch:""
 
 }
 const CartReducer = (state = initState, action) => {
@@ -22,6 +23,16 @@ const CartReducer = (state = initState, action) => {
                 ...state,
                 dataProduct:[...state.dataProduct,action.payload]
             }     
+        case 'Searching':
+            return{
+                ...state,
+                itemsSearch:[...state.itemsSearch,action.payload]
+            }
+        case 'InputSearch':
+            return{
+                ...state,
+                UserSearch:state.UserSearch = action.payload
+            }
         default:
             return state
     }

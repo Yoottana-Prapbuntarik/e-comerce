@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import Slider from '../Components/Slider';
-import Category from '../Components/CategoryBox';
 import CardBox from '../Components/CardBox';
 import { connect } from 'react-redux';
-import axios from 'axios';
-class Home extends Component {
+class ResultsSearch extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -20,60 +17,60 @@ class Home extends Component {
             return { index: type === 'add' ? prevState.index + 1 : prevState.index - 1 }
         });
     }
-
     componentDidMount() {
-        axios.get('https://www.mocky.io/v2/5d45c1fa300000c86ec5c8fc').then((datas) => {
-            this.props.getApi(datas.data.items);
-        })
+       
     }
 
     render() {
         return (
             <React.Fragment>
-                <Slider />
-                <div className="container-fluid MarginTopClass ">
-                    <div className="row text-center">
-                        <Category />
-                    </div>
+                <div className="container-fluid MarginTopClassII">
                     <div className="row">
                         <div className="col-12 MarginTopClass text-center">
-                            <h2 className="HeaderCard">
-                                เสื้อผ้าเเนะนำสำหรับคุณ.
-                            </h2>
+                            <h5>
+                                {this.props.UserSearch !== '' ?
+
+                                    (<b>ผลลัพธ์การค้นหา "{this.props.UserSearch}"</b>) : ("ผลลัพธ์การค้นหา")
+                                }
+                            </h5>
                         </div>
-                        {this.props.dataProduct.map(datas => {
-                            return (
-                                this.state.index === 1 ? (datas.map((list, i) => {
-                                    return (
-                                        i <= 16 &&
-                                        <CardBox key={i} img={list.img} name={list.name} cost={list.cost} />
-                                    )
-                                })
+                        {
+                            console.log(this.state.datas)
+                        }
+                        {
+                            this.props.itemsSearch.map(datas => {
+                                return (
+                                    this.state.index === 1 ? (datas.map((list, i) => {
+                                        return (
+                                            i <= 16 &&
+                                            <CardBox key={i} img={list.img} name={list.name} cost={list.cost} />
+                                        )
+                                    })
 
-                                ) : this.state.index === 2 ? (datas.map((list, i) => {
-                                    return (
-                                        i <= 32 && i > 16 &&
-                                        <CardBox key={i} img={list.img} name={list.name} cost={list.cost} />
-                                    )
-                                })) : this.state.index === 3 ? (datas.map((list, i) => {
-                                    return (
-                                        i <= 64 && i > 16 &&
-                                        <CardBox key={i} img={list.img} name={list.name} cost={list.cost} />
-                                    )
-                                })) : this.state.index === 4 ? (datas.map((list, i) => {
-                                    return (
-                                        i <= 128 && i > 64 &&
-                                        <CardBox key={i} img={list.img} name={list.name} cost={list.cost} />
-                                    )
-                                })) : (datas.map((list, i) => {
-                                    return (
-                                        i <= 256 && i > 64 &&
-                                        <CardBox key={i} img={list.img} name={list.name} cost={list.cost} />
-                                    )
-                                }))
-                            )
+                                    ) : this.state.index === 2 ? (datas.map((list, i) => {
+                                        return (
+                                            i <= 32 && i > 16 &&
+                                            <CardBox key={i} img={list.img} name={list.name} cost={list.cost} />
+                                        )
+                                    })) : this.state.index === 3 ? (datas.map((list, i) => {
+                                        return (
+                                            i <= 64 && i > 16 &&
+                                            <CardBox key={i} img={list.img} name={list.name} cost={list.cost} />
+                                        )
+                                    })) : this.state.index === 4 ? (datas.map((list, i) => {
+                                        return (
+                                            i <= 128 && i > 64 &&
+                                            <CardBox key={i} img={list.img} name={list.name} cost={list.cost} />
+                                        )
+                                    })) : (datas.map((list, i) => {
+                                        return (
+                                            i <= 256 && i > 64 &&
+                                            <CardBox key={i} img={list.img} name={list.name} cost={list.cost} />
+                                        )
+                                    }))
+                                )
 
-                        })}
+                            })}
 
                     </div >
                 </div >
@@ -117,17 +114,8 @@ class Home extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        dataProduct: state.dataProduct,
+        itemsSearch: state.itemsSearch,
+        UserSearch: state.UserSearch
     }
 }
-const mapDispatchToProps = disptach => {
-    return {
-        getApi: (datasApi) => {
-            disptach({
-                type: "Get-Api",
-                payload: datasApi
-            })
-        }
-    }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps)(ResultsSearch);

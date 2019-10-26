@@ -4,6 +4,7 @@ import NotFound from './Pages/NotFound';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import Home from './Pages/Home';
 import Product from './Pages/Product';
+import ResultsSearch from './Pages/ResultsSearch';
 import Footer from './Components/Footer';
 
 class App extends Component {
@@ -50,7 +51,8 @@ class App extends Component {
             <Navbar />
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/Product" component={Product} />
+              <Route  path="/ResultsSearch" component={ResultsSearch} />
+              <Route  path="/Product" component={Product} />
               <Route component={NotFound} />
             </Switch>
           </div>
