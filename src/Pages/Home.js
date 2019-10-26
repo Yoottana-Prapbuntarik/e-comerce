@@ -22,7 +22,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://www.mocky.io/v2/5d45c1fa300000c86ec5c8fc').then((datas) => {
+        axios.get('http://www.mocky.io/v2/5db45d24300000540057b781').then((datas) => {
             this.props.getApi(datas.data.items);
         })
     }

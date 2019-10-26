@@ -9,7 +9,7 @@ class SearchBox extends Component {
         this.state = {
             textInput: "",
             items: [],
-            query: '',
+            query: [],
             redirect: false
         }
         this.HandleChangeTextInput = this.HandleChangeTextInput.bind(this)
@@ -26,6 +26,9 @@ class SearchBox extends Component {
 
     componentWillUnmount() {
         document.removeEventListener("keydown", this.onPressed.bind(this));
+        this.setState({
+            query :''
+        })
     }
     HandleChangeTextInput(e) {
         this.setState({
@@ -43,13 +46,13 @@ class SearchBox extends Component {
         for (let idx = 0; idx < this.state.items.length; idx++) {
             for (let idxWord = 0; idxWord < this.state.textInput.length; idxWord++) {
                 if (this.state.items[idx].name[count] === this.state.textInput[idxWord]) {
-                    if (count < this.state.textInput.length) {
+                    if (count <= this.state.textInput.length) {
                         count = count + 1;
                     }
                     currentItems.push(this.state.items[idx]);
                     let ItemsSearch = [];
                     for (let i = 0; i < currentItems.length; i++) {
-                        if (currentItems[i] !== currentItems[i + 1]) ItemsSearch.push(currentItems[i]);
+                        if (currentItems[i] !== currentItems[i - 1]) ItemsSearch.push(currentItems[i]);
                         this.setState({
                             query: ItemsSearch
                         })

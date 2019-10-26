@@ -6,6 +6,7 @@ import {
     CarouselCaption,
     CarouselControl
 } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 const items = [
     {
         src: 'https://images.unsplash.com/photo-1571198317078-76a4b545b2c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1373&q=80',
@@ -75,8 +76,10 @@ class Slider extends Component {
                     <img src={item.src} alt={item.altText} />
                     <div className="backgroundText">
                     </div>
-                    <CarouselCaption captionText={''} captionHeader={item.caption}>
-                    </CarouselCaption>
+                    <NavLink to="/Promotion">
+                        <CarouselCaption captionText={''} captionHeader={item.caption}>
+                        </CarouselCaption>
+                    </NavLink>
                 </CarouselItem>
             );
         });
@@ -86,6 +89,7 @@ class Slider extends Component {
                 next={this.next}
                 previous={this.previous}
             >
+
                 <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
                 {slides}
                 <div className="d-none">

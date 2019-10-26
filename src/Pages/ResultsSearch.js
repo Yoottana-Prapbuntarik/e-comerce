@@ -17,10 +17,6 @@ class ResultsSearch extends Component {
             return { index: type === 'add' ? prevState.index + 1 : prevState.index - 1 }
         });
     }
-    componentDidMount() {
-       
-    }
-
     render() {
         return (
             <React.Fragment>
@@ -34,9 +30,6 @@ class ResultsSearch extends Component {
                                 }
                             </h5>
                         </div>
-                        {
-                            console.log(this.state.datas)
-                        }
                         {
                             this.props.itemsSearch.map(datas => {
                                 return (
