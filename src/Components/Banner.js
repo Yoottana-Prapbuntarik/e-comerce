@@ -13,7 +13,7 @@ class Banner extends Component {
         return (
             <div className="row">
                 <div className="Banner">
-                    <img src="https://images.unsplash.com/photo-1494578379344-d6c710782a3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"/>
+                    <img src={this.props.images}/>
                 <div className="text-banner col-12">
                     {this.props.text}
                 </div>
