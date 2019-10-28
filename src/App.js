@@ -55,6 +55,7 @@ class App extends Component {
               <Route  path="/Promotion" component={Promotion} />
               <Route  path="/ResultsSearch" component={ResultsSearch} />
               <Route  path="/Product" component={Product} />
+              {/* <Route  path="/ProductDetail" component={ProductDetail} /> */}
               <Route component={NotFound} />
             </Switch>
           </div>
