@@ -28,7 +28,7 @@
     .text-banner {
         width: 905px;
         height: 157px;
-        font-size: 79px;
+        font-size: 45px;
         font-weight: bold;
         font-stretch: normal;
         font-style: normal;
@@ -36,7 +36,7 @@
         letter-spacing: -0.6px;
         color: #ffffff;
         position: absolute;
-        top: -240px !important;
+        top: -200px !important;
         /* background: #000; */
         text-align: center;
     }
