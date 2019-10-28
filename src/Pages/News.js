@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import Banner from '../Components/Banner';
-class Promotion extends Component {
+class News extends Component {
     render() {
         return (
             <React.Fragment>
                 <div className="container-fluid">
-                        <Banner text={"Promotion"}/>
+                        <Banner text={"News"}/>
                         </div>
                 <div className="container-fluid MarginTopClass">
                     <div className="row">
                         <div className="col-12">
-                            Promotion
+                            News
                         </div>
                     </div>
                 </div>
@@ -19,4 +19,4 @@ class Promotion extends Component {
     }
 }
 
-export default Promotion
+export default News

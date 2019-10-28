@@ -6,6 +6,7 @@ import Home from './Pages/Home';
 import Product from './Pages/Product';
 import ResultsSearch from './Pages/ResultsSearch';
 import Promotion from './Pages/Promotion';
+import News from './Pages/News';
 import Footer from './Components/Footer';
 
 class App extends Component {
@@ -52,9 +53,10 @@ class App extends Component {
             <Navbar />
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route  path="/Product" component={Product} />
+              <Route  path="/News" component={News} />
               <Route  path="/Promotion" component={Promotion} />
               <Route  path="/ResultsSearch" component={ResultsSearch} />
-              <Route  path="/Product" component={Product} />
               {/* <Route  path="/ProductDetail" component={ProductDetail} /> */}
               <Route component={NotFound} />
             </Switch>
