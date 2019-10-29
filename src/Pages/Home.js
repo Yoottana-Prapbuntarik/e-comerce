@@ -22,9 +22,12 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://www.mocky.io/v2/5db45d24300000540057b781').then((datas) => {
+        axios.get('http://www.mocky.io/v2/5db7df793b0000530035eca6').then((datas) => {
             this.props.getApi(datas.data.items);
         })
+        // axios.get('http://www.mocky.io/v2/5db45d24300000540057b781').then((datas) => {
+        //     this.props.getApi(datas.data.items);
+        // })
     }
 
     render() {
@@ -41,34 +44,35 @@ class Home extends Component {
                                 เสื้อผ้าเเนะนำสำหรับคุณ.
                             </h2>
                         </div>
+
                         {this.props.dataProduct.map(datas => {
                             return (
                                 this.state.index === 1 ? (datas.map((list, i) => {
                                     return (
                                         i <= 16 &&
-                                        <CardBox key={i} img={list.img} name={list.name} cost={list.cost} />
+                                        <CardBox key={i} img={list.img[0].image} name={list.name} cost={list.cost} />
                                     )
                                 })
 
                                 ) : this.state.index === 2 ? (datas.map((list, i) => {
                                     return (
                                         i <= 32 && i > 16 &&
-                                        <CardBox key={i} img={list.img} name={list.name} cost={list.cost} />
+                                        <CardBox key={i} img={list.img[0].image} name={list.name} cost={list.cost} />
                                     )
                                 })) : this.state.index === 3 ? (datas.map((list, i) => {
                                     return (
                                         i <= 64 && i > 16 &&
-                                        <CardBox key={i} img={list.img} name={list.name} cost={list.cost} />
+                                        <CardBox key={i} img={list.img[0].image} name={list.name} cost={list.cost} />
                                     )
                                 })) : this.state.index === 4 ? (datas.map((list, i) => {
                                     return (
                                         i <= 128 && i > 64 &&
-                                        <CardBox key={i} img={list.img} name={list.name} cost={list.cost} />
+                                        <CardBox key={i} img={list.img[0].image} name={list.name} cost={list.cost} />
                                     )
                                 })) : (datas.map((list, i) => {
                                     return (
                                         i <= 256 && i > 64 &&
-                                        <CardBox key={i} img={list.img} name={list.name} cost={list.cost} />
+                                        <CardBox key={i} img={list.img[0].image} name={list.name} cost={list.cost} />
                                     )
                                 }))
                             )

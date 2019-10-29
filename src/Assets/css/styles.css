@@ -131,7 +131,7 @@ body,html {
                 
 /*Card*/
 .embed-responsive::before {
-    padding-top: 89.50% !important;
+    padding: 56.25% !important;
 }
 .cardCutoms {
     position: relative;
@@ -279,13 +279,19 @@ body,html {
 @media (max-width: 767.98px) { 
     /* Footer */
      .left-footer{
-        margin-top: 60px;
+        margin-top: 25px;
         font-size: 18px;
     } 
     .right-footer{
-        margin-top: 60px;
+        margin-top: 25px;
         font-size: 18px;
     } 
+    .Footer{
+        position: fixed;
+        bottom: 0;
+        height: 120px;
+        background: #333333;
+    }
 }
 
 /* Medium devices (tablets, less than 992px)*/

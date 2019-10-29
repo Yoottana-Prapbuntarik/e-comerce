@@ -45,7 +45,7 @@ class SearchBox extends Component {
         let currentItems = [];
         for (let idx = 0; idx < this.state.items.length; idx++) {
             for (let idxWord = 0; idxWord < this.state.textInput.length; idxWord++) {
-                if (this.state.items[idx].name[count] === this.state.textInput[idxWord]) {
+                if (this.state.items[idx].type[count] === this.state.textInput[idxWord]) {
                     if (count <= this.state.textInput.length) {
                         count = count + 1;
                     }

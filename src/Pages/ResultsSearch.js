@@ -17,6 +17,9 @@ class ResultsSearch extends Component {
             return { index: type === 'add' ? prevState.index + 1 : prevState.index - 1 }
         });
     }
+    componentWillUnmount(){
+        this.props.getSearch([]);
+    }
     render() {
         return (
             <React.Fragment>
@@ -36,29 +39,29 @@ class ResultsSearch extends Component {
                                     this.state.index === 1 ? (datas.map((list, i) => {
                                         return (
                                             i <= 16 &&
-                                            <CardBox key={i} img={list.img} name={list.name} cost={list.cost} />
+                                            <CardBox key={i} img={list.img[0].image} name={list.name} cost={list.cost} />
                                         )
                                     })
 
                                     ) : this.state.index === 2 ? (datas.map((list, i) => {
                                         return (
                                             i <= 32 && i > 16 &&
-                                            <CardBox key={i} img={list.img} name={list.name} cost={list.cost} />
+                                            <CardBox key={i} img={list.img[0].image} name={list.name} cost={list.cost} />
                                         )
                                     })) : this.state.index === 3 ? (datas.map((list, i) => {
                                         return (
                                             i <= 64 && i > 16 &&
-                                            <CardBox key={i} img={list.img} name={list.name} cost={list.cost} />
+                                            <CardBox key={i} img={list.img[0].image} name={list.name} cost={list.cost} />
                                         )
                                     })) : this.state.index === 4 ? (datas.map((list, i) => {
                                         return (
                                             i <= 128 && i > 64 &&
-                                            <CardBox key={i} img={list.img} name={list.name} cost={list.cost} />
+                                            <CardBox key={i} img={list.img[0].image} name={list.name} cost={list.cost} />
                                         )
                                     })) : (datas.map((list, i) => {
                                         return (
                                             i <= 256 && i > 64 &&
-                                            <CardBox key={i} img={list.img} name={list.name} cost={list.cost} />
+                                            <CardBox key={i} img={list.img[0].image} name={list.name} cost={list.cost} />
                                         )
                                     }))
                                 )
@@ -111,4 +114,14 @@ const mapStateToProps = (state) => {
         UserSearch: state.UserSearch
     }
 }
-export default connect(mapStateToProps)(ResultsSearch);
+const mapDispatchToProps = disptach  => {
+    return {
+        getSearch: (search) => {
+            disptach({
+                type: "Searching",
+                payload: search
+            })
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(ResultsSearch);
