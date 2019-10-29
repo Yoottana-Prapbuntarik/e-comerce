@@ -59,9 +59,8 @@ class App extends Component {
             </Switch>
           </div>
         </BrowserRouter>
-        {console.log(this.state.valueScroll)}
         {
-          this.state.valueScroll > window.clientHeight &&
+          this.state.valueScroll > window.innerHeight &&
         <Footer/>
         }
       </div >
