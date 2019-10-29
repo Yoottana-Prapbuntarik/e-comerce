@@ -180,10 +180,11 @@ body,html {
 
 /* Footer */
 .Footer{
-    position: fixed;
-    bottom: 0;
+    clear: both;
     height: 150px;
     background: #333333;
+    position: relative;
+    bottom: 0;
 }
 
  .left-footer{
@@ -279,15 +280,15 @@ body,html {
 @media (max-width: 767.98px) { 
     /* Footer */
      .left-footer{
-        margin-top: 25px;
-        font-size: 12px;
+        margin-top: 30px;
+        font-size: 18px;
     } 
     .right-footer{
-        margin-top: 25px;
-        font-size: 12px;
+        margin-top: 30px;
+        font-size: 18px;
     } 
     .Footer{
-        position: fixed;
+        position: relative;
         bottom: 0;
         height: 120px;
         background: #333333;
@@ -315,7 +316,7 @@ body,html {
         z-index: 100 !important;
     }
     .div-search {
-            top: 350px;
+            top: 166px;
             position: absolute;
             left: 10%;
             width: 340px;

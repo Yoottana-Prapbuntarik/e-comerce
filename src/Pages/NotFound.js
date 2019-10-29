@@ -1,10 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Banner from '../Components/Banner';
 
 class NotFound extends Component {
     render() {
 
         return (
-            <div className="container MarginTopClassII">
+            <React.Fragment>
+                    <div className="container-fluid">
+                        <Banner images={"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQy-9LcVHb1SDMgdlcAzzP6rpLsuIQ_C981p23__t1AVMprT3gX"} alt="image banner"/>
+                        </div>
+            <div className="container">
                 <div className="row">
                     <div className="col-12">
                         <div  className="text-center">
@@ -14,6 +19,7 @@ class NotFound extends Component {
                     </div>
                 </div>
             </div>
+            </React.Fragment>
         )
     }
 }

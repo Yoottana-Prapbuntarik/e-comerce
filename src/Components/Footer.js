@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-
+import facebook from '../Assets/images/logo/facebook.png';
+import line from '../Assets/images/logo/line.png';
+import ig from '../Assets/images/logo/ig.png';
 class Footer extends Component {
     render() {
         return (
@@ -9,18 +11,18 @@ class Footer extends Component {
                         &copy; 2019 Nattraphak.com
                             </div>
                     <div className="col-6 right-footer">
-                        #Nattraphak.com
-                        <div className="row">
-                        <div className="col-2">
-                            <img className="ml-2" src="https://tasteofbucharest.ro/wp-content/uploads/2017/03/social-facebook-box-blue-icon.png" alt="" width="30px" />
-                        </div>
-                        <div className="col-2">
-                            <img className="ml-2" src="https://tasteofbucharest.ro/wp-content/uploads/2017/03/social-facebook-box-blue-icon.png" alt="" width="30px" />
-                        </div>
-                        <div className="col-2">
-                            <img className="ml-2" src="https://tasteofbucharest.ro/wp-content/uploads/2017/03/social-facebook-box-blue-icon.png" alt="" width="30px" />
-                        </div>
-                        </div>
+                        #Nattraphak.com                       
+                        <a className="ml-2" href="https://www.facebook.com">
+                         <img  src={facebook} alt="" width="30px" />
+                        </a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a className="ml-2"  href="https://www.facebook.com">
+                         <img src={ig} alt="" width="30px" />
+                        </a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a className="ml-2"  href="https://www.facebook.com">
+                         <img src={line} alt="" width="30px" />
+                        </a>
                     </div>
                 </div>
             </div>
@@ -28,5 +30,3 @@ class Footer extends Component {
     }
 }
 export default Footer;
-        // 2019 Nattraphak.com
-//  #Nattraphak.com Facebook Ig Line

@@ -27,12 +27,11 @@ class CardBox extends Component {
                     <div className="container MarginTopClass">
                         <div className="cardCutoms text-center">
                             <div className="embed-responsive embed-responsive-16by9">
-                                <NavLink className="wrapper-card-img " to={`/ProductDetail/`} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.onExit}>
+                                <NavLink className="wrapper-card-img " to={`/ProductDetail/${this.props.id}`} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.onExit}>
                                     <img alt={this.props.altText} className="card-img-top  embed-responsive-item" src={this.props.img}
                                         width="300px" >
                                     </img>
                                 </NavLink>
-
                                 {this.state.over &&
                                     (<div className="showItem">
                                         10 ชิ้น

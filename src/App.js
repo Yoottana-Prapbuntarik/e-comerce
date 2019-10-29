@@ -5,6 +5,7 @@ import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import Home from './Pages/Home';
 import Product from './Pages/Product';
 import ResultsSearch from './Pages/ResultsSearch';
+import ProductDetail from './Pages/ProductDetail';
 import Promotion from './Pages/Promotion';
 import News from './Pages/News';
 import Footer from './Components/Footer';
@@ -54,13 +55,13 @@ class App extends Component {
               <Route path="/News" component={News} />
               <Route path="/Promotion" component={Promotion} />
               <Route path="/ResultsSearch" component={ResultsSearch} />
-              {/* <Route  path="/ProductDetail" component={ProductDetail} /> */}
+              <Route  path="/ProductDetail/:id" component={ProductDetail} />
               <Route component={NotFound} />
             </Switch>
           </div>
         </BrowserRouter>
         {
-          this.state.valueScroll > window.innerHeight &&
+          this.state.valueScroll > (window.innerHeight) &&
         <Footer/>
         }
       </div >

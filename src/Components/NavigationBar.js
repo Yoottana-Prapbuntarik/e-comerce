@@ -55,7 +55,7 @@ class NavigationBar extends Component {
         if(window.scrollY > 0){
             eventScroll ={
                 transition:'0.5s',
-                padding:' 0.1rem 1rem'                
+                padding:' 0.6rem 1rem'                
             }
         }
         return (
