@@ -61,7 +61,7 @@ class App extends Component {
         </BrowserRouter>
         {console.log(this.state.valueScroll)}
         {
-          this.state.valueScroll >= 720 &&
+          this.state.valueScroll > window.clientHeight &&
         <Footer/>
         }
       </div >

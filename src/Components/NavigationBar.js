@@ -51,10 +51,17 @@ class NavigationBar extends Component {
         })
     }
     render() {
+        let eventScroll ={padding:'1.25rem 1rem'}
+        if(window.scrollY > 0){
+            eventScroll ={
+                transition:'0.5s',
+                padding:' 0.1rem 1rem'                
+            }
+        }
         return (
             <React.Fragment>
                 <div className="container">
-                    <Navbar className="text-center  alpha  fixed-top" light expand="lg">
+                    <Navbar style={eventScroll} className="text-center  alpha  fixed-top" light expand="lg">
                         <NavLink className="navbar-brand" to="/">
                             <img src={mainLogo} className="logo" alt="logo" />
                         </NavLink>
