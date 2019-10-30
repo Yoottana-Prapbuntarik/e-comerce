@@ -38,10 +38,10 @@ class ProductDetail extends Component {
                         <React.Fragment key={i}>
                             <div className="container h-50">
                                 <div className="row">
-                                    <div className="col-lg-6">
+                                    <div className="col-lg-6 col-12">
                                         <ProductSlide imgSource={data} />
                                     </div>
-                                    <div className="col-lg-6 ProductDetailFront">
+                                    <div className="col-lg-6 col-12 ProductDetailFront">
                                         <h3 className="mt-3">{data.name}<br />{data.cost} บาท</h3>
                                         <div className="conatiner MarginTopClassIII mb-5">
                                             <div className="row">
