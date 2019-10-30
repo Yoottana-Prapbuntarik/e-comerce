@@ -1,7 +1,6 @@
 const initState = {
     addedItems:[],
     allCost:0,
-    dataProduct:[],
     itemsSearch:[],
     UserSearch:""
 
@@ -17,11 +16,6 @@ const CartReducer = (state = initState, action) => {
             return {
                 ...state,
                 allCost: state.allCost += action.payload
-            }
-        case 'Get-Api':
-            return{
-                ...state,
-                dataProduct:[...state.dataProduct,action.payload]
             }     
         case 'Searching':
             return{

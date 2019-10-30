@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/fontawesome-free-solid';
 class SearchBox extends Component {
@@ -10,24 +11,31 @@ class SearchBox extends Component {
             textInput: "",
             items: [],
             query: [],
-            redirect: false
+            redirect: false,
+            mounted: true,
         }
         this.HandleChangeTextInput = this.HandleChangeTextInput.bind(this)
         this.onHandleSearch = this.onHandleSearch.bind(this)
     }
     componentDidMount() {
-        this.props.dataProduct.map(datas => {
-            return this.setState({
-                items: datas
+        if (this.state.mounted) {
+            axios.get('http://www.mocky.io/v2/5db946cd30000040765ee168').then((res) => {
+                this.setState({
+                    items: res.data.items
+                })
             })
-        })
+        }
         document.addEventListener("keydown", this.onPressed.bind(this));
     }
 
     componentWillUnmount() {
         document.removeEventListener("keydown", this.onPressed.bind(this));
         this.setState({
-            query :''
+            query: ''
+        })
+        this.setState({
+            mounted: false,
+            items: []
         })
     }
     HandleChangeTextInput(e) {
@@ -41,13 +49,12 @@ class SearchBox extends Component {
         }
     }
     onHandleSearch() {
-        let count = 0;
         let currentItems = [];
         for (let idx = 0; idx < this.state.items.length; idx++) {
-            for (let idxWord = 0; idxWord < this.state.textInput.length; idxWord++) {
+            for (let idxWord = 0, count = 0; idxWord < this.state.textInput.length; idxWord++ , count++) {
                 if (this.state.items[idx].type[count] === this.state.textInput[idxWord]) {
-                    if (count <= this.state.textInput.length) {
-                        count = count + 1;
+                    if(count > this.state.items[idx].type.length){
+                        count = 0;
                     }
                     currentItems.push(this.state.items[idx]);
                     let ItemsSearch = [];

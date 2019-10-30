@@ -9,6 +9,8 @@ class Home extends Component {
         super(props);
         this.state = {
             index: 1,
+            dataItem: [],
+            mounted: true
         }
         this.HandlePage = this.HandlePage.bind(this);
     }
@@ -20,10 +22,19 @@ class Home extends Component {
             return { index: type === 'add' ? prevState.index + 1 : prevState.index - 1 }
         });
     }
-
     componentDidMount() {
-        axios.get('http://www.mocky.io/v2/5db8705c3b00004f0b35f145').then((datas) => {
-            this.props.getApi(datas.data.items);
+        if (this.state.mounted) {
+            axios.get('http://www.mocky.io/v2/5db946cd30000040765ee168').then((res) => {
+                this.setState({
+                    dataItem: res.data.items
+                })
+            })
+        }
+    }
+    componentWillUnmount() {
+        this.setState({
+            mounted: false,
+            dataItem: []
         })
     }
 
@@ -41,40 +52,37 @@ class Home extends Component {
                                 เสื้อผ้าเเนะนำสำหรับคุณ.
                             </h2>
                         </div>
+                        {
+                            this.state.index === 1 ? (this.state.dataItem.map((list, i) => {
+                                return (
+                                    list.id <= 16 &&
+                                    <CardBox key={i} img={list.img[0].source} id={list.id} name={list.name} cost={list.cost} />
+                                )
+                            })
 
-                        {this.props.dataProduct.map(datas => {
-                            return (
-                                this.state.index === 1 ? (datas.map((list, i) => {
-                                    return (
-                                        i <= 16 &&
-                                        <CardBox key={i} img={list.img[0]} id={list.id} name={list.name} cost={list.cost} />
-                                    )
-                                })
+                            ) : this.state.index === 2 ? (this.state.dataItem.map((list, i) => {
+                                return (
+                                    list.id <= 32 && list.id > 16 &&
+                                    <CardBox key={i} img={list.img[0].source} id={list.id} name={list.name} cost={list.cost} />
+                                )
+                            })) : this.state.index === 3 ? (this.state.dataItem.map((list, i) => {
+                                return (
+                                    list.id <= 64 && list.id > 32 &&
+                                    <CardBox key={i} img={list.img[0].source} id={list.id} name={list.name} cost={list.cost} />
+                                )
+                            })) : this.state.index === 4 ? (this.state.dataItem.map((list, i) => {
+                                return (
+                                    list.id <= 128 && list.id > 64 &&
+                                    <CardBox key={i} img={list.img[0].source} id={list.id} name={list.name} cost={list.cost} />
+                                )
+                            })) : (this.state.dataItem.map((list, i) => {
+                                return (
+                                    list.id <= 256 && list.id > 64 &&
+                                    <CardBox key={i} img={list.img[0].source} id={list.id} name={list.name} cost={list.cost} />
+                                )
+                            }))
+                        }
 
-                                ) : this.state.index === 2 ? (datas.map((list, i) => {
-                                    return (
-                                        i <= 32 && i > 16 &&
-                                        <CardBox key={i} img={list.img[0]} id={list.id} name={list.name} cost={list.cost} />
-                                    )
-                                })) : this.state.index === 3 ? (datas.map((list, i) => {
-                                    return (
-                                        i <= 64 && i > 16 &&
-                                        <CardBox key={i} img={list.img[0]} id={list.id} name={list.name} cost={list.cost} />
-                                    )
-                                })) : this.state.index === 4 ? (datas.map((list, i) => {
-                                    return (
-                                        i <= 128 && i > 64 &&
-                                        <CardBox key={i} img={list.img[0]} id={list.id} name={list.name} cost={list.cost} />
-                                    )
-                                })) : (datas.map((list, i) => {
-                                    return (
-                                        i <= 256 && i > 64 &&
-                                        <CardBox key={i} img={list.img[0]} id={list.id} name={list.name} cost={list.cost} />
-                                    )
-                                }))
-                            )
-
-                        })}
 
                     </div >
                 </div >
@@ -121,14 +129,4 @@ const mapStateToProps = (state) => {
         dataProduct: state.dataProduct,
     }
 }
-const mapDispatchToProps = disptach => {
-    return {
-        getApi: (datasApi) => {
-            disptach({
-                type: "Get-Api",
-                payload: datasApi
-            })
-        }
-    }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps)(Home);

@@ -19,6 +19,7 @@ body,html {
 /* Footer */
 /* buttonGroup */
 /* search */
+/* ProductDetail */
 /*Responsive Media Query*/
 
 
@@ -28,7 +29,10 @@ body,html {
     
 }
 .MarginTopClassII {
-    margin-top: 155px;
+    margin-top: 205px;
+}
+.MarginTopClassIII {
+    margin-top: 170px;
 }
 
 /* Navbar */
@@ -107,6 +111,50 @@ body,html {
     width: 100%;
     height: 950px;
 }
+/* ProductDetail */
+/* ProductSlider */
+.ProductDetailFront h3{
+    max-width: 600px;
+    width: 584px;
+  height: 54px;
+  font-family: SukhumvitSet;
+  font-size: 40px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.35;
+  letter-spacing: -0.24px;
+  color: #333333;
+}
+.ProductSlider .carousel-item img{
+    border-style: none;
+    width: 600px !important;
+    height: 740px !important;
+}
+.ProductSlider .carousel-caption h3 {
+    display: none;
+}
+.buttonSize{
+    width: 200px;
+    height: 40px;
+    border-radius: 4px;
+    color: #000 !important;
+    background-color: #fff !important;
+    border-color: #6c757d !important;
+}
+.caret{
+    display: inline-block !important;
+    margin-left: 9.1em !important;
+    vertical-align: .3em !important;
+    content: "";
+    border-top: .3em solid !important;
+    border-right: .3em solid transparent !important;
+    border-bottom: 0 !important;
+    border-left: .3em solid transparent !important;
+    margin-top: 15px !important;
+}
+
+
 
 /*CategoryBox */
 .Category{
@@ -137,7 +185,7 @@ body,html {
     display: flex;
     flex-direction: column;
     min-width: 0;
-    word-wrap: break-word;
+    word-ap: break-word;
     background-color: #fff;
     background-clip: border-box;
     border-radius: .25rem;
@@ -276,24 +324,29 @@ body,html {
                 background-color: #ffffff;
         }  
     }
-/* Small devices (landscape phones, less than 768px)*/
-@media (max-width: 767.98px) { 
-    /* Footer */
+    /* Small devices (landscape phones, less than 768px)*/
+    @media (max-width: 767.98px) { 
+        /* Footer */
      .left-footer{
-        margin-top: 30px;
-        font-size: 18px;
-    } 
-    .right-footer{
-        margin-top: 30px;
-        font-size: 18px;
-    } 
-    .Footer{
-        position: relative;
-        bottom: 0;
-        height: 120px;
-        background: #333333;
+         margin-top: 30px;
+         font-size: 18px;
+        } 
+        .right-footer{
+            margin-top: 30px;
+            font-size: 18px;
+        } 
+        .Footer{
+            position: relative;
+            bottom: 0;
+            height: 120px;
+            background: #333333;
+        }
+        /*ProductSlider */
+        .ProductSlider .carousel-item img{
+                width: 100% !important;
+                height: 100% !important;
+        }
     }
-}
 
 /* Medium devices (tablets, less than 992px)*/
 @media (max-width: 991.98px) { 
@@ -304,10 +357,10 @@ body,html {
         height: 550px !important;
     }
     .carousel-caption h3 {
-    font-size: 50px !important;
-    font-weight: bold;    
+        font-size: 50px !important;
+        font-weight: bold;    
     }
-
+    
     /* search */
     .search {
         position: absolute;
@@ -316,15 +369,27 @@ body,html {
         z-index: 100 !important;
     }
     .div-search {
-            top: 166px;
-            position: absolute;
-            left: 10%;
-            width: 340px;
-            margin-bottom: 150px;
-            height: 131.4px;
-            box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
-            background-color: #ffffff;
+        top: 166px;
+        position: absolute;
+        left: 10%;
+        width: 340px;
+        margin-bottom: 150px;
+        height: 131.4px;
+        box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
     } 
+    .ProductDetailFront h3{
+        max-width: 400px;
+        width: 584px;
+      height: 54px;
+      font-size: 20px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.35;
+      letter-spacing: -0.24px;
+      color: #333333;
+    }
 }
 /* Large devices (desktops, less than 1200px*/
 @media (max-width: 1199.98px) { 

@@ -17,9 +17,7 @@ class ResultsSearch extends Component {
             return { index: type === 'add' ? prevState.index + 1 : prevState.index - 1 }
         });
     }
-    componentWillUnmount(){
-        this.props.getSearch([]);
-    }
+
     render() {
         return (
             <React.Fragment>
@@ -38,30 +36,30 @@ class ResultsSearch extends Component {
                                 return (
                                     this.state.index === 1 ? (datas.map((list, i) => {
                                         return (
-                                            i <= 16 &&
-                                            <CardBox key={i} img={list.img[0]} name={list.name} cost={list.cost} />
+                                            list.id <= 16 &&
+                                            <CardBox key={i} img={list.img[0].source} name={list.name} cost={list.cost} />
                                         )
                                     })
 
                                     ) : this.state.index === 2 ? (datas.map((list, i) => {
                                         return (
-                                            i <= 32 && i > 16 &&
-                                            <CardBox key={i} img={list.img[0]} name={list.name} cost={list.cost} />
+                                            list.id <= 32 && list.id > 16 &&
+                                            <CardBox key={i} img={list.img[0].source} name={list.name} cost={list.cost} />
                                         )
                                     })) : this.state.index === 3 ? (datas.map((list, i) => {
                                         return (
-                                            i <= 64 && i > 16 &&
-                                            <CardBox key={i} img={list.img[0]} name={list.name} cost={list.cost} />
+                                            list.id <= 64 && list.id > 16 &&
+                                            <CardBox key={i} img={list.img[0].source} name={list.name} cost={list.cost} />
                                         )
                                     })) : this.state.index === 4 ? (datas.map((list, i) => {
                                         return (
-                                            i <= 128 && i > 64 &&
-                                            <CardBox key={i} img={list.img[0]} name={list.name} cost={list.cost} />
+                                            list.id <= 128 && list.id > 64 &&
+                                            <CardBox key={i} img={list.img[0].source} name={list.name} cost={list.cost} />
                                         )
                                     })) : (datas.map((list, i) => {
                                         return (
-                                            i <= 256 && i > 64 &&
-                                            <CardBox key={i} img={list.img[0]} name={list.name} cost={list.cost} />
+                                            list.id <= 256 && list.id > 64 &&
+                                            <CardBox key={i} img={list.img[0].source} name={list.name} cost={list.cost} />
                                         )
                                     }))
                                 )
