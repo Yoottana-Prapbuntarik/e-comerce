@@ -31,7 +31,7 @@ class ProductDetail extends Component {
     }
     render() {
         return (
-            <div className="MarginTopClassII container">
+            <div className="MarginTopClassII container-fluid">
                 {this.state.currentItems.map((data, i) => {
                     return (
                         parseInt(this.props.match.params.id) === data.id &&
