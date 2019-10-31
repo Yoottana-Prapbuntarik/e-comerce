@@ -30,11 +30,6 @@ class SearchBox extends Component {
 
     componentWillUnmount() {
         document.removeEventListener("keydown", this.onPressed.bind(this));
-        this.setState({
-            query: this.state.query = [],
-            mounted: false,
-            items:this.state.items = [],
-        })
     }
     HandleChangeTextInput(e) {
         this.setState({
@@ -51,7 +46,7 @@ class SearchBox extends Component {
         for (let idx = 0; idx < this.state.items.length; idx++) {
             for (let idxWord = 0, count = 0; idxWord < this.state.textInput.length; idxWord++ , count++) {
                 if (this.state.items[idx].type[count] === this.state.textInput[idxWord]) {
-                    if(count > this.state.items[idx].type.length){
+                    if (count > this.state.items[idx].type.length) {
                         count = 0;
                     }
                     currentItems.push(this.state.items[idx]);
@@ -68,12 +63,15 @@ class SearchBox extends Component {
         this.setState({ redirect: true })
         this.props.getTextSearch(this.state.textInput);
         this.props.getSearch(this.state.query);
+        this.setState({
+            query:[],
+            items:[]
+        })
     }
     render() {
         const { redirect } = this.state;
         if (redirect) {
             return <Redirect to='/ResultsSearch' />;
-
         }
         return (
             <div className="container div-search">
@@ -82,7 +80,7 @@ class SearchBox extends Component {
                 <div className="input-group mb-3">
                     <input type="text" className="form-control fixedFocus" placeholder="serach" aria-label="serach" aria-describedby="basic-addon2" onChange={this.HandleChangeTextInput} />
                 </div>
-                <div className="search" onClick={this.onHandleSearch} onKeyDown={this.onPressed}
+                <div className="search" onKeyDown={this.onPressed}
                 >
                     <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
                 </div>

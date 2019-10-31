@@ -38,9 +38,27 @@ class Home extends Component {
     }
 
     render() {
+        let items_banner = [
+            {
+                src:'https://images.unsplash.com/photo-1533452171465-a53bec7eb8e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80',
+                altText:'Sale มากกว่า 50 %',
+                caption:'Sale มากกว่า 50 %',
+            },
+            {
+                src:'https://images.unsplash.com/photo-1526178613552-2b45c6c302f0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
+                altText:'Limited time offer',
+                caption:'Limited time offer',
+            },
+            {
+                src:'https://images.unsplash.com/reserve/wi9yf7kTQxCNeY72cCY6_Images%20of%20Jenny%20Lace%20Plasticity%20Publish%20(4%20of%2025).jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
+                altText:'Shop now !',
+                caption:'Shop now !',
+            },
+
+        ]
         return (
             <React.Fragment>
-                <Slider />
+                <Slider itemsImg={items_banner}/>
                 <div className="container-fluid MarginTopClass ">
                     <div className="row text-center">
                         <Category />
@@ -61,22 +79,22 @@ class Home extends Component {
 
                             ) : this.state.index === 2 ? (this.state.dataItem.map((list, i) => {
                                 return (
-                                    list.id <= 32 && list.id > 16 &&
+                                    list.id > 16 && list.id <= 32 && 
                                     <CardBox key={i} img={list.img[0].source} id={list.id} name={list.name} cost={list.cost} />
                                 )
                             })) : this.state.index === 3 ? (this.state.dataItem.map((list, i) => {
                                 return (
-                                    list.id <= 64 && list.id > 32 &&
+                                    list.id > 32 && list.id <= 64 &&
                                     <CardBox key={i} img={list.img[0].source} id={list.id} name={list.name} cost={list.cost} />
                                 )
                             })) : this.state.index === 4 ? (this.state.dataItem.map((list, i) => {
                                 return (
-                                    list.id <= 128 && list.id > 64 &&
+                                    list.id > 64 && list.id <= 128 &&
                                     <CardBox key={i} img={list.img[0].source} id={list.id} name={list.name} cost={list.cost} />
                                 )
                             })) : (this.state.dataItem.map((list, i) => {
                                 return (
-                                    list.id <= 256 && list.id > 64 &&
+                                    list.id > 128 && list.id <= 256 &&
                                     <CardBox key={i} img={list.img[0].source} id={list.id} name={list.name} cost={list.cost} />
                                 )
                             }))

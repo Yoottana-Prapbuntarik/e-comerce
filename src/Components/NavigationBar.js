@@ -45,9 +45,7 @@ class NavigationBar extends Component {
     HandleSearch() {
         let currentPath = window.location.pathname;
         if (currentPath !== "/") {
-            if (currentPath !== "/") {
-                window.location.href = "/";
-            }
+            window.location.href = "/";
         }
         this.setState({
             search: !this.state.search

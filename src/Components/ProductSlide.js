@@ -6,23 +6,6 @@ import {
     CarouselCaption,
     CarouselControl
 } from 'reactstrap';
-// const items = [
-//     {
-//         src: 'https://images.unsplash.com/photo-1571198317078-76a4b545b2c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1373&q=80',
-//         altText: 'Banner go here',
-//         caption: 'Banner go here'
-//     },
-//     {
-//         src: 'https://images.unsplash.com/photo-1571642376444-52558bb8cee2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1326&q=80',
-//         altText: 'Banner go here',
-//         caption: 'Banner go hereII'
-//     },
-//     {
-//         src: 'https://images.unsplash.com/photo-1571241419809-b49d176baeb1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMDk0fQ&auto=format&fit=crop&w=1360&q=80',
-//         altText: 'Banner go here',
-//         caption: 'Banner go hereIII'
-//     }
-// ];
 class ProductSlide extends Component {
     constructor(props) {
         super(props);

@@ -7,24 +7,6 @@ import {
     CarouselControl
 } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
-const items = [
-    {
-        src: 'https://images.unsplash.com/photo-1571198317078-76a4b545b2c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1373&q=80',
-        altText: 'Banner go here',
-        caption: 'Banner go here'
-    },
-    {
-        src: 'https://images.unsplash.com/photo-1571642376444-52558bb8cee2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1326&q=80',
-        altText: 'Banner go here',
-        caption: 'Banner go hereII'
-    },
-    {
-        src: 'https://images.unsplash.com/photo-1571241419809-b49d176baeb1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMDk0fQ&auto=format&fit=crop&w=1360&q=80',
-        altText: 'Banner go here',
-        caption: 'Banner go hereIII'
-    }
-];
-
 class Slider extends Component {
     constructor(props) {
         super(props);
@@ -53,26 +35,25 @@ class Slider extends Component {
     }
     next() {
         if (this.animating) return;
-        const nextIndex = this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
+        const nextIndex = this.state.activeIndex === this.props.itemsImg.length- 1 ? 0 : this.state.activeIndex + 1;
         this.setState({ activeIndex: nextIndex });
     }
 
     previous() {
         if (this.animating) return;
-        const nextIndex = this.state.activeIndex === 0 ? items.length - 1 : this.state.activeIndex - 1;
+        const nextIndex = this.state.activeIndex === 0 ? this.props.itemsImg.length- 1 : this.state.activeIndex - 1;
         this.setState({ activeIndex: nextIndex });
     }
 
     render() {
 
         const { activeIndex } = this.state;
-
-        const slides = items.map((item) => {
+        const slides = this.props.itemsImg.map((item,i) => {
             return (
                 <CarouselItem className="img-responsive"
                     onExiting={this.onExiting}
                     onExited={this.onExited}
-                    key={item.src}>
+                    key={i}>
                     <img src={item.src} alt={item.altText} />
                     <div className="backgroundText">
                     </div>
@@ -90,9 +71,9 @@ class Slider extends Component {
                 previous={this.previous}
             >
 
-                <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+                <CarouselIndicators items={slides} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
                 {slides}
-                <div className="d-none">
+                <div className="d-block">
                     <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
                     <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
                 </div>
