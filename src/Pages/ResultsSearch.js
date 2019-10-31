@@ -17,7 +17,6 @@ class ResultsSearch extends Component {
             return { index: type === 'add' ? prevState.index + 1 : prevState.index - 1 }
         });
     }
-
     render() {
         return (
             <React.Fragment>
@@ -112,14 +111,14 @@ const mapStateToProps = (state) => {
         UserSearch: state.UserSearch
     }
 }
-const mapDispatchToProps = disptach  => {
-    return {
-        getSearch: (search) => {
-            disptach({
-                type: "Searching",
-                payload: search
-            })
-        }
-    }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(ResultsSearch);
+// const mapDispatchToProps = disptach  => {
+//     return {
+//         getSearch: (search) => {
+//             disptach({
+//                 type: "Searching",
+//                 payload: search
+//             })
+//         }
+//     }
+// }
+export default connect(mapStateToProps)(ResultsSearch);

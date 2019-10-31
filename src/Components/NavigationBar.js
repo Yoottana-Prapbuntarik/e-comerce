@@ -14,7 +14,7 @@ class NavigationBar extends Component {
             isOpen: false,
             scrolling: false,
             isHover: false,
-            search: false
+            search: false,
         }
         this.closeNav = this.closeNav.bind(this);
         this.toggle = this.toggle.bind(this);
@@ -45,7 +45,9 @@ class NavigationBar extends Component {
     HandleSearch() {
         let currentPath = window.location.pathname;
         if (currentPath !== "/") {
-            window.location.href = "/";
+            if (currentPath !== "/") {
+                window.location.href = "/";
+            }
         }
         this.setState({
             search: !this.state.search
@@ -53,7 +55,7 @@ class NavigationBar extends Component {
     }
     render() {
         let eventScroll = { padding: '1.25rem 1rem' }
-        if (window.scrollY > 0) {
+        if (this.props.detectScroll > 0) {
             eventScroll = {
                 transition: '0.5s',
                 padding: ' 0.6rem 1rem'
@@ -95,14 +97,14 @@ class NavigationBar extends Component {
                                     </NavItem>
                                     <div className="hrVertical"></div>
                                     <NavItem className="navbarLink">
-                                        <NavLink to="">
+                                        <NavLink to="/">
                                             <FontAwesomeIcon icon={faSearch} onClick={this.HandleSearch} />
                                         </NavLink>
                                     </NavItem>
                                     <NavItem className="cart-nav navbarLink">
                                         <NavLink to="/Product" onClick={this.closeNav}>
                                             <FontAwesomeIcon icon={faShoppingCart} />
-                                            &nbsp;&nbsp; {this.props.addedItems.length > 0  ? <span>({this.props.addedItems.length})</span>:<span>(0)</span>}
+                                            &nbsp;&nbsp; {this.props.addedItems.length > 0 ? <span>({this.props.addedItems.length})</span> : <span>(0)</span>}
                                         </NavLink>
                                     </NavItem>
                                 </Nav>

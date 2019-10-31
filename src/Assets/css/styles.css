@@ -33,6 +33,7 @@ body,html {
 }
 .MarginTopClassIII {
     margin-top: 170px;
+    margin-bottom: 250px;
 }
 
 /* Navbar */
@@ -403,7 +404,7 @@ body,html {
         background-color: #ffffff;
     } 
     .ProductDetailFront h3{
-        max-width: 300px;
+        max-width: 300px !important;
         width: 584px;
       height: 54px;
       font-size: 20px;
@@ -413,6 +414,10 @@ body,html {
       line-height: 1.35;
       letter-spacing: -0.24px;
       color: #333333;
+    }
+    .MarginTopClassIII {
+        margin-top: 250px;
+        margin-bottom: 250px;
     }
 }
 /* Large devices (desktops, less than 1200px*/
@@ -477,7 +482,7 @@ body,html {
     }
     /* Product detail */
     .ProductDetailFront h3{
-        max-width: 450px !important;
+        max-width: 450px;
         width: 584px;
       height: 54px;
       font-family: SukhumvitSet;

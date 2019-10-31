@@ -82,7 +82,7 @@ class ProductDetail extends Component {
                                     </div>
                                     <div className="col-lg-6 col-12 ProductDetailFront">
                                         <h3 className="mt-3">{data.name}<br />{data.cost} บาท</h3>
-                                        <div className="conatiner MarginTopClassIII mb-5">
+                                        <div className="conatiner MarginTopClassIII">
                                             <div className="row">
                                                 <div className="col-12">
                                                     <div className="lead">

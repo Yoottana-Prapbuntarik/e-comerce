@@ -31,11 +31,9 @@ class SearchBox extends Component {
     componentWillUnmount() {
         document.removeEventListener("keydown", this.onPressed.bind(this));
         this.setState({
-            query: ''
-        })
-        this.setState({
+            query: this.state.query = [],
             mounted: false,
-            items: []
+            items:this.state.items = [],
         })
     }
     HandleChangeTextInput(e) {
@@ -111,7 +109,7 @@ const mapDispatchToProps = disptach => {
                 type: "InputSearch",
                 payload: text
             })
-        }
+        },
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(SearchBox);

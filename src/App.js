@@ -48,7 +48,7 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <div>
-            <Navbar />
+            <Navbar detectScroll={this.state.valueScroll}/>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/Product" component={Product} />
@@ -61,7 +61,7 @@ class App extends Component {
           </div>
         </BrowserRouter>
         {
-          this.state.valueScroll > (window.innerHeight) &&
+          this.state.valueScroll > 200 &&
         <Footer/>
         }
       </div >
