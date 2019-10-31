@@ -37,29 +37,29 @@ class ResultsSearch extends Component {
                                     this.state.index === 1 ? (datas.map((list, i) => {
                                         return (
                                             list.id <= 16 &&
-                                            <CardBox key={i} img={list.img[0].source} name={list.name} cost={list.cost} />
+                                            <CardBox key={i} img={list.img[0].source} id={list.id} name={list.name} cost={list.cost} />
                                         )
                                     })
 
                                     ) : this.state.index === 2 ? (datas.map((list, i) => {
                                         return (
                                             list.id <= 32 && list.id > 16 &&
-                                            <CardBox key={i} img={list.img[0].source} name={list.name} cost={list.cost} />
+                                            <CardBox key={i} img={list.img[0].source} id={list.id} name={list.name} cost={list.cost} />
                                         )
                                     })) : this.state.index === 3 ? (datas.map((list, i) => {
                                         return (
                                             list.id <= 64 && list.id > 16 &&
-                                            <CardBox key={i} img={list.img[0].source} name={list.name} cost={list.cost} />
+                                            <CardBox key={i} img={list.img[0].source} id={list.id} name={list.name} cost={list.cost} />
                                         )
                                     })) : this.state.index === 4 ? (datas.map((list, i) => {
                                         return (
                                             list.id <= 128 && list.id > 64 &&
-                                            <CardBox key={i} img={list.img[0].source} name={list.name} cost={list.cost} />
+                                            <CardBox key={i} img={list.img[0].source} id={list.id} name={list.name} cost={list.cost} />
                                         )
                                     })) : (datas.map((list, i) => {
                                         return (
                                             list.id <= 256 && list.id > 64 &&
-                                            <CardBox key={i} img={list.img[0].source} name={list.name} cost={list.cost} />
+                                            <CardBox key={i} img={list.img[0].source} id={list.id} name={list.name} cost={list.cost} />
                                         )
                                     }))
                                 )

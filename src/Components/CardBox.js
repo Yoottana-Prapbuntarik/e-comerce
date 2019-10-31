@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
 class CardBox extends Component {
     constructor(props) {
         super(props);
@@ -51,5 +52,9 @@ class CardBox extends Component {
         )
     }
 }
-
-export default CardBox
+const mapStateToProps = (state) =>{
+    return{
+        itemsSearch:state.itemsSearch
+    }
+}
+export default connect(mapStateToProps)(CardBox);

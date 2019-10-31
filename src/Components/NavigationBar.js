@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -43,7 +44,7 @@ class NavigationBar extends Component {
     }
     HandleSearch() {
         let currentPath = window.location.pathname;
-        if(currentPath !== "/"){
+        if (currentPath !== "/") {
             window.location.href = "/";
         }
         this.setState({
@@ -51,11 +52,11 @@ class NavigationBar extends Component {
         })
     }
     render() {
-        let eventScroll ={padding:'1.25rem 1rem'}
-        if(window.scrollY > 0){
-            eventScroll ={
-                transition:'0.5s',
-                padding:' 0.6rem 1rem'                
+        let eventScroll = { padding: '1.25rem 1rem' }
+        if (window.scrollY > 0) {
+            eventScroll = {
+                transition: '0.5s',
+                padding: ' 0.6rem 1rem'
             }
         }
         return (
@@ -101,7 +102,7 @@ class NavigationBar extends Component {
                                     <NavItem className="cart-nav navbarLink">
                                         <NavLink to="/Product" onClick={this.closeNav}>
                                             <FontAwesomeIcon icon={faShoppingCart} />
-                                            &nbsp;&nbsp; <span>(0)</span>
+                                            &nbsp;&nbsp; {this.props.addedItems.length > 0  ? <span>({this.props.addedItems.length})</span>:<span>(0)</span>}
                                         </NavLink>
                                     </NavItem>
                                 </Nav>
@@ -116,4 +117,9 @@ class NavigationBar extends Component {
         );
     }
 }
-export default NavigationBar;
+const mapStateToProps = (state) => {
+    return {
+        addedItems: state.addedItems,
+    }
+}
+export default connect(mapStateToProps)(NavigationBar);

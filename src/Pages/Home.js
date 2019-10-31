@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Slider from '../Components/Slider';
 import Category from '../Components/CategoryBox';
 import CardBox from '../Components/CardBox';
-import { connect } from 'react-redux';
 import axios from 'axios';
 class Home extends Component {
     constructor(props) {
@@ -124,9 +123,5 @@ class Home extends Component {
         );
     }
 }
-const mapStateToProps = (state) => {
-    return {
-        dataProduct: state.dataProduct,
-    }
-}
-export default connect(mapStateToProps)(Home);
+
+export default Home;
