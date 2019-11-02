@@ -5,6 +5,7 @@ import facebook from '../Assets/images/logo/facebook.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/fontawesome-free-solid';
 import DetailProduct from '../Components/DetailProduct';
+import Suggest from '../Components/Suggest';
 import { Dropdown, DropdownItem, DropdownToggle, DropdownMenu } from 'reactstrap';
 import axios from 'axios';
 class ProductDetail extends Component {
@@ -163,6 +164,7 @@ class ProductDetail extends Component {
                                 </div>
                         <div className="row">
                             <DetailProduct />
+                            <Suggest/>
                         </div>
                             </div>
                         </React.Fragment>
