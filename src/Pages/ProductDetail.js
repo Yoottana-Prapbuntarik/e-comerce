@@ -4,6 +4,7 @@ import ProductSlide from '../Components/ProductSlide';
 import facebook from '../Assets/images/logo/facebook.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/fontawesome-free-solid';
+import DetailProduct from '../Components/DetailProduct';
 import { Dropdown, DropdownItem, DropdownToggle, DropdownMenu } from 'reactstrap';
 import axios from 'axios';
 class ProductDetail extends Component {
@@ -53,15 +54,15 @@ class ProductDetail extends Component {
 
     }
     addItemToCart() {
-        for(let idx = 0; idx < this.state.currentItems.length; idx++){
+        for (let idx = 0; idx < this.state.currentItems.length; idx++) {
             if (parseInt(this.props.match.params.id) === this.state.currentItems[idx].id) {
-              let dataToDb = {
-                    name:this.state.currentItems[idx].name,
-                    img:this.state.currentItems[idx].img[0].source,
-                    size:this.state.size,
-                    color:this.state.color,
-                    amount:this.state.amount,
-                    cost:this.state.currentItems[idx].cost * this.state.amount
+                let dataToDb = {
+                    name: this.state.currentItems[idx].name,
+                    img: this.state.currentItems[idx].img[0].source,
+                    size: this.state.size,
+                    color: this.state.color,
+                    amount: this.state.amount,
+                    cost: this.state.currentItems[idx].cost * this.state.amount
                 }
                 this.props.addItems(dataToDb)
                 this.props.SumCost(dataToDb.cost);
@@ -147,7 +148,6 @@ class ProductDetail extends Component {
                                                                 <b>+</b>
                                                             </button>
                                                         </li>
-
                                                     </ul>
                                                     <ul className="list-amount mt-5">
                                                         <li className="d-inline ">
@@ -161,6 +161,9 @@ class ProductDetail extends Component {
                                         </div>
                                     </div>
                                 </div>
+                        <div className="row">
+                            <DetailProduct />
+                        </div>
                             </div>
                         </React.Fragment>
                     )
@@ -173,7 +176,7 @@ class ProductDetail extends Component {
 const mapStateToProps = (state) => {
     return {
         addedItems: state.addedItems,
-        allCost:state.allCost
+        allCost: state.allCost
     }
 }
 const mapDispatchToProps = (dispatch) => {

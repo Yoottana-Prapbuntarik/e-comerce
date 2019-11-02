@@ -180,6 +180,25 @@ body,html {
     width: 300px !important;
     height: 50px !important;
 }
+.borderDetailText{
+    border: .5px solid #c7c7cc;
+}
+.headingDetailText{
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.14px;
+    color: #333333;
+}
+.textDetail{
+    font-size: 24px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+}
 
 /*CategoryBox */
 .Category{
