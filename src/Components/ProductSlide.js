@@ -51,29 +51,34 @@ class ProductSlide extends Component {
                     onExiting={this.onExiting}
                     onExited={this.onExited}
                     key={i}>
-                    <img src={item.source} alt={item.caption} />
-                    <div className="backgroundText">
+                    <div className="warpper-img-slider-product">
+                        <img src={item.source} alt={item.caption} />
+                        <CarouselCaption captionText={''} captionHeader={item.caption}>
+                        </CarouselCaption>
                     </div>
-                    <CarouselCaption captionText={''} captionHeader={item.caption}>
-                    </CarouselCaption>
                 </CarouselItem>
             );
         });
         return (
-            <div className="ProductSlider">
-                <Carousel
-                    activeIndex={activeIndex}
-                    next={this.next}
-                    previous={this.previous}
-                >
+            <div className="container">
+                <div className="row">
 
-                    <CarouselIndicators items={slides} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
-                    {slides}
-                    <div className="d-none">
-                        <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-                        <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
-                    </div>
-                </Carousel>
+                <div className="ProductSlider">
+                    <Carousel
+                        activeIndex={activeIndex}
+                        next={this.next}
+                        previous={this.previous}
+                        >
+
+                        <CarouselIndicators items={slides} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+                        {slides}
+                        <div className="d-none">
+                            <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
+                            <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+                        </div>
+                    </Carousel>
+                        </div>
+                </div>
             </div>
         );
     }

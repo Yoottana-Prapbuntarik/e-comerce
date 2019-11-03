@@ -35,27 +35,29 @@ class Slider extends Component {
     }
     next() {
         if (this.animating) return;
-        const nextIndex = this.state.activeIndex === this.props.itemsImg.length- 1 ? 0 : this.state.activeIndex + 1;
+        const nextIndex = this.state.activeIndex === this.props.itemsImg.length - 1 ? 0 : this.state.activeIndex + 1;
         this.setState({ activeIndex: nextIndex });
     }
 
     previous() {
         if (this.animating) return;
-        const nextIndex = this.state.activeIndex === 0 ? this.props.itemsImg.length- 1 : this.state.activeIndex - 1;
+        const nextIndex = this.state.activeIndex === 0 ? this.props.itemsImg.length - 1 : this.state.activeIndex - 1;
         this.setState({ activeIndex: nextIndex });
     }
 
     render() {
 
         const { activeIndex } = this.state;
-        const slides = this.props.itemsImg.map((item,i) => {
+        const slides = this.props.itemsImg.map((item, i) => {
             return (
                 <CarouselItem className="img-responsive"
                     onExiting={this.onExiting}
                     onExited={this.onExited}
                     key={i}>
-                    <img src={item.src} alt={item.altText} />
-                    <div className="backgroundText">
+                    <div className="wrapper-img-slide">
+                        <img src={item.src} alt={item.altText} />
+                        <div className="backgroundText">
+                        </div>
                     </div>
                     <NavLink to="/Promotion">
                         <CarouselCaption captionText={''} captionHeader={item.caption}>

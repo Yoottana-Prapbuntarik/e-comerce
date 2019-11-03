@@ -29,8 +29,8 @@ class CardBox extends Component {
                         <div className="cardCutoms text-center">
                             <div className="embed-responsive embed-responsive-16by9">
                                 <NavLink className="wrapper-card-img " to={`/ProductDetail/${this.props.id}`} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.onExit}>
-                                    <img alt={this.props.altText} className="card-img-top  embed-responsive-item" src={this.props.img}
-                                        width="300px" >
+                                    <img alt={this.props.altText} className="card-img-top  img-custome" src={this.props.img}
+                                         >
                                     </img>
                                 </NavLink>
                                 {this.state.over &&

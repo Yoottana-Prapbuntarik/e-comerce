@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import Mycart from '../Pages/Mycart';
+import {connect} from 'react-redux';
 import { faSearch, faShoppingCart, faAngleDown } from '@fortawesome/fontawesome-free-solid';
 import mainLogo from '../Assets/images/logo/nattraphak.png';
 import SearchBox from './SearchBox';
@@ -15,12 +16,19 @@ class NavigationBar extends Component {
             scrolling: false,
             isHover: false,
             search: false,
+            isClick: false,
         }
         this.closeNav = this.closeNav.bind(this);
         this.toggle = this.toggle.bind(this);
         this.handleMouseHover = this.handleMouseHover.bind(this);
         this.handleMouseUp = this.handleMouseUp.bind(this);
         this.HandleSearch = this.HandleSearch.bind(this);
+        this.handleClickCart = this.handleClickCart.bind(this);
+    }
+    handleClickCart(){
+        this.setState({
+            isClick: !this.state.isClick
+        })
     }
     toggle() {
         this.setState({
@@ -100,7 +108,7 @@ class NavigationBar extends Component {
                                         </NavLink>
                                     </NavItem>
                                     <NavItem className="cart-nav navbarLink">
-                                        <NavLink to="/Product" onClick={this.closeNav}>
+                                        <NavLink to="/Mycart" onClick={this.handleClickCart}>
                                             <FontAwesomeIcon icon={faShoppingCart} />
                                             &nbsp;&nbsp; {this.props.addedItems.length > 0 ? <span>({this.props.addedItems.length})</span> : <span>(0)</span>}
                                         </NavLink>

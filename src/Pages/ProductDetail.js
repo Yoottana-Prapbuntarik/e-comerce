@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/fontawesome-free-solid';
 import DetailProduct from '../Components/DetailProduct';
 import Suggest from '../Components/Suggest';
+import {NavLink} from 'react-router-dom';
 import { Dropdown, DropdownItem, DropdownToggle, DropdownMenu } from 'reactstrap';
 import axios from 'axios';
 class ProductDetail extends Component {
@@ -18,13 +19,20 @@ class ProductDetail extends Component {
             amount: 1,
             dropdownOpen: false,
             dropdownColorOpen: false,
-
         }
         this.toggle = this.toggle.bind(this);
         this.toggleDropdownColor = this.toggleDropdownColor.bind(this);
         this.HandlePlusAmount = this.HandlePlusAmount.bind(this);
         this.HandleDeleteAmount = this.HandleDeleteAmount.bind(this);
         this.addItemToCart = this.addItemToCart.bind(this);
+    }
+    componentWillMount(){
+        window.scrollTo(0, 0);
+    }
+    componentWillReceiveProps (newProps) {
+        if( newProps.match.params.id !== this.props.match.params.id ){
+            window.scrollTo(0, 0);
+        }
     }
     toggle() {
         this.setState(prevState => ({ dropdownOpen: !prevState.dropdownOpen }));
@@ -52,7 +60,6 @@ class ProductDetail extends Component {
                 currentItems: res.data.items
             })
         })
-
     }
     addItemToCart() {
         for (let idx = 0; idx < this.state.currentItems.length; idx++) {
@@ -77,7 +84,7 @@ class ProductDetail extends Component {
                     return (
                         parseInt(this.props.match.params.id) === data.id &&
                         <React.Fragment key={i}>
-                            <div className="container h-50">
+                            <div className="container-fluid h-50">
                                 <div className="row">
                                     <div className="col-lg-6 col-12">
                                         <ProductSlide imgSource={data} />
@@ -152,9 +159,9 @@ class ProductDetail extends Component {
                                                     </ul>
                                                     <ul className="list-amount mt-5">
                                                         <li className="d-inline ">
-                                                            <button className="btn btn-amount text-white" onClick={this.addItemToCart}>
+                                                            <NavLink to="/Mycart" className="btn btn-amount text-white" onClick={this.addItemToCart}>
                                                                 <FontAwesomeIcon icon={faShoppingCart} /> หยิบใส่ตระกร้า
-                                                            </button>
+                                                            </NavLink>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -162,15 +169,13 @@ class ProductDetail extends Component {
                                         </div>
                                     </div>
                                 </div>
-                        <div className="row">
-                            <DetailProduct />
-                            <Suggest/>
-                        </div>
                             </div>
                         </React.Fragment>
                     )
                 })
                 }
+                    <DetailProduct />
+                <Suggest />
             </div>
         )
     }

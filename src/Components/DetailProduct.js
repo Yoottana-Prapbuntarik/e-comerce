@@ -16,7 +16,7 @@ class DetailProduct extends Component {
                     <p className="headingDetailText">รายละเอียดสินค้า</p>
                     <ul className="list-amount">
                         <li className="d-inline mr-4">
-                            <div className="container">
+                            <div className="container-fluid">
                                 <div className="row">
                                     <div className="col-md-5 col-12 pt-4 w-100 borderDetailText">
                                         <p className="headingDetailText">ประเภทเนื้อผ้า</p>

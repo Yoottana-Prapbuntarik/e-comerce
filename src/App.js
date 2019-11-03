@@ -8,6 +8,7 @@ import ResultsSearch from './Pages/ResultsSearch';
 import ProductDetail from './Pages/ProductDetail';
 import Promotion from './Pages/Promotion';
 import News from './Pages/News';
+import Mycart from './Pages/Mycart';
 import Footer from './Components/Footer';
 
 class App extends Component {
@@ -52,6 +53,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/Product" component={Product} />
+              <Route path="/Mycart" component={Mycart} />
               <Route path="/News" component={News} />
               <Route path="/Promotion" component={Promotion} />
               <Route path="/ResultsSearch" component={ResultsSearch} />
