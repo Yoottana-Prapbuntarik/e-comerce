@@ -327,12 +327,13 @@ body,html {
 /* search */
 .search{
     position: absolute;
-    top: 170px;
-    right: 60px;
+    top: 60px;
+    right: 45px;
     z-index: 100 !important;
 }
 .div-search{
-    width: 340px;
+    position: absolute;
+    width: 340px !important;
     padding-top: 20px;
     height: 131.4px;
     box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
@@ -344,9 +345,9 @@ body,html {
     width: 25px;
     border: 12px solid #ffffff;
     border-bottom: 30px solid rgba(0, 0, 0, 0.03);
-    left: 89%;
+    left: 70%;
     z-index: -100;
-    top: 69px;
+    top: -33px;
 }
 /* Cart */
 .Cart{
@@ -435,21 +436,11 @@ body,html {
         right: 43px !important;
         z-index: 100 !important;
     }
-    .div-search {
-        top: 166px;
-        position: absolute;
-        left: 10%;
-        width: 340px;
-        margin-bottom: 150px;
-        height: 131.4px;
-        box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
-        background-color: #ffffff;
-    } 
     .ProductDetailFront h3{
         max-width: 300px !important;
         width: 584px;
-      height: 54px;
-      font-size: 20px;
+        height: 54px;
+        font-size: 20px;
       font-weight: bold;
       font-stretch: normal;
       font-style: normal;
@@ -460,6 +451,19 @@ body,html {
     .MarginTopClassIII {
         margin-top: 250px;
         margin-bottom: 250px;
+    }
+    .div-search {
+    position: absolute;
+    top: 166px;
+    margin-left: auto;
+    width: 100% !important;
+    margin-bottom: 150px; 
+    height: 131.4px;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    } 
+    .arrow-box{
+        display: none;
     }
 }
 /* Large devices (desktops, less than 1200px*/
@@ -510,12 +514,21 @@ body,html {
     /* search */
     .search{
         position: absolute;
-        top: 164px;
         right: 60px;
         z-index: 100 !important;
     }
     .div-search ::after{
         display: none;
+    }
+    .arrow-box{
+        content: '';
+        position: absolute;
+        width: 25px;
+        border: 12px solid #ffffff;
+        border-bottom: 30px solid rgba(0, 0, 0, 0.03);
+        left: 45%;
+        z-index: -100;
+        top: -33px;
     }
     /* Product detail */
     .ProductDetailFront h3{

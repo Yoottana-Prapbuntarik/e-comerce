@@ -78,7 +78,7 @@ class SearchBox extends Component {
                 <h5 className="text-left">ค้นหาเสื้อผ้า</h5>
                 <div className="arrow-box"></div>
                 <div className="input-group mb-3">
-                    <input type="text" className="form-control fixedFocus" placeholder="serach" aria-label="serach" aria-describedby="basic-addon2" onChange={this.HandleChangeTextInput} />
+                    <input type="text" className="form-control fixedFocus" placeholder="ค้นหา" aria-label="serach" aria-describedby="basic-addon2" onChange={this.HandleChangeTextInput} />
                 </div>
                 <div className="search" onKeyDown={this.onPressed}
                 >

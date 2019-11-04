@@ -16,7 +16,7 @@ class Footer extends Component {
                             <div className="col-md-7 col-12">
                                 #Nattraphak.com
                             </div>
-                            <div className="col-md-1 col-6">
+                            <div className="col-md-1 col-3">
                                 <a className="" href="https://www.facebook.com">
                                     <img src={facebook} alt="" width="30px" />
                                 </a>
