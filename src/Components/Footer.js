@@ -11,18 +11,28 @@ class Footer extends Component {
                         &copy; 2019 Nattraphak.com
                             </div>
                     <div className="col-6 right-footer">
-                        #Nattraphak.com                       
-                        <a className="ml-2" href="https://www.facebook.com">
-                         <img  src={facebook} alt="" width="30px" />
-                        </a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a className="ml-2"  href="https://www.facebook.com">
-                         <img src={ig} alt="" width="30px" />
-                        </a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a className="ml-2"  href="https://www.facebook.com">
-                         <img src={line} alt="" width="30px" />
-                        </a>
+                        <div className="container text-right">
+                        <div className="row">
+                            <div className="col-md-7 col-12">
+                                #Nattraphak.com
+                            </div>
+                            <div className="col-md-1 col-6">
+                                <a className="" href="https://www.facebook.com">
+                                    <img src={facebook} alt="" width="30px" />
+                                </a>
+                            </div>
+                            <div className="col-md-1 col-3">
+                                <a className="" href="https://www.facebook.com">
+                                    <img src={ig} alt="" width="30px" />
+                                </a>
+                            </div>
+                            <div className="col-md-1 col-3">
+                                <a className="" href="https://www.facebook.com">
+                                    <img src={line} alt="" width="30px" />
+                                </a>
+                            </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
