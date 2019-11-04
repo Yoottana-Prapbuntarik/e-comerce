@@ -500,6 +500,7 @@ body,html {
     
     /*buttonGroup*/
     .pagination{
+        justify-content: center !important;
         margin:2% 0% !important;
     }
     .border-page-link{
