@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import CardBox from '../Components/CardBox';
+import SortCategory from '../Components/SortCategory';
 import Banner from '../Components/Banner';
 class Promotion extends Component {
     constructor(props) {
@@ -43,11 +44,20 @@ class Promotion extends Component {
                         </div>
                 <div className="container-fluid ">
                 <div className="row">
-                        <div className="col-12 text-center">
-                            <h2 className="HeaderCard text-left ml-3">
-                                ชื่อของโปรโมชั่น
-                            </h2>
+                <div className="col-12 text-center">
+                            <div className="row">
+                                <div className="col-md-3">
+                                    <h2 className="HeaderCard ">
+                                        สินค้าทั้งหมด
+                                    </h2>
+                                </div>
+                                <div className="col-md-6"></div>
+                                <div className="col-md-3 btn-dropdown">
+                                    <SortCategory />
+                                </div>
+                            </div>
                         </div>
+
                         {
                             this.state.index === 1 ? (this.state.dataItem.map((list, i) => {
                                 return (
