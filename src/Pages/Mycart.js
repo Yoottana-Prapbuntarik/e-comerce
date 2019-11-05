@@ -18,7 +18,6 @@ class Mycart extends Component {
                 <div className="mt-5">
                     <Cart dataProduct={this.props.addedItems} AllPrice={this.props.allCost}/>
                 </div>
-                <hr width="58%" />
                 <div className="container mt-5">
                     <div className="row">
                         <div className="col-md-6 py-3 col-12">

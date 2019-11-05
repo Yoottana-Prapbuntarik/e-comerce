@@ -360,6 +360,15 @@ body,html {
     z-index: 4000;
     background: #fff;
 }
+.CartHover{
+    position:absolute;
+    z-index:2000;
+    background:#fff;
+    right:63px;
+    top:117px;
+    overflow: scroll;
+    max-height: 350px;
+}
 
 /*Responsive Media Query*/
 
@@ -464,6 +473,10 @@ body,html {
     } 
     .arrow-box{
         display: none;
+    }
+    .CartHover{
+        overflow: hidden;
+        display: none !important;
     }
 }
 /* Large devices (desktops, less than 1200px*/

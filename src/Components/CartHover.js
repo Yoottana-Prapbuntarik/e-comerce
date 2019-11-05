@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
-class Cart extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: {}
-        }
-    }
-
+import {NavLink} from 'react-router-dom';
+class CartHover extends Component {
     render() {
         let { dataProduct, AllPrice } = this.props;
         return (
@@ -37,17 +31,21 @@ class Cart extends Component {
                                         )
                                     })
                                 }
-                                <tr>
-                                    <td>ราคารวม</td>
-                                    <td></td>
-                                    <td>{dataProduct === undefined ? '0' : AllPrice} บาท</td>
-                                </tr>
                             </tbody>
                         </table>
+                    </div>
+                    <div className="col-4 py-3">
+                        <NavLink className="btn btn-primary" to="/Mycart">ไปที่ตระกร้าของฉัน</NavLink>
+                    </div>
+                    <div className="col-4 py-3 text-center">
+                    ราคารวม                
+                    </div>
+                    <div className="col-4 py-3 text-center">
+                    {dataProduct === undefined ? '0' : AllPrice} บาท
                     </div>
                 </div>
             </div >
         )
     }
 }
-export default Cart;
+export default CartHover;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import Mycart from '../Pages/Mycart';
+import CartHover from './CartHover';
 import {connect} from 'react-redux';
 import { faSearch, faShoppingCart, faAngleDown } from '@fortawesome/fontawesome-free-solid';
 import mainLogo from '../Assets/images/logo/nattraphak.png';
@@ -14,21 +14,14 @@ class NavigationBar extends Component {
         this.state = {
             isOpen: false,
             scrolling: false,
-            isHover: false,
+            isHover: "none",
             search: false,
-            isClick: false,
         }
         this.closeNav = this.closeNav.bind(this);
         this.toggle = this.toggle.bind(this);
-        this.handleMouseHover = this.handleMouseHover.bind(this);
-        this.handleMouseUp = this.handleMouseUp.bind(this);
+        this.mouseEnter = this.mouseEnter.bind(this);
+        this.mouseLeave = this.mouseLeave.bind(this);
         this.HandleSearch = this.HandleSearch.bind(this);
-        this.handleClickCart = this.handleClickCart.bind(this);
-    }
-    handleClickCart(){
-        this.setState({
-            isClick: !this.state.isClick
-        })
     }
     toggle() {
         this.setState({
@@ -40,15 +33,19 @@ class NavigationBar extends Component {
             isOpen: false,
         })
     }
-    handleMouseHover() {
-        this.setState({
-            isHover: !this.state.isHover,
-        })
+    mouseEnter() {
+        this.setState({isHover: "block"})
     }
-    handleMouseUp() {
-        this.setState({
-            isHover: false,
-        })
+    
+    mouseLeave() {
+        setTimeout(
+        function() {
+          this.setState({isHover: "none"})
+    
+        }
+        .bind(this),
+        3000
+    );
     }
     HandleSearch() {
         let currentPath = window.location.pathname;
@@ -108,7 +105,7 @@ class NavigationBar extends Component {
                                         </NavLink>
                                     </NavItem>
                                     <NavItem className="cart-nav navbarLink">
-                                        <NavLink to="/Mycart" onClick={this.handleClickCart}>
+                                        <NavLink to="/Mycart"  onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
                                             <FontAwesomeIcon icon={faShoppingCart} />
                                             &nbsp;&nbsp; {this.props.addedItems.length > 0 ? <span>({this.props.addedItems.length})</span> : <span>(0)</span>}
                                         </NavLink>
@@ -121,6 +118,7 @@ class NavigationBar extends Component {
                         </Collapse>
                     </Navbar>
                 </div>
+                {<div className="CartHover" style={{display:this.state.isHover}}><CartHover AllPrice={this.props.allCost} dataProduct={this.props.addedItems}/></div>}
             </React.Fragment>
         );
     }
@@ -128,6 +126,8 @@ class NavigationBar extends Component {
 const mapStateToProps = (state) => {
     return {
         addedItems: state.addedItems,
+        allCost: state.allCost
+
     }
 }
 export default connect(mapStateToProps)(NavigationBar);
