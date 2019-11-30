@@ -14,6 +14,7 @@ body,html {
 
 /* MarginTop Class */
 /* Navbar */
+/* Confirm */
 /* Slider */
 /* Card */
 /* Footer */
@@ -85,7 +86,7 @@ body,html {
 .carousel-item .wrapper-img-slide img{
     border-style: none;
     width: 100%;
-    height: 950px !important;
+    max-height: 950px !important;
 }
 .carousel-indicators .active {
     opacity: 1;
@@ -360,6 +361,10 @@ body,html {
     z-index: 4000;
     background: #fff;
 }
+.bg-alphaGray{
+    background-color: #fafafa;
+    font-weight: bold;
+}
 .CartHover{
     position:absolute;
     z-index:2000;
@@ -368,6 +373,41 @@ body,html {
     top:117px;
     overflow: scroll;
     max-height: 350px;
+}
+.colorButtonMyCart a{
+    color: #e16faa;
+    font-weight: bold;
+    text-decoration: none !important;
+}
+.colorButtonMyCart a:hover{
+    color: #f096c4;
+    font-weight: bold;
+    text-decoration: none !important;
+}
+
+.colorButtonMyCart .btn-secondary{
+    background: #e16faa !important;
+    color:#fff !important;
+    border: none !important;
+}
+.colorButtonMyCart .btn-secondary:hover{
+    background: #f78ac2;
+    
+}
+/*Address*/
+.btn-color-pink-Address {
+    display: inline-block;
+    border: 1px solid #e16faa !important;
+    background: #e16faa !important;
+    color: #fff !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+.text-pink{
+    color: #e16faa !important;
+}
+.left-margin{
+    margin-left: 20% !important;
 }
 
 /*Responsive Media Query*/
@@ -388,47 +428,35 @@ body,html {
 /* Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.98px) { 
     /* Slider */
-        .search {
-            position: absolute;
-            top: 62px !important;
-            right: 43px !important;
-            z-index: 100 !important;
-        }
-        .div-search {
-                top: 300px;
-                position: absolute;
-                left: 0% !important;
-                width: 340px;
-                margin-bottom: 150px;
-                height: 131.4px;
-                box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
-                background-color: #ffffff;
-        }  
+    .search {
+        position: absolute;
+        top: 62px !important;
+        right: 43px !important;
+        z-index: 100 !important;
     }
-    /* Small devices (landscape phones, less than 768px)*/
-    @media (max-width: 767.98px) { 
-        /* Footer */
-     .left-footer{
-         margin-top: 30px;
-         font-size: 18px;
-        } 
-        .right-footer{
-            margin-top: 30px;
-            font-size: 18px;
-        } 
-        .Footer{
-            position: relative;
-            bottom: 0;
-            height: 120px;
-            background: #333333;
-        }
-        .carousel-item .wrapper-img-slide img {
-            clear: both;
-            border-style: none;
-            width: 100% !important;
-            height: auto !important;        
-        }
-    }
+    .div-search {
+        top: 300px;
+        position: absolute;
+        left: 0% !important;
+        width: 340px;
+        margin-bottom: 150px;
+        height: 131.4px;
+        box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+    }  
+}
+/* Small devices (landscape phones, less than 768px)*/
+@media (max-width: 767.98px) { 
+    /* Footer */
+    .left-footer{
+        margin-top: 30px;
+        font-size: 18px;
+    } 
+    .right-footer{
+        margin-top: 30px;
+        font-size: 18px;
+    } 
+}
 
 /* Medium devices (tablets, less than 992px)*/
 @media (max-width: 991.98px) { 
@@ -450,26 +478,26 @@ body,html {
         width: 584px;
         height: 54px;
         font-size: 20px;
-      font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.35;
-      letter-spacing: -0.24px;
-      color: #333333;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.35;
+        letter-spacing: -0.24px;
+        color: #333333;
     }
     .MarginTopClassIII {
         margin-top: 250px;
         margin-bottom: 250px;
     }
     .div-search {
-    position: absolute;
-    top: 166px;
-    margin-left: auto;
-    width: 100% !important;
-    margin-bottom: 150px; 
-    height: 131.4px;
-    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
+        position: absolute;
+        top: 166px;
+        margin-left: auto;
+        width: 100% !important;
+        margin-bottom: 150px; 
+        height: 131.4px;
+        box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
     } 
     .arrow-box{
         display: none;
@@ -478,6 +506,17 @@ body,html {
         overflow: hidden;
         display: none !important;
     }
+    .carousel-item .wrapper-img-slide img {
+        clear: both;
+        border-style: none;
+        width: 100% !important;
+        height: 475px !important;
+    }
+    /* Confirm */
+    .Text-Confirm-Button{
+        font-size: 12px;
+    }
+
 }
 /* Large devices (desktops, less than 1200px*/
 @media (max-width: 1199.98px) { 
@@ -547,15 +586,28 @@ body,html {
     .ProductDetailFront h3{
         max-width: 450px;
         width: 584px;
-      height: 54px;
-      font-family: SukhumvitSet;
-      font-size: 40px;
-      font-weight: bold;
+        height: 54px;
+        font-family: SukhumvitSet;
+        font-size: 40px;
+        font-weight: bold;
       font-stretch: normal;
       font-style: normal;
       line-height: 1.35;
       letter-spacing: -0.24px;
       color: #333333;
     }
-
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

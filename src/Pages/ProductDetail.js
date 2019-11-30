@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/fontawesome-free-solid';
 import DetailProduct from '../Components/DetailProduct';
 import Suggest from '../Components/Suggest';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Dropdown, DropdownItem, DropdownToggle, DropdownMenu } from 'reactstrap';
 import axios from 'axios';
 class ProductDetail extends Component {
@@ -26,11 +26,11 @@ class ProductDetail extends Component {
         this.HandleDeleteAmount = this.HandleDeleteAmount.bind(this);
         this.addItemToCart = this.addItemToCart.bind(this);
     }
-    componentWillMount(){
+    componentWillMount() {
         window.scrollTo(0, 0);
     }
-    componentWillReceiveProps (newProps) {
-        if( newProps.match.params.id !== this.props.match.params.id ){
+    componentWillReceiveProps(newProps) {
+        if (newProps.match.params.id !== this.props.match.params.id) {
             window.scrollTo(0, 0);
         }
     }
@@ -65,6 +65,7 @@ class ProductDetail extends Component {
         for (let idx = 0; idx < this.state.currentItems.length; idx++) {
             if (parseInt(this.props.match.params.id) === this.state.currentItems[idx].id) {
                 let dataToDb = {
+                    id: this.state.currentItems[idx].id,
                     name: this.state.currentItems[idx].name,
                     img: this.state.currentItems[idx].img[0].source,
                     size: this.state.size,
@@ -93,7 +94,7 @@ class ProductDetail extends Component {
                                         <h3 className="mt-3">{data.name}<br />{data.cost} บาท</h3>
                                         <div className="conatiner MarginTopClassIII">
                                             <div className="row">
-                                                <div className="col-12">
+                                                <div className="col-12 py-3">
                                                     <div className="lead">
                                                         เเชร์ :&nbsp; &nbsp; <img src={facebook} alt="face แชร์" width="40" height="40" />
                                                     </div>
@@ -159,8 +160,10 @@ class ProductDetail extends Component {
                                                     </ul>
                                                     <ul className="list-amount mt-5">
                                                         <li className="d-inline ">
-                                                            <NavLink to="/Mycart" className="btn btn-amount text-white" onClick={this.addItemToCart}>
-                                                                <FontAwesomeIcon icon={faShoppingCart} /> หยิบใส่ตระกร้า
+                                                            <NavLink to="/Mycart" className="btn btn-amount text-white w-75" onClick={this.addItemToCart}>
+                                                                <div className="py-2">
+                                                                    <FontAwesomeIcon icon={faShoppingCart} /> หยิบใส่ตระกร้า
+                                                                </div>
                                                             </NavLink>
                                                         </li>
                                                     </ul>
@@ -174,7 +177,7 @@ class ProductDetail extends Component {
                     )
                 })
                 }
-                    <DetailProduct />
+                <DetailProduct />
                 <Suggest />
             </div>
         )

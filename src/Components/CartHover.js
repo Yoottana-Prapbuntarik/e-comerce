@@ -23,24 +23,25 @@ class CartHover extends Component {
 
                                             <tr>
                                                 <td key={i}>
-                                                    <img src={dataProducts === undefined ? '' : dataProducts.img} width="150px" alt="img-product" />
+                                                    <img src={dataProducts === undefined ? '' : dataProducts.img} width="50px" alt="img-product" />
                                                 </td>
-                                                <td>{dataProducts === undefined ? '' : dataProducts.amount}</td>
-                                                <td>{dataProducts === undefined ? '' : dataProducts.cost}</td>
+                                                <td><span className="font-weight-blod"> X{dataProducts === undefined ? '' : dataProducts.amount}</span> </td>
+                                                <td><span className="font-weight-blod"> {dataProducts === undefined ? '' : dataProducts.cost}</span> </td>
                                             </tr>
                                         )
                                     })
                                 }
                             </tbody>
                         </table>
+                        <hr/>
                     </div>
-                    <div className="col-4 py-3">
-                        <NavLink className="btn btn-primary" to="/Mycart">ไปที่ตระกร้าของฉัน</NavLink>
+                    <div className="col-4 py-3 colorButtonMyCart">
+                    <NavLink className="btn btn-color-pink-Address w-100 my-5" to={`/Mycart`}>ไปที่ตระกร้าของฉัน</NavLink>
                     </div>
-                    <div className="col-4 py-3 text-center">
+                    <div className="col-4 font-weight-bold py-3 text-center">
                     ราคารวม                
                     </div>
-                    <div className="col-4 py-3 text-center">
+                    <div className="col-4 font-weight-bold py-3 text-center">
                     {dataProduct === undefined ? '0' : AllPrice} บาท
                     </div>
                 </div>

@@ -1,0 +1,49 @@
+  .status{
+    width: 86px;
+    height: 32px;
+    border-radius: 6px;
+    border: solid 1px #f8d591;
+    background-color: #fdf7e6;
+    padding: 2px;
+
+  }
+  .text-status{
+    width: 72px;
+    height: 26px;
+    font-family: SukhumvitSet;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.1px;
+    color: #f29123;
+  }
+  .HeaderPuchase{
+    width: 100%;
+    height: 85px;
+    background-color: #fafafa;
+  }
+  .viewPurchaseLog{
+    width: 72px;
+    height: 29px;
+    font-family: SukhumvitSet;
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.11px;
+    text-align: center;
+    color: #e070aa;
+  }
+  .btn-colorPink{
+    width: 300px;
+    height: 50px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    background-color: #e070aa !important;
+    color: #fff !important;
+    font-size: 14px !important;
+
+  }

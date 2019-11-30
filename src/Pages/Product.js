@@ -46,13 +46,13 @@ class Product extends Component {
                     <div className="row">
                         <div className="col-12 text-center">
                             <div className="row">
-                                <div className="col-md-3">
+                                <div className="col-lg-3">
                                     <h2 className="HeaderCard ">
                                         สินค้าทั้งหมด
                                     </h2>
                                 </div>
-                                <div className="col-md-6"></div>
-                                <div className="col-md-3 btn-dropdown">
+                                <div className="col-lg-6"></div>
+                                <div className="col-lg-3 btn-dropdown">
                                     <SortCategory />
                                 </div>
                             </div>

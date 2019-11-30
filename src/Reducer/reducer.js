@@ -27,6 +27,11 @@ const CartReducer = (state = initState, action) => {
                 ...state,
                 UserSearch: state.UserSearch = action.payload
             }
+        case 'DeleteItem':
+            return {
+                ...state,
+
+            }
         case 'Total':
             return {
                 ...state,
