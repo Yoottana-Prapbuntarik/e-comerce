@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import ProductSlide from '../Components/ProductSlide';
 import facebook from '../Assets/images/logo/facebook.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/fontawesome-free-solid';
+import { faShoppingCart ,faPlus , faMinus} from '@fortawesome/fontawesome-free-solid';
 import DetailProduct from '../Components/DetailProduct';
 import Suggest from '../Components/Suggest';
 import { NavLink } from 'react-router-dom';
@@ -25,6 +25,7 @@ class ProductDetail extends Component {
         this.HandlePlusAmount = this.HandlePlusAmount.bind(this);
         this.HandleDeleteAmount = this.HandleDeleteAmount.bind(this);
         this.addItemToCart = this.addItemToCart.bind(this);
+        this.handleChangeAmount = this.handleChangeAmount.bind(this);
     }
     componentWillMount() {
         window.scrollTo(0, 0);
@@ -50,9 +51,15 @@ class ProductDetail extends Component {
         this.setState({ amount: this.state.amount + 1 })
     }
     HandleDeleteAmount = () => {
-        if (this.state.amount !== 0) {
-            this.setState({ amount: this.state.amount - 1 })
-        }
+        this.setState({ amount: this.state.amount - 1 })
+    }
+    handleChangeAmount = (e) =>{
+            let eventAmout = parseInt(e.target.value);
+            if(eventAmout === 0){
+                this.setState({amount:1})
+            }else{
+                this.setState({amount : eventAmout})
+            }
     }
     componentDidMount() {
         axios.get('http://www.mocky.io/v2/5db946cd30000040765ee168').then(res => {
@@ -145,16 +152,17 @@ class ProductDetail extends Component {
                                                     <p className="lead">จำนวน</p>
                                                     <ul className="list-amount">
                                                         <li className="d-inline mr-4">
-                                                            <button className="btn btn-color-pink" onClick={this.HandleDeleteAmount}>
-                                                                <b>-</b>
+                                                            <button className="btn btn-color-pink" disabled={this.state.amount === 1} onClick={this.HandleDeleteAmount}>
+                                                                <FontAwesomeIcon  icon={faMinus} className="iconButton" />
                                                             </button>
                                                         </li>
-                                                        <li className="d-inline spacing-amount">
-                                                            {this.state.amount}
+                                                        <li className="d-inline customInputBox">
+                                                            {/* {this.state.amount} */}
+                                                            <input className="inputBox" placeholder={this.state.amount} onChange={this.handleChangeAmount}/>
                                                         </li>
                                                         <li className="d-inline ml-4">
                                                             <button className="btn btn-plus btn-color-pink" onClick={this.HandlePlusAmount}>
-                                                                <b>+</b>
+                                                                <FontAwesomeIcon icon={faPlus} className="iconButton"/>
                                                             </button>
                                                         </li>
                                                     </ul>

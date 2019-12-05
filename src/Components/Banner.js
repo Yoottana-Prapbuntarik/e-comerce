@@ -11,7 +11,7 @@ class Banner extends Component {
 
     render() {
         return (
-            <div className="row">
+            <div className="row mb-5">
                 <div className="Banner">
                     <img src={this.props.images} alt="banner"/>
                 <div className="text-banner col-12">

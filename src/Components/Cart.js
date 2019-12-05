@@ -9,32 +9,24 @@ class Cart extends Component {
             data: {}
         }
     }
-    DeleteItem = () => (id) => {
-        let confirm = window.confirm("คุณต้องการยกเลิกสินค้าใช่หรือไม่");
-        if (confirm) {
-            this.props.DeleteItem(id);
-        }
-    }
+
     render() {
         let { dataProduct, AllPrice } = this.props;
         return (
             <div className="container">
                 <div className="row">
                     <div className="col-12">
-                        <div className="container bg-alphaGray py-5 my-2">
+                        <div className="container bg-alphaGray pt-4 pb-4 my-2">
                             <div className="row ">
-                                <div className="col-3">
+                                <div className="col-6">
                                     สินค้าของฉัน
                             </div>
-                                <div className="col-3 text-right">
+                                <div className="col-3 text-center">
                                     จำนวน
                                     </div>
-                                <div className="col-3 text-right">
+                                <div className="col-3 text-center">
                                     ราคา
                             </div>
-                                <div className="col-3 pl-5">
-                                    <span className="pl-5"></span>
-                                </div>
                             </div>
                         </div>
                         <div className="container">
@@ -43,17 +35,31 @@ class Cart extends Component {
                                     dataProduct.map((dataProducts, i) => {
                                         return (
                                             <React.Fragment>
-                                                <div className="col-3 mt-2" key={i}>
-                                                    <img src={dataProducts === undefined ? '' : dataProducts.img} width="100%" alt="img-product" />
+                                                <div className="col-6 mt-2" key={i}>
+                                                    <div className="container-fluid">
+                                                        <div className="row">
+                                                            <div className="col-lg-4">
+                                                                <img src={dataProducts === undefined ? '' : dataProducts.img} alt="img-product" width="81px" />
+                                                            </div>
+                                                            <div className="col-lg-8 mt-4">
+                                                                <h5>{dataProducts === undefined ? '' : dataProducts.name}</h5>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div className="col-3 py-5 text-right" key={i}>
+                                                <div className="col-3 py-5 text-center" key={i}>
                                                     {dataProducts === undefined ? '' : dataProducts.amount}
                                                 </div>
-                                                <div className="col-3 py-5 text-right" key={i}>
-                                                    {dataProducts === undefined ? '' : dataProducts.cost}
-                                                </div>
-                                                <div className="col-3 text-left pl-5 py-5 ">
-                                                    <FontAwesomeIcon icon={faTimes} size="2x"/>
+                                                <div className="col-3 py-5 text-center" key={i}>
+                                                    <div className="container">
+                                                        <div className="row">
+                                                            <div className="col-8 text-right">
+                                                                {dataProducts === undefined ? '' : dataProducts.cost}
+
+                                                            </div>
+                                                            <div className="col-4"> <FontAwesomeIcon icon={faTimes} size="2x" /> </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </React.Fragment>
                                         )
@@ -61,14 +67,15 @@ class Cart extends Component {
                                 }
                             </div>
                         </div>
-                        <div className="container bg-alphaGray my-5 py-5">
+                        <div className="container bg-alphaGray my-5 pt-4 pb-4  ">
                             <div className="row ">
                                 <div className="col-6">
                                 </div>
-                                <div className="col-3 text-left">
+
+                                <div className="col-3 text-center">
                                     ราคารวม
                                     </div>
-                                <div className="col-3">
+                                <div className="col-3 text-center ">
                                     {dataProduct === undefined ? '0' : AllPrice} บาท
                             </div>
                             </div>
@@ -85,14 +92,5 @@ const mapStateToProps = (state) => {
         allCost: state.allCost
     }
 }
-const mapDispatchToProps = (dispatch) => {
-    return {
-        DeleteItem: (id) => {
-            dispatch({
-                type: "DeleteItem",
-                payload: id
-            })
-        }
-    }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+
+export default connect(mapStateToProps)(Cart);
