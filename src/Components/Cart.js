@@ -34,26 +34,26 @@ class Cart extends Component {
                                 {
                                     dataProduct.map((dataProducts, i) => {
                                         return (
-                                            <React.Fragment>
-                                                <div className="col-6 mt-2" key={i}>
+                                            <React.Fragment key={i}>
+                                                <div className="col-6 mt-2">
                                                     <div className="container-fluid">
                                                         <div className="row">
                                                             <div className="col-lg-4">
-                                                                <img src={dataProducts === undefined ? '' : dataProducts.img} alt="img-product" width="81px" />
+                                                                <img  src={dataProducts === undefined ? '' : dataProducts.img} alt="img-product" width="81px" />
                                                             </div>
                                                             <div className="col-lg-8 mt-4">
-                                                                <h5>{dataProducts === undefined ? '' : dataProducts.name}</h5>
+                                                                <h5 >{dataProducts === undefined ? '' : dataProducts.name}</h5>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div className="col-3 py-5 text-center" key={i}>
+                                                <div className="col-3 py-5 text-center" >
                                                     {dataProducts === undefined ? '' : dataProducts.amount}
                                                 </div>
-                                                <div className="col-3 py-5 text-center" key={i}>
+                                                <div className="col-3 py-5 text-center" >
                                                     <div className="container">
                                                         <div className="row">
-                                                            <div className="col-8 text-right">
+                                                            <div className="col-8 text-right" >
                                                                 {dataProducts === undefined ? '' : dataProducts.cost}
 
                                                             </div>

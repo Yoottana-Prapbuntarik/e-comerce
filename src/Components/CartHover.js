@@ -21,8 +21,8 @@ class CartHover extends Component {
                                     dataProduct.map((dataProducts, i) => {
                                         return (
 
-                                            <tr>
-                                                <td key={i}>
+                                            <tr key={i}>
+                                                <td >
                                                     <img src={dataProducts === undefined ? '' : dataProducts.img} width="50px" alt="img-product" />
                                                 </td>
                                                 <td><span className="font-weight-blod"> X{dataProducts === undefined ? '' : dataProducts.amount}</span> </td>
