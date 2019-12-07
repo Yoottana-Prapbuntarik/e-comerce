@@ -55,7 +55,7 @@
         font-weight:bold ;
     }
     .textAlpha{
-         color: #c7c7cc;
+         color: #c7c7cc !important;
          font-size: 18px;
         font-weight:bold !important;
         text-align: center;

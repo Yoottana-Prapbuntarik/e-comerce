@@ -42,7 +42,7 @@ class CardBox extends Component {
                             </div>
                             <div className="card-block mt-5 ">
                                 <h4 className="card-title">{this.props.name}</h4>
-                                <p className="card-text pb-3"><s>1,280 บาท</s> {this.props.cost} บาท</p>
+                                <p className="card-text pb-3"><s className="text-normal-gray">1,280 บาท</s> <span className="text-red">{this.props.cost.toLocaleString()} บาท </span></p>
                             </div>
                         </div>
                     </div>

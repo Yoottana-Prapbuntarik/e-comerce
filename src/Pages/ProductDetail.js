@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import ProductSlide from '../Components/ProductSlide';
 import facebook from '../Assets/images/logo/facebook.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart ,faPlus , faMinus} from '@fortawesome/fontawesome-free-solid';
+import { faShoppingCart, faPlus, faMinus } from '@fortawesome/fontawesome-free-solid';
 import DetailProduct from '../Components/DetailProduct';
 import Suggest from '../Components/Suggest';
 import { NavLink } from 'react-router-dom';
@@ -53,13 +53,13 @@ class ProductDetail extends Component {
     HandleDeleteAmount = () => {
         this.setState({ amount: this.state.amount - 1 })
     }
-    handleChangeAmount = (e) =>{
-            let eventAmout = parseInt(e.target.value);
-            if(eventAmout === 0){
-                this.setState({amount:1})
-            }else{
-                this.setState({amount : eventAmout})
-            }
+    handleChangeAmount = (e) => {
+        let eventAmout = parseInt(e.target.value);
+        if (eventAmout === 0) {
+            this.setState({ amount: 1 })
+        } else {
+            this.setState({ amount: eventAmout })
+        }
     }
     componentDidMount() {
         axios.get('http://www.mocky.io/v2/5db946cd30000040765ee168').then(res => {
@@ -97,17 +97,19 @@ class ProductDetail extends Component {
                                     <div className="col-lg-6 col-12">
                                         <ProductSlide imgSource={data} />
                                     </div>
-                                    <div className="col-lg-6 col-12 ProductDetailFront">
-                                        <h3 className="mt-3">{data.name}<br />{data.cost} บาท</h3>
-                                        <div className="conatiner MarginTopClassIII">
+                                    <div className="col-lg-6 col-12 ProductDetail">
+                                        <div className="conatiner ">
                                             <div className="row">
-                                                <div className="col-12 py-3">
+                                                <div className="col-12 mb-5">
+                                                    <h3>{data.name}<br />{data.cost} บาท <s className="text-secondary">1,280 บาท</s></h3>
+                                                </div>
+                                                <div className="col-12 MarginTopClassIII">
                                                     <div className="lead">
                                                         เเชร์ :&nbsp; &nbsp; <img src={facebook} alt="face แชร์" width="40" height="40" />
                                                     </div>
                                                 </div>
                                                 {/* Select Size Product */}
-                                                <div className="col-12 mt-3">
+                                                <div className="col-12">
                                                     <p className="lead">เลือกไซส์เสื้อ</p>
                                                     <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                                                         <DropdownToggle className="buttonSize text-left">
@@ -153,16 +155,16 @@ class ProductDetail extends Component {
                                                     <ul className="list-amount">
                                                         <li className="d-inline mr-4">
                                                             <button className="btn btn-color-pink" disabled={this.state.amount === 1} onClick={this.HandleDeleteAmount}>
-                                                                <FontAwesomeIcon  icon={faMinus} className="iconButton" />
+                                                                <FontAwesomeIcon icon={faMinus} className="iconButton" />
                                                             </button>
                                                         </li>
                                                         <li className="d-inline customInputBox">
                                                             {/* {this.state.amount} */}
-                                                            <input className="inputBox" placeholder={this.state.amount} onChange={this.handleChangeAmount}/>
+                                                            <input className="inputBox" placeholder={this.state.amount} onChange={this.handleChangeAmount} />
                                                         </li>
                                                         <li className="d-inline ml-4">
                                                             <button className="btn btn-plus btn-color-pink" onClick={this.HandlePlusAmount}>
-                                                                <FontAwesomeIcon icon={faPlus} className="iconButton"/>
+                                                                <FontAwesomeIcon icon={faPlus} className="iconButton" />
                                                             </button>
                                                         </li>
                                                     </ul>

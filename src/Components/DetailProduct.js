@@ -12,7 +12,7 @@ class DetailProduct extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="col-12 text-left">
+                <div className="col-12 text-left mt-3">
                     <p className="headingDetailText">รายละเอียดสินค้า</p>
                     <ul className="list-amount">
                         <li className="d-inline mr-4">

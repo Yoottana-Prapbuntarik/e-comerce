@@ -34,8 +34,8 @@ body,html {
     margin-top: 205px;
 }
 .MarginTopClassIII {
-    margin-top: 170px;
-    margin-bottom: 250px;
+    margin-top: 60px;
+    margin-bottom: 20px;
 }
 
 /* Navbar */
@@ -135,7 +135,7 @@ body,html {
 
 }
 /* ProductSlider */
-.ProductDetailFront h3{
+.ProductDetail h3{
     max-width: 600px;
     width: 584px;
     height: 54px;
@@ -146,6 +146,9 @@ body,html {
   line-height: 1.35;
   letter-spacing: -0.24px;
   color: #333333;
+}
+.ProductDetail > h3 .text-secondary{
+    color:#c7c7cc !important;
 }
 .ProductSlider  {
     border-style: none;
@@ -258,6 +261,8 @@ body,html {
 }
                 
 /*Card*/
+.text-red{color: #ff3b30 !important;}
+.text-normal-gray{color: #c7c7cc !important;}
 .img-custome{
     position: absolute !important;
     top: 0 !important;
@@ -384,23 +389,18 @@ body,html {
     z-index: 4000;
     background: #fff;
 }
-
-
-
-
-
 .bg-alphaGray{
     background-color: #fafafa;
     font-weight: bold;
 }
 .CartHover{
     position:absolute;
-    z-index:2000;
-    background:#fff;
+    width: 600px !important;
+    z-index:5000;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
     right:63px;
     top:117px;
-    overflow: scroll;
-    max-height: 350px;
 }
 .colorButtonMyCart a{
     color: #e16faa;
@@ -501,7 +501,7 @@ body,html {
         right: 43px !important;
         z-index: 100 !important;
     }
-    .ProductDetailFront h3{
+    .ProductDetail h3{
         max-width: 300px !important;
         width: 584px;
         height: 54px;
@@ -514,8 +514,8 @@ body,html {
         color: #333333;
     }
     .MarginTopClassIII {
-        margin-top: 250px;
-        margin-bottom: 250px;
+        margin-top: 205px !important;
+        margin-bottom: 20px;
     }
     .div-search {
         position: absolute;
@@ -611,7 +611,7 @@ body,html {
         top: -33px;
     }
     /* Product detail */
-    .ProductDetailFront h3{
+    .ProductDetail h3{
         max-width: 450px;
         width: 584px;
         height: 54px;
@@ -623,6 +623,10 @@ body,html {
       line-height: 1.35;
       letter-spacing: -0.24px;
       color: #333333;
+    }
+    .MarginTopClassIII {
+        margin-top: 125px;
+        margin-bottom: 20px;
     }
     
 }

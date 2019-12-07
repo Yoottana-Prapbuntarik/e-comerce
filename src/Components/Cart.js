@@ -21,10 +21,10 @@ class Cart extends Component {
                                 <div className="col-6">
                                     สินค้าของฉัน
                             </div>
-                                <div className="col-3 text-center">
+                                <div className="col-3 text-left">
                                     จำนวน
                                     </div>
-                                <div className="col-3 text-center">
+                                <div className="col-3  text-left">
                                     ราคา
                             </div>
                             </div>
@@ -47,17 +47,17 @@ class Cart extends Component {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div className="col-3 py-5 text-center" >
-                                                    {dataProducts === undefined ? '' : dataProducts.amount}
+                                                <div className="col-2 py-5 text-left" >
+                                                    {dataProducts === undefined ? '' : 'X' + dataProducts.amount}
                                                 </div>
-                                                <div className="col-3 py-5 text-center" >
+                                                <div className="col-4 py-5 " >
                                                     <div className="container">
                                                         <div className="row">
-                                                            <div className="col-8 text-right" >
-                                                                {dataProducts === undefined ? '' : dataProducts.cost}
+                                                            <div className="col-6  text-right" >
+                                                                {dataProducts === undefined ? '' : dataProducts.cost.toLocaleString()} บาท
 
                                                             </div>
-                                                            <div className="col-4"> <FontAwesomeIcon icon={faTimes} size="2x" /> </div>
+                                                            <div className="col-6  text-right"> <FontAwesomeIcon icon={faTimes} size="2x" /> </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -72,11 +72,11 @@ class Cart extends Component {
                                 <div className="col-6">
                                 </div>
 
-                                <div className="col-3 text-center">
+                                <div className="col-3 text-left">
                                     ราคารวม
                                     </div>
-                                <div className="col-3 text-center ">
-                                    {dataProduct === undefined ? '0' : AllPrice} บาท
+                                <div className="col-3 text-left ">
+                                    {dataProduct === undefined ? '0' : AllPrice.toLocaleString()} บาท
                             </div>
                             </div>
                         </div>

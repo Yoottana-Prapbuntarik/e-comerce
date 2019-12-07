@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 class CartHover extends Component {
     render() {
         let { dataProduct, AllPrice } = this.props;
@@ -7,42 +7,38 @@ class CartHover extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col-12">
-                        <table className="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col-4">สินค้าของฉัน</th>
-                                    <th scope="col-4">จำนวน</th>
-                                    <th scope="col-4">ราคา</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
+                        <div className="container my-5">
+                            <div className="row">
+                                <div className="col-12">
+                                    <h5 className="font-weight-bold">ตะกร้าสินค้าของฉัน</h5>
+                                </div>
                                 {
                                     dataProduct.map((dataProducts, i) => {
                                         return (
-
-                                            <tr key={i}>
-                                                <td >
+                                            <React.Fragment key={i}>
+                                                <div className="col-4 mt-2">
                                                     <img src={dataProducts === undefined ? '' : dataProducts.img} width="50px" alt="img-product" />
-                                                </td>
-                                                <td><span className="font-weight-blod"> X{dataProducts === undefined ? '' : dataProducts.amount}</span> </td>
-                                                <td><span className="font-weight-blod"> {dataProducts === undefined ? '' : dataProducts.cost}</span> </td>
-                                            </tr>
+                                                </div>
+                                                <div className="col-4 mt-2 py-4"><span className="font-weight-bold"> X{dataProducts === undefined ? '' : dataProducts.amount}</span> </div>
+                                                <div className="col-4 mt-2 py-4"><span className="font-weight-bold"> {dataProducts === undefined ? '' : dataProducts.cost.toLocaleString()}</span> </div>
+                                            </React.Fragment>
                                         )
                                     })
                                 }
-                            </tbody>
-                        </table>
-                        <hr/>
-                    </div>
-                    <div className="col-4 py-3 colorButtonMyCart">
-                    <NavLink className="btn btn-color-pink-Address w-100 my-5" to={`/Mycart`}>ไปที่ตระกร้าของฉัน</NavLink>
-                    </div>
-                    <div className="col-4 font-weight-bold py-3 text-center">
-                    ราคารวม                
-                    </div>
-                    <div className="col-4 font-weight-bold py-3 text-center">
-                    {dataProduct === undefined ? '0' : AllPrice} บาท
+                            </div>
+                            <hr />
+                            <div className="row mt-5">
+                                <div className="col-4   colorButtonMyCart">
+                                    <NavLink className="btn btn-color-pink-Address w-100 " to={`/Mycart`}>ไปที่ตระกร้าของฉัน</NavLink>
+                                </div>
+                                <div className="col-4  font-weight-bold py-2 text-center">
+                                    ราคารวม
+                            </div>
+                                <div className="col-4  font-weight-bold py-2 text-center">
+                                    {dataProduct === undefined ? '0' : AllPrice.toLocaleString()} บาท
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div >
