@@ -6,31 +6,31 @@ class Footer extends Component {
     render() {
         return (
             <div className="container-fluid  Footer">
-                <div className="row text-center text-white ">
+                <div className="row  text-white ">
                     <div className="col-6 left-footer">
-                        &copy; 2019 Nattraphak.com
-                            </div>
-                    <div className="col-6 right-footer">
-                        <div className="container text-right">
-                        <div className="row">
-                            <div className="col-md-7 col-12">
-                                #Nattraphak.com
-                            </div>
-                            <div className="col-md-1 col-3">
-                                <a className="" href="https://www.facebook.com">
-                                    <img src={facebook} alt="" width="30px" />
-                                </a>
-                            </div>
-                            <div className="col-md-1 col-3">
-                                <a className="" href="https://www.facebook.com">
-                                    <img src={ig} alt="" width="30px" />
-                                </a>
-                            </div>
-                            <div className="col-md-1 col-3">
-                                <a className="" href="https://www.facebook.com">
-                                    <img src={line} alt="" width="30px" />
-                                </a>
-                            </div>
+                        <span className="text-footer">&copy; <b>2019 Nattraphak.com</b></span>
+                    </div>
+                    <div className="col-6 right-footer ">
+                        <div className="container-fluid text-right ">
+                            <div className="row">
+                                <div className="col-lg-7 text-footer  col-12">
+                                    <b>#Nattraphak.com</b>
+                                </div>
+                                <div className="col-lg-1 col-md-8 col-sm-6  col-4">
+                                    <a className="" href="https://www.facebook.com">
+                                        <img src={facebook} alt="" width="35px" />
+                                    </a>
+                                </div>
+                                <div className="col-lg-1 col-md-2 col-sm-3  col-4">
+                                    <a className="" href="https://www.facebook.com">
+                                        <img src={ig} alt="" width="35px" />
+                                    </a>
+                                </div>
+                                <div className="col-lg-1 col-md-2 col-sm-3  col-4">
+                                    <a className="" href="https://www.facebook.com">
+                                        <img src={line} alt="" width="35px" />
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

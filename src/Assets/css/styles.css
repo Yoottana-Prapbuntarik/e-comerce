@@ -21,6 +21,7 @@ body,html {
 /* buttonGroup */
 /* search */
 /* ProductDetail */
+/* Footer */
 /* Cart */
 /*Responsive Media Query*/
 
@@ -328,10 +329,20 @@ body,html {
     position: relative;
     bottom: 0;
 }
-
+.text-footer{
+    font-size: 24px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: -0.14px;
+    color: #ececec;
+}
 .left-footer{
     margin-top: 60px;
     font-size: 24px;
+} 
+.left-footer span{
+    padding-left: 125px;
 } 
 .right-footer{
     margin-top: 60px;
@@ -441,7 +452,7 @@ body,html {
 /*Responsive Media Query*/
 
 /*Iphon 6  - 4 */
-@media (max-width:375px){
+@media (max-width:475px){
     /* Category */
     .Category h2{
         position: absolute;
@@ -450,6 +461,15 @@ body,html {
         font-weight: bold;
         right: 25%;
         top: 50%;
+    }
+    /*Footer*/
+    .text-footer{
+        font-size: 15px;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.38;
+        letter-spacing: -0.14px;
+        color: #ececec;
     }
     
 }
@@ -472,6 +492,7 @@ body,html {
         box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
         background-color: #ffffff;
     }  
+    
 }
 /* Small devices (landscape phones, less than 768px)*/
 @media (max-width: 767.98px) { 
@@ -483,7 +504,7 @@ body,html {
     .right-footer{
         margin-top: 30px;
         font-size: 18px;
-    } 
+    }
 }
 
 /* Medium devices (tablets, less than 992px)*/
@@ -544,6 +565,9 @@ body,html {
     .Text-Confirm-Button{
         font-size: 12px;
     }
+    .left-footer span{
+        padding-left: 0;
+    }  
 
 }
 /* Large devices (desktops, less than 1200px*/
