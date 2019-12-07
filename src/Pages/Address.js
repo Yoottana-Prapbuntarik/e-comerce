@@ -14,36 +14,45 @@ class CardAddress extends Component {
                             <div className=" mx-auto col-md-6">
                                 <form className="mt-3">
                                     <div className="row">
-                                        <div className="form-group col-12 font-weight-bold my-2">
-                                            <label htmlFor="fnameAndlname">ชื่อ - นามสกุล</label>
-                                            <input type="text" className="form-control" id="fnameAndlname" />
+                                        <div className="row mx-auto mt-2">
+                                            <div className="col-12 font-weight-bold">
+                                                <label htmlFor="name-lname">ชื่อ - นามสกุล</label>
+                                                <input type="text" className="custome-form" id="name-lname" />
+                                            </div>
                                         </div>
-                                        <div className="form-group my-2 font-weight-bold col-12">
-                                            <label htmlFor="Address">ที่อยู่จัดส่ง</label>
-                                            <input type="text" className="form-control" id="Address" placeholder="เลขที่ หมู่บ้าน คอนโด ชื่อถนน" />
+                                        <div className="row mx-auto mt-2">
+                                            <div className="col-12 font-weight-bold">
+                                                <label htmlFor="address">ที่อยู่จัดส่ง</label>
+                                                <input type="text" className="custome-form" id="address" placeholder="เลขที่บ้าน หมู่บ้าน คอนโด ชื่อถนน" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="row">
-                                        <div className="form-group col-6 my-2">
-                                            <input type="text" className="form-control" id="Address" placeholder="แขวง" />
+
+                                        <div className="row mx-auto">
+                                            <div className=" col-lg-6 mt-2">
+                                                <input type="text" className="custome-form-children" id="Address" placeholder="แขวง" />
+                                            </div>
+                                            <div className=" col-lg-6 mt-2">
+                                                <input type="text" className="custome-form-children" id="Address" placeholder="เขต" />
+                                            </div>
                                         </div>
-                                        <div className="form-group col-6 my-2">
-                                            <input type="text" className="form-control" id="Address" placeholder="เขต" />
+                                        <div className="row mx-auto">
+                                            <div className="col-lg-6 mt-2">
+                                                <input type="text" className="custome-form-children" id="Address" placeholder="จังหวัด" />
+                                            </div>
+                                            <div className="col-lg-6 mt-2">
+                                                <input type="text" className="custome-form-children" id="Address" placeholder="รหัสไปรษณีย์" />
+                                            </div>
                                         </div>
-                                        <div className="form-group col-6 my-2">
-                                            <input type="text" className="form-control" id="Address" placeholder="จังหวัด" />
+                                        <div className="row mx-auto mt-2">
+                                            <div className="col-12 font-weight-bold">
+                                                <label htmlFor="tel">เบอร์ติดต่อ</label>
+                                                <input type="tel" pattern=".{10}" className="custome-form" id="tel" />
+                                            </div>
                                         </div>
-                                        <div className="form-group col-6 my-2">
-                                            <input type="text" className="form-control" id="Address" placeholder="รหัสไปรษณีย์" />
-                                        </div>
-                                    </div>
-                                    <div className="form-group  mt-4 font-weight-bold">
-                                        <label htmlFor="tel">เบอร์ติดต่อ</label>
-                                        <input type="tel" pattern=".{10}" className="form-control" id="tel" />
                                     </div>
                                     <div className="col-12">
                                         <NavLink to={`/Confirm`}>
-                                            <button className="btn btn-color-pink-Address w-100 my-5" disabled={false}>
+                                            <button className="btn btn-color-pink-Address w-100 my-4" disabled={false}>
                                                 ถัดไป
                                         </button>
                                         </NavLink>
