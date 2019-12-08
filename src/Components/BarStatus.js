@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../Assets/css/BarStatus.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck } from '@fortawesome/fontawesome-free-solid';
+import trick from '../Assets/images/icon/tick.png';
 class BarStatus extends Component {
     render() {
         let { status, indexStatus } = this.props;
@@ -30,7 +29,9 @@ class BarStatus extends Component {
                                             <React.Fragment>
                                                 <div className="col-6 col-12"></div>
                                                 <div className="mr-3">
-                                                    <span className="borderCirclePink  text-pink" style={CircleNumberBox}><FontAwesomeIcon icon={faCheck} /></span>
+                                                    <span className="borderCirclePink  text-pink" style={CircleNumberBox}>
+                                                        <img  src={trick}  width="12px" alt="icon trick"/>
+                                                        </span>
                                                 </div>
                                                 <div classNam="col-6 col-12"><span className="textfill" style={TextBoxStatus}>การส่งสินค้า</span></div>
                                             </React.Fragment>
@@ -64,7 +65,9 @@ class BarStatus extends Component {
                                             <React.Fragment>
                                                 <div className="col-6 col-12"></div>
                                                 <div className="mr-3">
-                                                    <span className="borderCirclePink text-pink" style={CircleNumberBox}><FontAwesomeIcon icon={faCheck} /></span>
+                                                    <span className="borderCirclePink text-pink" style={CircleNumberBox}>
+                                                        <img  src={trick}  width="12px" alt="icon trick"/>
+                                                        </span>
                                                 </div>
                                                 <div classNam="col-6 col-12"><span className="textfill" style={TextBoxStatus}>การส่งสินค้า</span></div>
                                             </React.Fragment>
