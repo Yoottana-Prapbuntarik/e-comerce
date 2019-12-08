@@ -3,7 +3,24 @@ import BarStatus from '../Components/BarStatus';
 import '../Assets/css/Address.css';
 import { NavLink } from 'react-router-dom';
 class CardAddress extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            telephon: '',
+            isCorrect: true
+        }
+    }
 
+    handleChange(e) {
+        const telephon = (e.target.validity.valid && e.target.value.length <= 10) ? e.target.value : this.state.telephon;
+        parseInt(telephon);
+        this.setState({ telephon });
+        if (telephon.length === 10) {
+            this.setState({
+                isCorrect: false
+            })
+        }
+    }
     render() {
         return (
             <React.Fragment>
@@ -46,15 +63,15 @@ class CardAddress extends Component {
                                         <div className="row mx-auto mt-2">
                                             <div className="col-12 font-weight-bold">
                                                 <label htmlFor="tel">เบอร์ติดต่อ</label>
-                                                <input type="tel" pattern=".{10}" className="custome-form" id="tel" />
+                                                <input type="text" className="custome-form" id="tel" pattern="[0-9]*" onInput={this.handleChange.bind(this)} value={this.state.telephon} />
                                             </div>
                                         </div>
                                     </div>
                                     <div className="col-12">
                                         <NavLink to={`/Confirm`}>
-                                            <button className="btn btn-color-pink-Address w-100 my-4" disabled={false}>
+                                            <button className="btn btn-color-pink-Address w-100 my-4" disabled={this.state.isCorrect}>
                                                 ถัดไป
-                                        </button>
+                                            </button>
                                         </NavLink>
                                     </div>
                                 </form>
