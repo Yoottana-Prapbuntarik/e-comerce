@@ -59,6 +59,7 @@ class App extends Component {
           <div>
             <Navbar detectScroll={this.state.valueScroll}/>
             <Switch>
+              {/* path in your website */}
               <Route exact path="/" component={Home} />
               <Route path="/Product" component={Product} />
               <Route path="/Mycart" component={Mycart} />
