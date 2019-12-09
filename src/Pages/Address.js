@@ -19,6 +19,10 @@ class CardAddress extends Component {
             this.setState({
                 isCorrect: false
             })
+        }else{
+            this.setState({
+                isCorrect: true
+            })
         }
     }
     render() {
@@ -32,14 +36,12 @@ class CardAddress extends Component {
                                 <form className="mt-3">
                                     <div className="row">
                                         <div className="row mx-auto mt-2">
-                                            <div className="col-12 font-weight-bold">
-                                                <label htmlFor="name-lname">ชื่อ - นามสกุล</label>
+                                            <div className="col-lg-12 font-weight-bold">
+                                                <label className="mt-2" htmlFor="name-lname">ชื่อ - นามสกุล</label>
                                                 <input type="text" className="custome-form" id="name-lname" />
                                             </div>
-                                        </div>
-                                        <div className="row mx-auto mt-2">
-                                            <div className="col-12 font-weight-bold">
-                                                <label htmlFor="address">ที่อยู่จัดส่ง</label>
+                                            <div className="col-lg-12 font-weight-bold">
+                                                <label className="mt-2" htmlFor="address">ที่อยู่จัดส่ง</label>
                                                 <input type="text" className="custome-form" id="address" placeholder="เลขที่บ้าน หมู่บ้าน คอนโด ชื่อถนน" />
                                             </div>
                                         </div>
@@ -59,12 +61,11 @@ class CardAddress extends Component {
                                             <div className="col-lg-6 mt-2">
                                                 <input type="text" className="custome-form-children" id="Address" placeholder="รหัสไปรษณีย์" />
                                             </div>
+
                                         </div>
-                                        <div className="row mx-auto mt-2">
-                                            <div className="col-12 font-weight-bold">
-                                                <label htmlFor="tel">เบอร์ติดต่อ</label>
-                                                <input type="text" className="custome-form" id="tel" pattern="[0-9]*" onInput={this.handleChange.bind(this)} value={this.state.telephon} />
-                                            </div>
+                                        <div className="col-lg-12 font-weight-bold">
+                                            <label className="mt-2" htmlFor="tel">เบอร์ติดต่อ</label>
+                                            <input type="text" className="custome-form" id="tel" pattern="[0-9]*" onChange={this.handleChange.bind(this)} value={this.state.telephon}/>
                                         </div>
                                     </div>
                                     <div className="col-12">

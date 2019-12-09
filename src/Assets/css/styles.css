@@ -432,7 +432,15 @@ body,html {
 .colorButtonMyCart .btn-secondary:hover{
     background: #f78ac2;
 }
-
+.wrapper-img{
+    position: relative;
+    padding-bottom: 106px;
+    overflow: hidden;
+}
+.wrapper-img img{
+    position: absolute;
+    max-width: 81px !important;
+}
 /*Address*/
 .btn-color-pink-Address {
     display: inline-block;
@@ -445,9 +453,7 @@ body,html {
 .text-pink{
     color: #e16faa !important;
 }
-.left-margin{
-    margin-left: 20% !important;
-}
+
 
 /*Responsive Media Query*/
 
@@ -493,6 +499,16 @@ body,html {
         background-color: #ffffff;
     }  
     
+}
+/*Confirm*/
+.text-confirm{
+    font-size: 24px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.14px;
+  color: #333333;
 }
 /* Small devices (landscape phones, less than 768px)*/
 @media (max-width: 767.98px) { 

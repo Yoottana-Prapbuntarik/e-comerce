@@ -20,7 +20,7 @@ class Mycart extends Component {
                 <div className="mt-5">
                     <Cart dataProduct={this.props.addedItems} AllPrice={this.props.allCost} DeleteProduct={this.DeleteItem}/>
                 </div>
-                <div className="container mt-5">
+                <div className="container">
                     <div className="row colorButtonMyCart">
                         <div className="col-md-6 py-3 col-12">
                             <NavLink to="/Product">

@@ -4,11 +4,11 @@ import trick from '../Assets/images/icon/tick.png';
 class BarStatus extends Component {
     render() {
         let { status, indexStatus } = this.props;
-        let CircleNumberBox, TextBoxStatus;
-        CircleNumberBox = { boxShadow: '-1px 20px 5px 25px #fff' };
-        TextBoxStatus = { boxShadow: '-1px 50px 5px 25px #fff' };
+        let backgroundWhiteAndShadow, backgroundWhiteUnderNumber;
+        backgroundWhiteAndShadow = { boxShadow: '-1px 20px 1px 14.8px #fff', background: '#fff' };
+        backgroundWhiteUnderNumber = { background: '#fff', paddingLeft: '17px' }
         return (
-            <div className="row text-center">
+            <div className="row">
                 <div className="container-fluid left-margin">
                     <div className="row">
                         <div className="lineStatus"></div>
@@ -17,33 +17,22 @@ class BarStatus extends Component {
                                 {status === 'Address' ?
                                     (
                                         <React.Fragment>
-                                            <div className="col-6 col-12">
+                                            <div className="mr-3" style={backgroundWhiteUnderNumber}>
+                                                <span className="circleBoxPink" >1</span>
                                             </div>
-                                            <div className="mr-3">
-                                                <span className="circleBox" style={CircleNumberBox}>1</span>
-                                            </div>
-                                            <div classNam="col-6 col-12" ><span className="textfill " style={TextBoxStatus}>การส่งสินค้า</span></div>
+                                            <div style={backgroundWhiteAndShadow} ><span className="textfill">การส่งสินค้า</span></div>
                                         </React.Fragment>
-                                    ) : indexStatus > 1?
+                                    ) : indexStatus > 1 ?
                                         (
                                             <React.Fragment>
-                                                <div className="col-6 col-12"></div>
-                                                <div className="mr-3">
-                                                    <span className="borderCirclePink  text-pink" style={CircleNumberBox}>
-                                                        <img  src={trick}  width="12px" alt="icon trick"/>
-                                                        </span>
+                                                <div className="mr-3" style={backgroundWhiteUnderNumber}>
+                                                    <span className="borderCirclePink  text-pink">
+                                                        <img className="d-inline-block ml-1" src={trick} width="14px" alt="icon trick" />
+                                                    </span>
                                                 </div>
-                                                <div classNam="col-6 col-12"><span className="textfill" style={TextBoxStatus}>การส่งสินค้า</span></div>
+                                                <div style={backgroundWhiteAndShadow}><span className="textfill">การส่งสินค้า</span></div>
                                             </React.Fragment>
-                                        ) : (
-                                            <React.Fragment>
-                                                <div className="col-6 col-12"></div>
-                                                <div className="mr-3">
-                                                    <span className="borderCircleAlpha" style={CircleNumberBox}>1</span>
-                                                </div>
-                                                <div classNam="col-6 col-12"><span className="bg-white textAlpha" style={TextBoxStatus}>การส่งสินค้า</span></div>
-                                            </React.Fragment>
-                                        )
+                                        ) : ('')
                                 }
                             </div>
                         </div>
@@ -53,33 +42,30 @@ class BarStatus extends Component {
                                 {status === 'Confirm' ?
                                     (
                                         <React.Fragment>
-                                            <div className="col-6 col-12"></div>
-                                            <div className="mr-3">
-                                                <span className="circleBox" style={CircleNumberBox}>2</span>
+                                            <div className="mr-3" style={backgroundWhiteUnderNumber}>
+                                                <span className="circleBoxPink">2</span>
                                             </div>
-                                            <div classNam="col-6 col-12" ><span className="textfill " style={{ TextBoxStatus }}>ตรวจสอบรายการสั่งซื้อ</span></div>
+                                            <div style={backgroundWhiteAndShadow}><span className="textfill ">ตรวจสอบรายการสั่งซื้อ</span></div>
                                         </React.Fragment>
                                     ) :
                                     indexStatus > 2 ?
                                         (
                                             <React.Fragment>
-                                                <div className="col-6 col-12"></div>
-                                                <div className="mr-3">
-                                                    <span className="borderCirclePink text-pink" style={CircleNumberBox}>
-                                                        <img  src={trick}  width="12px" alt="icon trick"/>
-                                                        </span>
+                                                <div className="mr-3" style={backgroundWhiteUnderNumber}>
+                                                    <span className="borderCirclePink text-pink" >
+                                                    <img className="d-inline-block ml-1" src={trick} width="14px" alt="icon trick" />
+                                                    </span>
                                                 </div>
-                                                <div classNam="col-6 col-12"><span className="textfill" style={TextBoxStatus}>การส่งสินค้า</span></div>
+                                                <div style={backgroundWhiteAndShadow}><span className="textfill" >ตรวจสอบรายการสั่งซื้อ</span></div>
                                             </React.Fragment>
                                         ) : (
-                                                <React.Fragment>
-                                                    <div className="col-6 col-12"></div>
-                                                    <div className="mr-3">
-                                                        <span className="borderCircleAlpha textAlpha" style={CircleNumberBox}>2</span>
-                                                    </div>
-                                                    <div classNam="col-6 col-12" ><span className="textAlpha bg-white " style={{ TextBoxStatus }}>ตรวจสอบรายการสั่งซื้อ</span></div>
-                                                </React.Fragment>
-                                            )
+                                            <React.Fragment>
+                                                <div className="mr-3" style={backgroundWhiteUnderNumber}>
+                                                    <span className="borderCircleAlpha textAlpha">2</span>
+                                                </div>
+                                                <div style={backgroundWhiteAndShadow}><span className="textAlpha bg-white ">ตรวจสอบรายการสั่งซื้อ</span></div>
+                                            </React.Fragment>
+                                        )
 
                                 }
                             </div>
@@ -89,19 +75,17 @@ class BarStatus extends Component {
                                 {status === 'Booking' ?
                                     (
                                         <React.Fragment>
-                                            <div className="col-6 col-12"></div>
-                                            <div className="mr-3">
-                                                <span className="circleBox" style={CircleNumberBox}>3</span>
+                                            <div className="mr-3" style={backgroundWhiteUnderNumber}>
+                                                <span className="circleBoxPink">3</span>
                                             </div>
-                                            <div classNam="col-6 col-12 bg-white"><span className="textfill" style={{ boxShadow: '-1px 50px 5px 25px #fff' }}>คำสั่งซื้อเรียบร้อย</span></div>
+                                            <div style={backgroundWhiteAndShadow}><span className="textfill">คำสั่งซื้อเรียบร้อย</span></div>
                                         </React.Fragment>
                                     ) : (
                                         <React.Fragment>
-                                            <div className="col-6 col-12"></div>
-                                            <div className="mr-3">
-                                                <span className="borderCircleAlpha textAlpha" style={CircleNumberBox}>3</span>
+                                            <div className="mr-3"  style={backgroundWhiteUnderNumber}>
+                                                <span className="borderCircleAlpha textAlpha">3</span>
                                             </div>
-                                            <div classNam="col-6 col-12"><span className="textAlpha bg-white" style={{ boxShadow: '-1px 50px 5px 25px #fff' }}>คำสั่งซื้อเรียบร้อย</span></div>
+                                            <div style={backgroundWhiteAndShadow} ><span className="textAlpha bg-white">คำสั่งซื้อเรียบร้อย</span></div>
                                         </React.Fragment>
                                     )
                                 }
@@ -113,5 +97,4 @@ class BarStatus extends Component {
         )
     }
 }
-
 export default BarStatus;

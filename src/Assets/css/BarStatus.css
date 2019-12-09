@@ -1,5 +1,7 @@
-      
-   .lineStatus {
+.left-margin{
+    margin-left: 16% !important;
+}      
+.lineStatus {
        position: relative;
         display: inline-block;
         background: #ececec;
@@ -8,12 +10,12 @@
         z-index: -1;
         top: 14px;
     }
-    .barbox{
+.barbox{
         position: relative;
         background: #fff;
         width:10px;
     }
-.circleBox{
+.circleBoxPink{
     background: #e070aa;
     padding: 1px;
     width: 25px;
@@ -82,12 +84,12 @@
 @media (max-width: 767.98px) { 
             .textfill{
                 color: #e070aa !important;
-                font-size: 11px;
+                font-size: 15px;
                 font-weight:bold ;
             }
             .textAlpha{
                  color: #c7c7cc;
-                font-size: 10px;
+                font-size: 15px;
                 font-weight:bold !important;
                 text-align: center;
             }
@@ -96,12 +98,12 @@
 @media (max-width: 575.98px) { 
             .textfill{
                 color: #e070aa !important;
-                font-size: 12px;
+                font-size: 15px;
                 font-weight:bold ;
             }
             .textAlpha{
                 color: #c7c7cc;
-                font-size: 12px;
+                font-size: 15px;
                 font-weight:bold !important;
                 text-align: center;
             }
