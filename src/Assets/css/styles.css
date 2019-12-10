@@ -375,7 +375,8 @@ body,html {
 /* search */
 .search{
     position: absolute;
-    top: 80px;
+    /* top: 80px; */
+    top: 60px;
     right: 45px;
     z-index: 100 !important;
 }
@@ -384,7 +385,7 @@ body,html {
     width: 340px !important;
     padding-top: 20px;
     right: 62px;
-    top: 62px;
+    top: 102px;;
     height: 131.4px;
     box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
@@ -582,7 +583,8 @@ body,html {
     /* search */
     .search {
         position: absolute;
-        top: 80px !important;
+        /* top: 80px !important; */
+        top: 60px;
         right: 43px !important;
         z-index: 100 !important;
     }
