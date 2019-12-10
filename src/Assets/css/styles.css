@@ -35,8 +35,8 @@ body,html {
     margin-top: 205px;
 }
 .MarginTopClassIII {
-    margin-top: 100px;
-    margin-bottom: 45px;
+    margin-top: 90px;
+    margin-bottom: 38px;
 }
 
 /* Navbar */
@@ -139,15 +139,16 @@ body,html {
 /* ProductSlider */
 .ProductDetail h3{
     max-width: 600px;
+    margin-bottom: 50px;
     width: 584px;
     height: 54px;
-  font-size: 40px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.35;
-  letter-spacing: -0.24px;
-  color: #333333;
+    font-size: 40px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.35;
+    letter-spacing: -0.24px;
+    color: #333333;
 }
 .ProductDetail > h3 .text-secondary{
     color:#c7c7cc !important;

@@ -16,11 +16,18 @@ class CartHover extends Component {
                                     dataProduct.map((dataProducts, i) => {
                                         return (
                                             <React.Fragment key={i}>
-                                                <div className="col-4 mt-2">
-                                                    <img src={dataProducts === undefined ? '' : dataProducts.img} width="50px" alt="img-product" />
+                                                <div className="col-8  mt-2">
+                                                    <div className="container">
+                                                        <div className="row">
+                                                            <div className="col-2">
+                                                            <img src={dataProducts === undefined ? '' : dataProducts.img} width="50px" alt="img-product" />
+                                                           </div>
+                                                            <div className="col-10 text-center mt-4"><span className="font-weight-bold"> {dataProducts === undefined ? '' : dataProducts.name}</span> </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div className="col-4 mt-2 py-4"><span className="font-weight-bold"> X{dataProducts === undefined ? '' : dataProducts.amount}</span> </div>
-                                                <div className="col-4 mt-2 py-4"><span className="font-weight-bold"> {dataProducts === undefined ? '' : dataProducts.cost.toLocaleString()}</span> </div>
+                                                <div className="col-2  mt-2 py-4"><span className="font-weight-bold"> X{dataProducts === undefined ? '' : dataProducts.amount}</span> </div>
+                                                <div className="col-2  mt-2 py-4"><span className="font-weight-bold"> {dataProducts === undefined ? '' : dataProducts.cost.toLocaleString()}</span> </div>
                                             </React.Fragment>
                                         )
                                     })
