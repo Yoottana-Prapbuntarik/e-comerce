@@ -55,7 +55,7 @@ class ProductDetail extends Component {
     }
     handleChangeAmount = (e) => {
         let eventAmout = parseInt(e.target.value);
-        if (eventAmout === 0) {
+        if (eventAmout === 0 ) {
             this.setState({ amount: 1 })
         } else {
             this.setState({ amount: eventAmout })
@@ -160,7 +160,7 @@ class ProductDetail extends Component {
                                                         </li>
                                                         <li className="d-inline customInputBox">
                                                             {/* {this.state.amount} */}
-                                                            <input className="inputBox" placeholder={this.state.amount} onChange={this.handleChangeAmount} />
+                                                            <input type="number" className="inputBox" placeholder={this.state.amount} onChange={this.handleChangeAmount} />
                                                         </li>
                                                         <li className="d-inline ml-4">
                                                             <button className="btn btn-plus btn-color-pink" onClick={this.HandlePlusAmount}>
@@ -170,7 +170,7 @@ class ProductDetail extends Component {
                                                     </ul>
                                                     <ul className="list-amount mt-5">
                                                         <li className="d-inline ">
-                                                            <NavLink to="/Mycart" className="btn btn-amount text-white w-75" onClick={this.addItemToCart}>
+                                                            <NavLink to="/Mycart" className="btn btn-amount text-white weight-button-addcart" onClick={this.addItemToCart}>
                                                                 <div className="py-2">
                                                                     <FontAwesomeIcon icon={faShoppingCart} /> หยิบใส่ตระกร้า
                                                                 </div>

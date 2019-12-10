@@ -57,18 +57,12 @@ class NavigationBar extends Component {
         })
     }
     render() {
-        let eventScroll = { padding: '1.25rem 1rem' }
-        if (this.props.detectScroll > 0) {
-            eventScroll = {
-                transition: '0.5s',
-                padding: ' 0.6rem 1rem'
-            }
-        }
+
         return (
             <React.Fragment>
                 <div className="container">
                     <div className="row">
-                        <Navbar style={eventScroll} className="text-center  alpha  fixed-top" light expand="lg">
+                        <Navbar className="text-center  alpha  fixed-top" light expand="lg">
                             <NavLink className="navbar-brand" to="/">
                                 <img src={mainLogo} className="logo" alt="logo" />
                             </NavLink>
@@ -106,16 +100,16 @@ class NavigationBar extends Component {
                                             </NavLink>
                                         </NavItem>
                                         <NavItem className="cart-nav navbarLink">
-                                            <NavLink to="/Mycart" onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
+                                            <NavLink className="d-block" to="/Mycart" onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
                                                 <FontAwesomeIcon icon={faShoppingCart} />
-                                                &nbsp;&nbsp; {this.props.addedItems.length > 0 ? <span>({this.props.addedItems.length})</span> : <span>(0)</span>}
+                                                &nbsp;&nbsp; {this.props.addedItems.length > 0 ? <span>({this.props.addedItems.length})</span>:<span>(0)</span>}
                                             </NavLink>
                                         </NavItem>
                                     </Nav>
-                                    <div className="container">
-                                        {this.state.search === true && <SearchBox />}
-                                    </div>
                                 </div>
+                                   
+                                          
+                                                {this.state.search === true && <SearchBox />}
                             </Collapse>
                         </Navbar>
                     </div>
