@@ -55,7 +55,7 @@ class ProductDetail extends Component {
     }
     handleChangeAmount = (e) => {
         let eventAmout = parseInt(e.target.value);
-        if (eventAmout === 0 ) {
+        if (eventAmout <= 0 || isNaN(eventAmout)) {
             this.setState({ amount: 1 })
         } else {
             this.setState({ amount: eventAmout })
