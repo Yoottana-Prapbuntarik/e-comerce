@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import '../Assets/css/Purchase.css';
+import '../Assets/css/Profile.css';
 import { connect } from 'react-redux';
 import Member from './Member'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/fontawesome-free-solid';
 class Profile extends Component {
     constructor(props) {
         super(props)
@@ -52,7 +53,7 @@ class Profile extends Component {
 
         })
     }
-    handleChangeDate = (e) =>{
+    handleChangeDate = (e) => {
         this.setState({
             date: e.target.value
         })
@@ -60,7 +61,7 @@ class Profile extends Component {
     render() {
         return (
             <Member>
-                <div className="container ">
+                <div className="container mb-4">
                     <div className="row">
                         <div className="col-md-12 mt-5 col-12">
                             <h3 className="font-weight-bold">บัญชีของฉัน</h3>
@@ -108,7 +109,7 @@ class Profile extends Component {
                             </h5>
                         </div>
                         <div className="col-12 my-5 text-left">
-                            <button className="btn btn-colorPink w-25" onClick={this.handleChangeProfile}>
+                            <button className="btn btn-colorPink" onClick={this.handleChangeProfile}>
                                 แก้ไข
                             </button>
                         </div>
@@ -118,7 +119,7 @@ class Profile extends Component {
                              </h5>
                         </div>
                         <div className="col-12 my-3 text-left">
-                            <button className="btn btn-colorPink w-25" onClick={this.handleChangePassword}>
+                            <button className="btn btn-colorPink" onClick={this.handleChangePassword}>
                                 เปลี่ยนรหัสผ่าน
                             </button>
                         </div>
@@ -126,32 +127,44 @@ class Profile extends Component {
                 </div>
                 {this.state.isClickChangePassword && <div className="container">
                     <div className="row">
-                        <div className="col-12 boxDialog">
+                        <div className="col-12 boxChangePassword">
                             <div className="container">
                                 <div className="row">
                                     <div className="col-12 font-weight-bold py-5">
                                         <div className="container">
-                                            <div className="row mb-5">
-                                                <div className="form-group col-10 text-left ">
-                                                    <label htmlFor="oldpassword">รหัสผ่านเดิม</label>
-                                                    <input type="password" className="form-control" id="oldpassword" />
+                                            <div className="row">
+                                                <div className="col-6 title">
+                                                    เปลี่ยนรหัสผ่าน
                                                 </div>
-                                                <div className="form-group col-10 text-left">
-                                                    <label htmlFor="newpassword">ใส่รหัสผ่านใหม่</label>
-                                                    <input type="password" className="form-control" id="newpassword" />
+                                                <div className="col-6 text-right">
+                                                    <FontAwesomeIcon className="bg-symbol" icon={faTimes} size="2x" onClick={this.handleChangePassword}/>
                                                 </div>
-                                                <div className="form-group col-10 text-left" >
-                                                    <label htmlFor="newpasswordagain">ยืนยันรหัสผ่านใหม่</label>
-                                                    <input type="password" className="form-control" id="newpasswordagain" />
-                                                </div>
-                                                <div className="container ">
-                                                    <div className="row">
-                                                        <div className="col-6 text-right ">
-                                                            <button className="btn  w-100 text-pink border-pink mt-3" onClick={this.handleChangePassword}>ยกเลิก</button>
+                                                <div className="underline my-3"></div>
+                                            </div>
+                                            <div className="container">
+                                                <div className="row my-3  field">
+                                                    <div className="form-group col-12">
+                                                        <label className="text-left" htmlFor="oldpassword">รหัสผ่านเดิม</label>
+                                                        <input type="password " className="form-control" id="oldpassword" />
+                                                    </div>
+                                                    <div className="form-group col-12 ">
+                                                        <label className="text-left" htmlFor="newpassword">ใส่รหัสผ่านใหม่</label>
+                                                        <input type="password" className="form-control" id="newpassword" />
+                                                    </div>
+                                                    <div className="form-group col-12 " >
+                                                        <label className="text-left" htmlFor="newpasswordagain">ยืนยันรหัสผ่านใหม่</label>
+                                                        <input type="password" className="form-control" id="newpasswordagain" />
+                                                    </div>
+                                                    <div className="container">
+                                                        <div className="row">
+                                                            <div className="underline mt-2"></div>
                                                         </div>
-                                                        <div className="col-6 text-right">
-                                                            <button className="btn buttonDialog w-100 mt-3" onClick={this.handleSubmit}>เปลี่ยน</button>
-                                                        </div>
+                                                        <div className="row">
+                                                            <div className="col-12  text-right">
+                                                                <button className="btn buttonCalcel text-pink border-pink mt-3" onClick={this.handleChangePassword}>ยกเลิก</button>
+                                                                <button className="btn buttonChange mt-3" onClick={this.handleSubmit}>เปลี่ยน</button>
+                                                            </div>
+                                                            </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -172,28 +185,28 @@ class Profile extends Component {
                                     <div className="col-12 font-weight-bold py-5">
                                         <div className="container">
                                             <div className="row mb-5">
-                                                <div className="form-group col-6 text-left ">
+                                                <div className="form-group col-lg-6 col-12 text-left ">
                                                     <label htmlFor="name">ชื่อ</label>
                                                     <input type="text" className="form-control" id="name" onChange={this.handleChangeName} />
                                                 </div>
-                                                <div className="form-group col-6 text-left">
+                                                <div className="form-group col-lg-6 col-12 text-left">
                                                     <label htmlFor="lname">นามสกุล</label>
                                                     <input type="text" className="form-control" id="lname" onChange={this.handleChangeLastName} />
                                                 </div>
-                                                <div className="form-group col-6 text-left" >
+                                                <div className="form-group col-lg-6 col-12 text-left" >
                                                     <label htmlFor="gender">เพศ</label>
                                                     <input type="text" className="form-control" id="gender" onChange={this.handleChangeGender} />
                                                 </div>
-                                                <div className="form-group col-6 text-left" >
+                                                <div className="form-group col-lg-6 col-12 text-left" >
                                                     <label htmlFor="date">วันเกิด</label>
                                                     <input type="text" className="form-control" id="date" onChange={this.handleChangeDate} />
                                                 </div>
                                                 <div className="container ">
                                                     <div className="row">
-                                                        <div className="col-6 text-right ">
+                                                        <div className="col-lg-6  text-right ">
                                                             <button className="btn  w-100 text-pink border-pink mt-3" onClick={this.handleChangeProfile}>ยกเลิก</button>
                                                         </div>
-                                                        <div className="col-6 text-right">
+                                                        <div className="col-lg-6 text-right">
                                                             <button className="btn buttonDialog w-100 mt-3" onClick={this.handleSubmit}>เปลี่ยนข้อมูล</button>
                                                         </div>
                                                     </div>

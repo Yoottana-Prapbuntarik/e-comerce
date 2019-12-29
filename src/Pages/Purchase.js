@@ -17,7 +17,7 @@ class Purchase extends Component {
                     <div className="col-md-12 mt-5 col-12">
                             <h3 className="font-weight-bold">รายการสั่งซื้อ</h3>          
                         </div>
-                        <div className="col-md-12 mt-5 col-12">
+                        <div className="col-md-12 mt-3 col-12">
                         <HeaderPuchase/>
                         </div>
                     </div>
