@@ -1,0 +1,21 @@
+.Text{
+    font-family: SukhumvitSet;
+    font-size: 40px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.24px;
+    color: #888888;
+}
+.btnAddAddress{
+    width: 300px;
+    height: 50px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    background-color: #e070aa !important;
+    color: #fff !important;
+}
+.iconCar{
+    color: #c7c7cc;
+}
