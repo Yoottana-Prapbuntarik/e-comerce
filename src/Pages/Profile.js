@@ -145,7 +145,7 @@ class Profile extends Component {
                                                 <div className="row my-3  field">
                                                     <div className="form-group col-12">
                                                         <label className="text-left" htmlFor="oldpassword">รหัสผ่านเดิม</label>
-                                                        <input type="password " className="form-control" id="oldpassword" />
+                                                        <input type="password" className="form-control" id="oldpassword" />
                                                     </div>
                                                     <div className="form-group col-12 ">
                                                         <label className="text-left" htmlFor="newpassword">ใส่รหัสผ่านใหม่</label>

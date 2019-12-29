@@ -17,6 +17,7 @@ import ConfirmPayment from './Pages/ConfirmPayment';
 import PurchaseLog from './Pages/PurchaseLog';
 import Purchase from './Pages/Purchase';
 import Profile from './Pages/Profile';
+import ManageMemberAddress from './Pages/ManageMemberAddress';
 import Footer from './Components/Footer';
 
 class App extends Component {
@@ -75,6 +76,7 @@ class App extends Component {
               <Route  path="/Purchase" component={Purchase} />
               <Route  path="/PurchaseLog" component={PurchaseLog} />
               <Route  path="/Profile" component={Profile} />
+              <Route  path="/MyAddress" component={ManageMemberAddress} />
               <Route component={NotFound} />
             </Switch>
           </div>
