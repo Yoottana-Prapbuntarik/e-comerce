@@ -5,6 +5,7 @@ import { faShippingFast } from '@fortawesome/fontawesome-free-solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../Assets/css/ManageMemberAddress.css';
 import FormAddress from '../Components/FormAddress';
+import AddedAddress from '../Components/AddedAddress';
 class ManageMemberAddress extends Component {
     constructor(props) {
         super(props)
@@ -47,14 +48,13 @@ class ManageMemberAddress extends Component {
                                     <div className="col-12    pt-3">
                                         {this.state.nameAnaLastName && this.state.address && this.state.tel != null ?
                                         <div>
-                                        {this.state.nameAnaLastName} <br/>
-                                        {this.state.address} <br/>
-                                        {this.state.tel}
+                                        <AddedAddress nameAnaLastName={this.state.nameAnaLastName} address={this.state.address} tel={this.state.tel}/>
                                         </div>:
                                         <p className="Text">ไม่มีข้อมูลที่อยู่</p>
                                         }
                                     </div>
-                                    <div className="col-12 ">
+                                    <div className={ `col-12  ${this.state.nameAnaLastName 
+                                        && this.state.address && this.state.tel !== null && "text-left"}`}>
                                         <button className="btn btnAddAddress" onClick={this.handleClickAddAddress}>เพิ่มที่อยู่</button>
                                     </div>
                                 </div>
