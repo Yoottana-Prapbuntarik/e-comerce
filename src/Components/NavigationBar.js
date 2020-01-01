@@ -16,6 +16,7 @@ class NavigationBar extends Component {
             scrolling: false,
             isHover: "none",
             search: false,
+            isLogin:false
         }
         this.closeNav = this.closeNav.bind(this);
         this.toggle = this.toggle.bind(this);
@@ -23,21 +24,21 @@ class NavigationBar extends Component {
         this.mouseLeave = this.mouseLeave.bind(this);
         this.HandleSearch = this.HandleSearch.bind(this);
     }
-    toggle() {
+    toggle = () => {
         this.setState({
             isOpen: !this.state.isOpen
         })
     }
-    closeNav() {
+    closeNav = () => {
         this.setState({
             isOpen: false,
         })
     }
-    mouseEnter() {
+    mouseEnter = () => {
         this.setState({ isHover: "block" })
     }
 
-    mouseLeave() {
+    mouseLeave = () => {
         setTimeout(
             function () {
                 this.setState({ isHover: "none" })
@@ -47,7 +48,7 @@ class NavigationBar extends Component {
             3000
         );
     }
-    HandleSearch() {
+    HandleSearch = () => {
         let currentPath = window.location.pathname;
         if (currentPath !== "/") {
             window.location.href = "/";
@@ -56,13 +57,21 @@ class NavigationBar extends Component {
             search: !this.state.search
         })
     }
+    HandleLogin =() =>{
+        window.scrollTo({top: 0})
+        this.closeNav();
+        this.props.HandleLogin(this.state.isLogin);
+        this.setState({
+            isLogin: ! this.state.isLogin,
+        })
+    }
     render() {
 
         return (
             <React.Fragment>
                 <div className="container">
                     <div className="row">
-                        <Navbar className="text-center  alpha  fixed-top" light expand="lg">
+                        <Navbar  className="text-center  alpha  fixed-top" light expand="lg">
                             <NavLink className="navbar-brand" to="/">
                                 <img src={mainLogo} className="logo" alt="logo" />
                             </NavLink>
@@ -88,28 +97,28 @@ class NavigationBar extends Component {
                                 </div>
                                 <div className=" ml-auto">
                                     <Nav navbar>
-                                        <NavItem className="navbarLink">
-                                            <NavLink to="/" onClick={this.closeNav} >สวัสดี Thanyaporn
-                                            &nbsp; <FontAwesomeIcon icon={faAngleDown} />
+                                        <NavItem className="navbarLink"  onClick={this.HandleLogin}>
+                                            <NavLink to="#" >สวัสดี Thanyaporn
+                                            &nbsp; <FontAwesomeIcon icon={faAngleDown}  />
                                             </NavLink>
                                         </NavItem>
                                         <div className="hrVertical"></div>
                                         <NavItem className="navbarLink">
-                                            <NavLink to="/">
+                                            <NavLink to="#">
                                                 <FontAwesomeIcon icon={faSearch} onClick={this.HandleSearch} />
                                             </NavLink>
                                         </NavItem>
                                         <NavItem className="cart-nav navbarLink">
                                             <NavLink className="d-block" to="/Mycart" onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
                                                 <FontAwesomeIcon icon={faShoppingCart} />
-                                                &nbsp;&nbsp; {this.props.addedItems.length > 0 ? <span>({this.props.addedItems.length})</span>:<span>(0)</span>}
+                                                &nbsp;&nbsp; {this.props.addedItems.length > 0 ? <span>({this.props.addedItems.length})</span> : <span>(0)</span>}
                                             </NavLink>
                                         </NavItem>
                                     </Nav>
                                 </div>
-                                   
-                                          
-                                                {this.state.search === true && <SearchBox />}
+
+
+                                {this.state.search === true && <SearchBox />}
                             </Collapse>
                         </Navbar>
                     </div>
@@ -122,8 +131,19 @@ class NavigationBar extends Component {
 const mapStateToProps = (state) => {
     return {
         addedItems: state.addedItems,
-        allCost: state.allCost
-
+        allCost: state.allCost,
+        isLogin: state.isLogin
     }
 }
-export default connect(mapStateToProps)(NavigationBar);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        HandleLogin: (isLogin) => {
+            dispatch({
+                type: "Login",
+                payload: isLogin
+            })
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavigationBar);

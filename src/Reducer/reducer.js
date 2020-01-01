@@ -2,7 +2,8 @@ const initState = {
     addedItems: [],
     allCost: 0,
     itemsSearch: [],
-    UserSearch: ""
+    UserSearch: "",
+    isLogin:null
 
 }
 const CartReducer = (state = initState, action) => {
@@ -27,10 +28,10 @@ const CartReducer = (state = initState, action) => {
                 ...state,
                 UserSearch: state.UserSearch = action.payload
             }
-        case 'DeleteItem':
-            return {
+        case 'Login':
+            return{
                 ...state,
-
+                isLogin:state.isLogin = action.payload
             }
         case 'Total':
             return {

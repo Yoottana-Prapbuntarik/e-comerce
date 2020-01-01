@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Navbar from './Components/NavigationBar';
 import NotFound from './Pages/NotFound';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
@@ -19,6 +20,7 @@ import Purchase from './Pages/Purchase';
 import Profile from './Pages/Profile';
 import ManageMemberAddress from './Pages/ManageMemberAddress';
 import Footer from './Components/Footer';
+import Login from './Components/Login';
 
 class App extends Component {
   constructor(props) {
@@ -51,14 +53,15 @@ class App extends Component {
       valueScroll: window.scrollY / 3 - 60
     })
   }
-
+  
   render() {
-
+    
     return (
       <div>
         <BrowserRouter>
           <div>
-            <Navbar detectScroll={this.state.valueScroll}/>
+            <Navbar detectScroll={this.state.valueScroll} />
+            {this.props.isLogin && <Login/>}
             <Switch>
               {/* path in your website */}
               <Route exact path="/" component={Home} />
@@ -67,27 +70,33 @@ class App extends Component {
               <Route path="/News" component={News} />
               <Route path="/Promotion" component={Promotion} />
               <Route path="/ResultsSearch" component={ResultsSearch} />
-              <Route  path="/ProductDetail/:id" component={ProductDetail} />
-              <Route  path="/Address" component={Address} />
-              <Route  path="/Confirm" component={Confirm} />
-              <Route  path="/Booking" component={Booking} />
-              <Route  path="/Member" component={Member} />
-              <Route  path="/ConfirmPayment" component={ConfirmPayment} />
-              <Route  path="/Purchase" component={Purchase} />
-              <Route  path="/PurchaseLog" component={PurchaseLog} />
-              <Route  path="/Profile" component={Profile} />
-              <Route  path="/MyAddress" component={ManageMemberAddress} />
+              <Route path="/ProductDetail/:id" component={ProductDetail} />
+              <Route path="/Address" component={Address} />
+              <Route path="/Confirm" component={Confirm} />
+              <Route path="/Booking" component={Booking} />
+              <Route path="/Member" component={Member} />
+              <Route path="/ConfirmPayment" component={ConfirmPayment} />
+              <Route path="/Purchase" component={Purchase} />
+              <Route path="/PurchaseLog" component={PurchaseLog} />
+              <Route path="/Profile" component={Profile} />
+              <Route path="/MyAddress" component={ManageMemberAddress} />
               <Route component={NotFound} />
             </Switch>
           </div>
         </BrowserRouter>
         {
-          this.state.valueScroll > 200 &&
-        <Footer/>
+          this.state.valueScroll > 300 &&
+          <Footer />
         }
       </div >
     )
   }
 }
 
-export default App
+const mapStateToProps = (state) => {
+  return {
+    isLogin: state.isLogin
+  }
+}
+
+export default connect(mapStateToProps)(App);

@@ -36,6 +36,17 @@ class News extends Component {
         })
     }
     render() {
+        let pagination = [];
+        let NumberPage;
+        for (let i = 16; i < 96; i++) {
+            if (i % 16 === 0) {
+                NumberPage = i / 16;
+                pagination.push(
+                    <li className="page-item ml-2 ">
+                        <button className="page-link border-page-link  text-dark" value={NumberPage} onClick={this.HandlePage}>{NumberPage}</button>
+                    </li>);
+            }
+        }
         return (
             <React.Fragment>
                 <div className="container-fluid">
@@ -91,20 +102,7 @@ class News extends Component {
                                             <span aria-hidden="true">{"<"}</span>
                                         </button>
                                     </li>
-                                    <li className="page-item ml-2 ">
-                                        <button className="page-link border-page-link  text-dark" value={1} onClick={this.HandlePage}>1</button></li>
-                                    <li className="page-item ml-2">
-                                        <button className="page-link border-page-link  text-dark" value={2} onClick={this.HandlePage}>2</button>
-                                    </li>
-                                    <li className="page-item ml-2">
-                                        <button className="page-link border-page-link  text-dark" value={3} onClick={this.HandlePage}>3</button>
-                                    </li>
-                                    <li className="page-item ml-2">
-                                        <button className="page-link border-page-link  text-dark" value={4} onClick={this.HandlePage}>4</button>
-                                    </li>
-                                    <li className="page-item ml-2">
-                                        <button className="page-link border-page-link  text-dark" value={5} onClick={this.HandlePage}>5</button>
-                                    </li>
+                                    {pagination}
                                     <li className="page-item ml-2">
                                         <button className="page-link border-page-link text-dark" href="#" aria-label="Next" onClick={this.onclick.bind(this, 'add')}>
                                             <span aria-hidden="true">{">"}</span>
@@ -114,7 +112,6 @@ class News extends Component {
                             </nav>
                         </div>
                     </div>
-
                 </div>
             </React.Fragment>
         )

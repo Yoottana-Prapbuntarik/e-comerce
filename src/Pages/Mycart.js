@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
 import Cart from '../Components/Cart';
-import { NavLink } from 'react-router-dom';
+import { NavLink ,Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingBag } from '@fortawesome/fontawesome-free-solid';
 class Mycart extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            itemNotNull : false
+        }
+    }
     render() {
+        const { itemNotNull } = this.state;
+
+        if (itemNotNull) {
+          return <Redirect to='/Address'/>;
+        }
         return (
             <div>
                 <div className="container  mt-5">
@@ -31,7 +42,7 @@ class Mycart extends Component {
                             <a href="/">ล้างตะกร้า</a>
                         </div>
                         <div className="col-md-3  py-3 col-12 colorButtonMyCart ">
-                            <NavLink className="btn btn-secondary w-100" to={`/Address`}>ดำเนินการต่อ</NavLink>
+                            <button className="btn btn-secondary w-100" disabled={this.props.addedItems.length !== 0 ? false : true} onClick={()=>this.setState({itemNotNull:!itemNotNull})}>ดำเนินการต่อ</button>
                         </div>
                     </div>
                 </div>
