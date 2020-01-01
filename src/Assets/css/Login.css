@@ -35,7 +35,7 @@
     height: 1px;
     background-color: #ececec;
 }
-.col-12  input {
+.inputDataMember input {
     width: 350px;
     display: block;
     height: 50px;
@@ -81,7 +81,7 @@
     }
 }
 @media (max-width: 575.98px) {
-    .col-12  input {
+    .inputDataMember input {
         width: 175px;
         display: block;
         height: 25px;

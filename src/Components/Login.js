@@ -27,10 +27,10 @@ class Login extends Component {
                                             <FontAwesomeIcon icon={faTimes} size="2x"/>
                                         </div>
                                         <div className="underline mb-3"></div>
-                                        <div className="col-12">
+                                        <div className="col-12 inputDataMember">
                                             <input type="text" />
                                         </div>
-                                        <div className="col-12">
+                                        <div className="col-12 inputDataMember">
                                             <input type="text" />
                                         </div>
                                         <div className="col-6 text-center my-3 bg-success">

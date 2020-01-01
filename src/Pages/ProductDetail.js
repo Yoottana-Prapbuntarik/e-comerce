@@ -160,7 +160,6 @@ class ProductDetail extends Component {
                                                             </button>
                                                         </li>
                                                         <li className="d-inline customInputBox">
-                                                            {/* {this.state.amount} */}
                                                             <input type="number" className="inputBox" placeholder={this.state.amount} onChange={this.handleChangeAmount} />
                                                         </li>
                                                         <li className="d-inline ml-4">
