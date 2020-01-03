@@ -3,8 +3,7 @@ const initState = {
     allCost: 0,
     itemsSearch: [],
     UserSearch: "",
-    isLogin:null
-
+    isLogin:false
 }
 const CartReducer = (state = initState, action) => {
     switch (action.type) {

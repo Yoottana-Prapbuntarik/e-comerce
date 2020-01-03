@@ -16,7 +16,7 @@ class NavigationBar extends Component {
             scrolling: false,
             isHover: "none",
             search: false,
-            isLogin:false
+            // isLogin:false
         }
         this.closeNav = this.closeNav.bind(this);
         this.toggle = this.toggle.bind(this);
@@ -60,10 +60,10 @@ class NavigationBar extends Component {
     HandleLogin =() =>{
         window.scrollTo({top: 0})
         this.closeNav();
-        this.props.HandleLogin(this.state.isLogin);
-        this.setState({
-            isLogin: ! this.state.isLogin,
-        })
+        this.props.HandleLogin(true);
+        // this.setState({
+        //     isLogin: true,
+        // })
     }
     render() {
 

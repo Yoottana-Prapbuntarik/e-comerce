@@ -70,7 +70,7 @@ class FormAddress extends Component {
                                     <input type="tel" className="form-control" id="telephone" onChange={this.handleTelephone} />
                                 </div>
                                 <div className="col-12">
-                                    <div class={this.state.isCheckBox ? "checkboxCustomAfterClick" : "checkboxCustom"}>
+                                    <div className={this.state.isCheckBox ? "checkboxCustomAfterClick" : "checkboxCustom"}>
                                         <label>
                                             <input type="checkbox" onClick={this.handleCheckBox} />
                                             <b><img className="pt-1" src={this.state.isCheckBox ? Trick2 : Trick3} alt="trick" width="20px" /></b>
