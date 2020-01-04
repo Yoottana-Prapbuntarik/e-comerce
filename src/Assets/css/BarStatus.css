@@ -2,19 +2,19 @@
     margin-left: 16% !important;
 }      
 .lineStatus {
-       position: relative;
-        display: inline-block;
-        background: #ececec;
-        height: 1px;
-        width: 75%;
-        z-index: -1;
-        top: 14px;
-    }
+    position: relative;
+    display: inline-block;
+    background: #ececec;
+    height: 1px;
+    width: 75%;
+    z-index: -1;
+    top: 14px;
+}
 .barbox{
-        position: relative;
-        background: #fff;
-        width:10px;
-    }
+    position: relative;
+    background: #fff;
+    width:10px;
+}
 .circleBoxPink{
     background: #e070aa;
     padding: 1px;

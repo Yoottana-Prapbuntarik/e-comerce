@@ -98,6 +98,18 @@
     letter-spacing: -0.1px;
     color: #333333;
 }
+.textRegister{
+    width: 141px;
+    height: 26px;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.1px;
+    text-align: center;
+    color: #e070aa;
+}
 .title {
     width: 95px;
     height: 37px;
@@ -114,6 +126,14 @@
     height: 1px;
     background-color: #ececec;
 }
+.line{
+    width:99px;
+    height: 1px;
+    background-color: #ececec !important;
+    z-index: 10;
+    margin: 13px auto;
+}
+
 .inputDataMember input {
     width: 350px;
     display: block;

@@ -95,7 +95,7 @@ class NavigationBar extends Component {
                                     </Nav>
 
                                 </div>
-                                <div className=" ml-auto">
+                                <div className="ml-auto">
                                     <Nav navbar>
                                         <NavItem className="navbarLink"  onClick={this.HandleLogin}>
                                             <NavLink to="#" >สวัสดี Thanyaporn

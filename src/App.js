@@ -19,6 +19,7 @@ import PurchaseLog from './Pages/PurchaseLog';
 import Purchase from './Pages/Purchase';
 import Profile from './Pages/Profile';
 import ManageMemberAddress from './Pages/ManageMemberAddress';
+import Register from './Pages/Register';
 import Footer from './Components/Footer';
 import Login from './Components/Login';
 
@@ -80,6 +81,7 @@ class App extends Component {
               <Route path="/PurchaseLog" component={PurchaseLog} />
               <Route path="/Profile" component={Profile} />
               <Route path="/MyAddress" component={ManageMemberAddress} />
+              <Route path="/Register" component={Register} />
               <Route component={NotFound} />
             </Switch>
           </div>

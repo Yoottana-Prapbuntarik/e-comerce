@@ -23,9 +23,9 @@ class AddedAddress extends Component {
                     </div>
                     <div className="underline"></div>
                     <div className="col-12 textAddedDetai my-2">
-                           <span > {this.props.address} &nbsp; &nbsp;
+                        <span > {this.props.address} &nbsp; &nbsp;
                             {this.props.tel}
-                            </span>
+                        </span>
                     </div>
                 </div>
             </div>

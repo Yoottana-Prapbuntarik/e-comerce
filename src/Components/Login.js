@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../Assets/css/Login.css';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { faTimes } from '@fortawesome/fontawesome-free-solid';
 import Trick2 from '../Assets/images/icon/tick2.png';
 import Trick3 from '../Assets/images/icon/tick3.png';
@@ -12,14 +13,14 @@ class Login extends Component {
         super(props)
 
         this.state = {
-            isCheckBox:false,
-            isLogin:false
+            isCheckBox: false,
+            isLogin: false
         }
         this.handleCheckBox = this.handleCheckBox.bind(this);
     }
-    handleCheckBox = () =>{
+    handleCheckBox = () => {
         this.setState({
-            isCheckBox : !this.state.isCheckBox
+            isCheckBox: !this.state.isCheckBox
         })
     }
 
@@ -38,7 +39,7 @@ class Login extends Component {
                                             เข้าสู่ระบบ
                                         </div>
                                         <div className="col-6 my-3 text-right">
-                                            <FontAwesomeIcon icon={faTimes} size="2x" onClick={()=> this.props.HandleLogin(!this.props.isLogin)} />
+                                            <FontAwesomeIcon icon={faTimes} size="2x" onClick={() => this.props.HandleLogin(!this.props.isLogin)} />
                                         </div>
                                         <div className="underline mb-3"></div>
                                         <div className="col-12 inputDataMember">
@@ -57,8 +58,8 @@ class Login extends Component {
                                                 </label>
                                             </div>
                                         </div>
-                                        <div className="col-lg-6 text-center my-2  textForgotPassword">
-                                           <span className="p-auto"> ลืมรหัสผ่าน </span>
+                                        <div className="col-lg-6 text-center  my-2  textForgotPassword">
+                                            <span className="pl-auto"> ลืมรหัสผ่าน?</span>
                                         </div>
                                         <div className="col-12">
                                             <button className="btn btn-pink">เข้าสู่ระบบ</button>
@@ -68,10 +69,10 @@ class Login extends Component {
                                                 <div className="container">
                                                     <div className="row">
                                                         <div className="col-3 text-left">
-                                                        <img src={facebook} alt="logo facebook" width="32px" />
+                                                            <img src={facebook} alt="logo facebook" width="32px" />
                                                         </div>
                                                         <div className="col-9 textButtonOauth  text-left">
-                                                          <span>  เข้าสู่ระบบด้วย Facebook </span>
+                                                            <span>  เข้าสู่ระบบด้วย Facebook </span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -82,22 +83,32 @@ class Login extends Component {
                                                 <div className="container">
                                                     <div className="row">
                                                         <div className="col-3 text-left">
-                                                        <img src={line} alt="logo facebook" width="32px" />
+                                                            <img src={line} alt="logo facebook" width="32px" />
                                                         </div>
                                                         <div className="col-9 textButtonOauth text-left">
-                                                           <span> เข้าสู่ระบบด้วย Line </span>
+                                                            <span> เข้าสู่ระบบด้วย Line </span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </button>
                                         </div>
-                                     
+
                                         <div className="col-12 text-center my-3">
-                                            ยังไม่เคยสมัครมาก่อน
+                                            <div className="container">
+                                                <div className="row">
+                                                    <div className="col-3 line">
+                                                    </div>
+                                                    <div className="col-6">
+                                                        ยังไม่เคยสมัครมาก่อน
+                                                    </div>
+                                                    <div className="col-3 line">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div className="col-12 text-center pb-5 ">
+                                        <NavLink className="col-12 text-center textRegister pb-5 " to="/register">
                                             สมัครสมาชิกด้วยอีเมล์
-                                        </div>
+                                        </NavLink>
                                     </div>
                                 </div>
                             </div>
@@ -124,4 +135,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps) (Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
