@@ -75,7 +75,7 @@
 .bgSymbol{
     color: #979797;
 }
-.field input {
+.fieldCustom input {
     width: 100% !important;
     height: 50px !important;
     margin: 0 auto !important;

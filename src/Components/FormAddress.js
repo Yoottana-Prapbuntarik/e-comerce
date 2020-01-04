@@ -56,20 +56,20 @@ class FormAddress extends Component {
                         </div>
                         <div className="underline my-2"></div>
                         <div className="container">
-                            <div className="row my-3  field">
+                            <div className="row my-3  fieldCustom">
                                 <div className="container">
                                     <div className="row">
                                         <div className="col-10 mx-auto">
                                             <div className="form-group col-12">
-                                                <label className="text-center" htmlFor="nameAndLastName">ชื่อ - นามสกุล</label>
+                                                <label htmlFor="nameAndLastName">ชื่อ - นามสกุล</label>
                                                 <input type="text" className="form-control py-3" id="nameAndLastName" onChange={this.handleNameAndLastName} />
                                             </div>
                                             <div className="form-group col-12 ">
-                                                <label className="text-center" htmlFor="address">ที่อยู่จัดส่ง</label>
+                                                <label htmlFor="address">ที่อยู่จัดส่ง</label>
                                                 <input type="text" className="form-control py-5" id="address" onChange={this.handleAddress} />
                                             </div>
                                             <div className="form-group col-12 " >
-                                                <label className="text-center" htmlFor="telephone">เบอร์ติดต่อ</label>
+                                                <label htmlFor="telephone">เบอร์ติดต่อ</label>
                                                 <input type="tel" className="form-control py-3" id="telephone" onChange={this.handleTelephone} />
                                             </div>
                                             <div className="col-12">

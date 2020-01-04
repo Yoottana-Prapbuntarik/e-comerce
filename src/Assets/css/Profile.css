@@ -12,7 +12,7 @@
     color: #979797;
 }
  .field input {
-    width: 500px !important;
+    width: 100% !important;
     height: 50px !important;
     margin: 0 auto !important;
     border-radius: 4px;
