@@ -14,19 +14,41 @@ class Login extends Component {
 
         this.state = {
             isCheckBox: false,
-            isLogin: false
+            username: null,
+            password: null,
         }
         this.handleCheckBox = this.handleCheckBox.bind(this);
+        this.handleUsername = this.handleUsername.bind(this);
+        this.handlePassword = this.handlePassword.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
     handleCheckBox = () => {
         this.setState({
             isCheckBox: !this.state.isCheckBox
         })
     }
-
-
+    handleUsername = (e) => {
+        this.setState({
+            username: e.target.value
+        })
+    }
+    handlePassword = (e) => {
+        this.setState({
+            password: e.target.value
+        })
+    }
+    handleSubmit = (e) => {
+        e.preventDefault();
+        alert("username :" + this.state.username + "password :" + this.state.password + "remember login :" + this.state.isCheckBox);
+        this.username.value = "";
+        this.password.value = "";
+        this.setState({
+            username: null,
+            password: null,
+            isCheckBox: false
+        })
+    }
     render() {
-
         return (
             <div className="containerLogin">
                 <div className="container">
@@ -39,21 +61,21 @@ class Login extends Component {
                                             เข้าสู่ระบบ
                                         </div>
                                         <div className="col-6 my-3 text-right">
-                                            <FontAwesomeIcon icon={faTimes} size="2x" onClick={() => this.props.HandleLogin(!this.props.isLogin)} />
+                                            <FontAwesomeIcon icon={faTimes} size="2x" onClick={() => this.props.handleLogin(!this.props.isLogin)} />
                                         </div>
                                         <div className="underline mb-3"></div>
                                         <div className="col-12 inputDataMember">
-                                            <input type="text" />
+                                            <input ref={el => this.username = el} type="email" onChange={this.handleUsername} />
                                         </div>
                                         <div className="col-12 inputDataMember">
-                                            <input type="password" />
+                                            <input ref={el => this.password = el} type="password" onChange={this.handlePassword} />
                                         </div>
 
                                         <div className="col-lg-6 pl-5 my-2">
                                             <div className={this.state.isCheckBox ? "checkboxCustomAfterClick" : "checkboxCustom"}>
                                                 <label className="pl-2">
-                                                    <input type="checkbox" onClick={this.handleCheckBox} />
-                                                    <b><img src={this.state.isCheckBox ? Trick2 : Trick3} alt="trick" width="15px" /></b>
+                                                    <input ref={el => this.remember = el} type="checkbox" onClick={this.handleCheckBox} />
+                                                    <b><img className="pt-2" src={this.state.isCheckBox ? Trick2 : Trick3} alt="trick" width="15px" /></b>
                                                     <span className="pl-2 textCheckBox">จดจำการเข้าสู่ระบบ</span>
                                                 </label>
                                             </div>
@@ -62,7 +84,7 @@ class Login extends Component {
                                             <span className="pl-auto"> ลืมรหัสผ่าน?</span>
                                         </div>
                                         <div className="col-12">
-                                            <button className="btn btn-pink">เข้าสู่ระบบ</button>
+                                            <button className="btn btn-pink" onClick={this.handleSubmit}>เข้าสู่ระบบ</button>
                                         </div>
                                         <div className="col-12">
                                             <button className="btn btn-alpha">
@@ -92,7 +114,6 @@ class Login extends Component {
                                                 </div>
                                             </button>
                                         </div>
-
                                         <div className="col-12 text-center my-3">
                                             <div className="container">
                                                 <div className="row">
@@ -126,7 +147,7 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        HandleLogin: (isLogin) => {
+        handleLogin: (isLogin) => {
             dispatch({
                 type: "Login",
                 payload: isLogin

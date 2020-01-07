@@ -133,7 +133,7 @@ class Profile extends Component {
                                     <div className="col-12 font-weight-bold py-5">
                                         <div className="container">
                                             <div className="row">
-                                                <div className="col-6 title">
+                                                <div className="col-6 titleChangePassword">
                                                     เปลี่ยนรหัสผ่าน
                                                 </div>
                                                 <div className="col-6 text-right">
@@ -143,7 +143,7 @@ class Profile extends Component {
                                             </div>
                                             <div className="container">
                                                 <div className="row my-3  field">
-                                                    <div className="col-8 mx-auto">
+                                                    <div className="col-md-8 col-12 mx-auto">
                                                         <div className="container">
                                                             <div className="row">
                                                                 <div className="form-group col-12">

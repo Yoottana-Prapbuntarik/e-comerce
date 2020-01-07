@@ -24,7 +24,7 @@
     height: 1px;
     background-color: #ececec;
 }
-.title {
+.titleChangePassword {
     font-size: 24px;
     font-weight: bold !important;
     font-stretch: normal;
@@ -55,7 +55,8 @@
 }
  
 @media (max-width:767.98px){
-    .title {
+    .titleChangePassword {
+        padding-top: 8px !important;
         font-size: 14px;
         font-weight: bold !important;
         font-stretch: normal;
