@@ -80,10 +80,6 @@ body,html {
     background-color: #ececec;
 }
 
-.alignAutoLeft{
-    margin-left: 550px;
-}
-
 /* Slider */
 .carousel-item .wrapper-img-slide img{
     border-style: none;
@@ -656,10 +652,12 @@ body,html {
         font-size: 15px;
     }
     .alignAutoRight{
-        margin: 0 auto;
+        /* margin: 0 auto; */
+        margin-left: 25px;
     }
     .alignAutoLeft{
-        margin: 0 auto;
+        margin-left: 25px;
+        /* margin: 0 auto; */
     }
     .alpha{
         padding: 0;

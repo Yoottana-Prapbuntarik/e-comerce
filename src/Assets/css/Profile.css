@@ -12,7 +12,7 @@
     color: #979797;
 }
  .field input {
-    width: 500px !important;
+    width: 100% !important;
     height: 50px !important;
     margin: 0 auto !important;
     border-radius: 4px;
@@ -23,9 +23,8 @@
     width: 100%;
     height: 1px;
     background-color: #ececec;
-
 }
-.title {
+.titleChangePassword {
     font-size: 24px;
     font-weight: bold !important;
     font-stretch: normal;
@@ -56,7 +55,8 @@
 }
  
 @media (max-width:767.98px){
-    .title {
+    .titleChangePassword {
+        padding-top: 8px !important;
         font-size: 14px;
         font-weight: bold !important;
         font-stretch: normal;

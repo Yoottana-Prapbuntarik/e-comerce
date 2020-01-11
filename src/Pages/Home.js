@@ -40,25 +40,36 @@ class Home extends Component {
     render() {
         let items_banner = [
             {
-                src:'https://images.unsplash.com/photo-1533452171465-a53bec7eb8e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80',
-                altText:'Sale มากกว่า 50 %',
-                caption:'Sale มากกว่า 50 %',
+                src: 'https://images.unsplash.com/photo-1533452171465-a53bec7eb8e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80',
+                altText: 'Sale มากกว่า 50 %',
+                caption: 'Sale มากกว่า 50 %',
             },
             {
-                src:'https://images.unsplash.com/photo-1526178613552-2b45c6c302f0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
-                altText:'Limited time offer',
-                caption:'Limited time offer',
+                src: 'https://images.unsplash.com/photo-1526178613552-2b45c6c302f0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
+                altText: 'Limited time offer',
+                caption: 'Limited time offer',
             },
             {
-                src:'https://images.unsplash.com/reserve/wi9yf7kTQxCNeY72cCY6_Images%20of%20Jenny%20Lace%20Plasticity%20Publish%20(4%20of%2025).jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
-                altText:'Shop now !',
-                caption:'Shop now !',
+                src: 'https://images.unsplash.com/reserve/wi9yf7kTQxCNeY72cCY6_Images%20of%20Jenny%20Lace%20Plasticity%20Publish%20(4%20of%2025).jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
+                altText: 'Shop now !',
+                caption: 'Shop now !',
             },
 
         ]
+        let pagination = [];
+        let NumberPage;
+        for (let i = 16; i < 96; i++) {
+            if (i % 16 === 0) {
+                NumberPage = i / 16;
+                pagination.push(
+                    <li className="page-item ml-2 ">
+                        <button className="page-link border-page-link  text-dark" value={NumberPage} onClick={this.HandlePage}>{NumberPage}</button>
+                    </li>);
+            }
+        }
         return (
             <React.Fragment>
-                <Slider itemsImg={items_banner}/>
+                <Slider itemsImg={items_banner} />
                 <div className="container-fluid MarginTopClass ">
                     <div className="row text-center">
                         <Category />
@@ -79,7 +90,7 @@ class Home extends Component {
 
                             ) : this.state.index === 2 ? (this.state.dataItem.map((list, i) => {
                                 return (
-                                    list.id > 16 && list.id <= 32 && 
+                                    list.id > 16 && list.id <= 32 &&
                                     <CardBox key={i} img={list.img[0].source} id={list.id} name={list.name} cost={list.cost} />
                                 )
                             })) : this.state.index === 3 ? (this.state.dataItem.map((list, i) => {
@@ -113,20 +124,7 @@ class Home extends Component {
                                             <span aria-hidden="true">{"<"}</span>
                                         </button>
                                     </li>
-                                    <li className="page-item ml-2 ">
-                                        <button className="page-link border-page-link  text-dark" value={1} onClick={this.HandlePage}>1</button></li>
-                                    <li className="page-item ml-2">
-                                        <button className="page-link border-page-link  text-dark" value={2} onClick={this.HandlePage}>2</button>
-                                    </li>
-                                    <li className="page-item ml-2">
-                                        <button className="page-link border-page-link  text-dark" value={3} onClick={this.HandlePage}>3</button>
-                                    </li>
-                                    <li className="page-item ml-2">
-                                        <button className="page-link border-page-link  text-dark" value={4} onClick={this.HandlePage}>4</button>
-                                    </li>
-                                    <li className="page-item ml-2">
-                                        <button className="page-link border-page-link  text-dark" value={5} onClick={this.HandlePage}>5</button>
-                                    </li>
+                                    {pagination}
                                     <li className="page-item ml-2">
                                         <button className="page-link border-page-link text-dark" href="#" aria-label="Next" onClick={this.onclick.bind(this, 'add')}>
                                             <span aria-hidden="true">{">"}</span>

@@ -54,11 +54,12 @@ class ProductDetail extends Component {
         this.setState({ amount: this.state.amount - 1 })
     }
     handleChangeAmount = (e) => {
-        let eventAmout = parseInt(e.target.value);
-        if (eventAmout <= 0 || isNaN(eventAmout)) {
+        let amountProduct = parseInt(e.target.value);
+        let nullValue = 0;
+        if (amountProduct <= nullValue || isNaN(amountProduct)) {
             this.setState({ amount: 1 })
         } else {
-            this.setState({ amount: eventAmout })
+            this.setState({ amount: amountProduct })
         }
     }
     componentDidMount() {
@@ -159,7 +160,6 @@ class ProductDetail extends Component {
                                                             </button>
                                                         </li>
                                                         <li className="d-inline customInputBox">
-                                                            {/* {this.state.amount} */}
                                                             <input type="number" className="inputBox" placeholder={this.state.amount} onChange={this.handleChangeAmount} />
                                                         </li>
                                                         <li className="d-inline ml-4">
