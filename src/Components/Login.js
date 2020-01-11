@@ -8,17 +8,25 @@ import Trick3 from '../Assets/images/icon/tick3.png';
 import facebook from '../Assets/images/logo/facebook.png';
 import line from '../Assets/images/logo/line.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+const emojiRegex = require('emoji-regex');
+const regexEmoji = emojiRegex();
+// pattern regex form
+let regexEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i,
+    regexPassword = /^[#\w@_-]{8,20}$/;
+
+//check boolean form
+let isValidEmail, isValidPassword;
 class Login extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
             isCheckBox: false,
-            username: null,
+            email: null,
             password: null,
         }
         this.handleCheckBox = this.handleCheckBox.bind(this);
-        this.handleUsername = this.handleUsername.bind(this);
+        this.handleEmail = this.handleEmail.bind(this);
         this.handlePassword = this.handlePassword.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -27,23 +35,35 @@ class Login extends Component {
             isCheckBox: !this.state.isCheckBox
         })
     }
-    handleUsername = (e) => {
+    handleEmail = (e) => {
+        let field = e.target.value
+        if (regexEmail.test(field) === false || regexEmoji.test(field) === true) {
+            isValidEmail = false;
+        } else {
+            isValidEmail = true;
+        }
         this.setState({
-            username: e.target.value
+            email: e.target.value
         })
     }
     handlePassword = (e) => {
+        let field = e.target.value
+        if (regexPassword.test(field) === false || regexEmoji.test(field) === true) {
+            isValidPassword = false;
+        } else {
+            isValidPassword = true;
+        }
         this.setState({
             password: e.target.value
         })
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        alert("username :" + this.state.username + "password :" + this.state.password + "remember login :" + this.state.isCheckBox);
-        this.username.value = "";
+        alert("email :" + this.state.email + "password :" + this.state.password + "remember login :" + this.state.isCheckBox);
+        this.email.value = "";
         this.password.value = "";
         this.setState({
-            username: null,
+            email: null,
             password: null,
             isCheckBox: false
         })
@@ -63,12 +83,14 @@ class Login extends Component {
                                         <div className="col-6 my-3 text-right">
                                             <FontAwesomeIcon icon={faTimes} size="2x" onClick={() => this.props.handleLogin(!this.props.isLogin)} />
                                         </div>
-                                        <div className="underline mb-3"></div>
+                                        <div className="underline mb-2"></div>
                                         <div className="col-12 inputDataMember">
-                                            <input ref={el => this.username = el} type="email" onChange={this.handleUsername} />
+                                            <input ref={el => this.email = el} type="email" onChange={this.handleEmail} />
+                                            {isValidEmail === false && <small className="text-danger d-inline ml-5 ">โปรดกรอกอีเมลล์ให้ถูกต้อง</small>}
                                         </div>
                                         <div className="col-12 inputDataMember">
                                             <input ref={el => this.password = el} type="password" onChange={this.handlePassword} />
+                                            {isValidPassword === false && <small className="text-danger d-inline ml-5 ">โปรดกรอกอีเมลล์ให้ถูกต้อง</small>}
                                         </div>
 
                                         <div className="col-lg-6 pl-5 my-2">

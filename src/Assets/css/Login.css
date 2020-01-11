@@ -136,6 +136,7 @@
 
 .inputDataMember input {
     width: 350px;
+    padding: 5px;
     display: block;
     height: 50px;
     margin: 8px auto !important;
@@ -173,7 +174,7 @@
         margin-top: 141.25px;
         width: 380px;
         left: -185px;
-        height: 600px !important;
+        height: 617px !important;
         border-radius: 8px;
         box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.4);
         background-color: #ffffff;
@@ -205,7 +206,7 @@
         width: 350px; 
         left: -175px;
         top: -140px;
-        height: 540px !important;
+        height: 575px !important;
         border-radius: 8px;
         box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.4);
         background-color: #ffffff;
@@ -218,7 +219,7 @@
         width: 330px; 
         top: -140px;
         left: -164px;
-        height: 528px !important;
+        height:567px !important;
         border-radius: 8px;
         box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.4);
         background-color: #ffffff;
